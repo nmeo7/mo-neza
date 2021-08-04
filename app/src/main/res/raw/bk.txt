@@ -1,0 +1,391 @@
+Local transfer - MTN Rwanda Credited A/C: 0788778339 Debited A/C: 00040-00653562-09 Amount:  RWF 53,000 Event #: 914266 Status: SUCCESS Date: 2021-06-03
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 45,000 Event #: 910025 Status: SUCCESS Date: 2021-06-02
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 3,200 Event #: 903262 Status: SUCCESS Date: 2021-06-01
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 34,000 Event #: 890504 Status: SUCCESS Date: 2021-05-30
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 882160 Status: SUCCESS Date: 2021-05-29
+Local transfer - MTN Rwanda Credited A/C: 0788308934 Debited A/C: 00040-00653562-09 Amount:  RWF 10,000 Event #: 879332 Status: SUCCESS Date: 2021-05-28
+Bill payment - RRA PAYMENT Consumer Reference: 0539996931 Amount: 60000 Receipt #: 31961986 Event #: 991001 Date: 2021-05-24
+Your BKquick Loan A/C balance is RWF 353392
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 200,000 Event #: 841241 Status: SUCCESS Date: 2021-05-22
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 164,000 Event #: 704142 Status: SUCCESS Date: 2021-04-29
+Your OTP (One Time Password) for device 8.0.0 is 936985. This OTP will expire in 5 minute(s)
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 689069 Status: SUCCESS Date: 2021-04-27
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 671330 Status: SUCCESS Date: 2021-04-24
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 667764 Status: SUCCESS Date: 2021-04-23
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 663076 Status: SUCCESS Date: 2021-04-23
+BKSMS A/C:00040-0065####-09 Date:2021-04-22 14:12 Branch:HEAD QUARTER Debit:600000.0 Lib:INTERNALtransfer Ref.No:415749 Balance:405938
+BKSMS A/C:00040-0065####-09 Date:2021-04-22 13:06 Branch:HEAD QUARTER Credit:851278.0 Lib:I21042201QC1KFT21112SRZDRNatio Ref.No:219810 Balance:405938
+BKSMS A/C:00040-0065####-09 Date:2021-04-22 13:06 Branch:HEAD QUARTER Credit:851278.0 Lib:I21042201QC1KFT21112SRZDRNatio Ref.No:219810 Balance:405938
+Local transfer - Bank of Kigali (BK) Credited A/C: 00040-00301234-82 Debited A/C: 00040-00653562-09 Amount: RWF 600,000 Event #: 415749 Status: SUCCESS Date: 2021-04-22
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 631525 Status: SUCCESS Date: 2021-04-17
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 30,000 Event #: 625144 Status: SUCCESS Date: 2021-04-16
+BKSMS A/C:00040-0065####-09 Date:2021-04-13 16:53 Branch:HEAD QUARTER Debit:17438.0 Lib:Auth256518AMZNMktpUS0301 Ref.No:667958 Balance:235060
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 608149 Status: SUCCESS Date: 2021-04-12
+Your BKquick Loan A/C balance is RWF 426708
+Dear Customer , your payment of 85869 RWF has failed due to internal system error on 2021-01-23. Please call 4455 for support. Thank you for using BKquick.
+BKSMS A/C:00040-0065####-09 Date:2021-04-06 07:19 Branch:HEAD QUARTER Debit:300000.0 Lib:INTERNALtransfer Ref.No:406617 Balance:118557
+Local transfer - Bank of Kigali (BK) Credited A/C: 00040-00326106-25 Debited A/C: 00040-00653562-09 Amount: RWF 300,000 Event #: 406617 Status: SUCCESS Date: 2021-04-06
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 535605 Status: SUCCESS Date: 2021-03-31
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 30,000 Event #: 521542 Status: SUCCESS Date: 2021-03-29
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 511261 Status: SUCCESS Date: 2021-03-28
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 505330 Status: SUCCESS Date: 2021-03-27
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 488655 Status: SUCCESS Date: 2021-03-24
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 482305 Status: SUCCESS Date: 2021-03-23
+Local transfer - MTN Rwanda Credited A/C: 0783053178 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 482290 Status: SUCCESS Date: 2021-03-23
+BKSMS A/C:00040-0065####-09 Date:2021-03-22 17:21 Branch:HEAD QUARTER Credit:851278.0 Lib:I21032201NR3WFT21081P3Z1LNatio Ref.No:041401 Balance:871948
+Local transfer - MTN Rwanda Credited A/C: 0783053178 Debited A/C: 00040-00653562-09 Amount:  RWF 13,500 Event #: 478640 Status: SUCCESS Date: 2021-03-22
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 477948 Status: SUCCESS Date: 2021-03-22
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 476549 Status: SUCCESS Date: 2021-03-22
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 60,000 Event #: 451189 Status: SUCCESS Date: 2021-03-17
+Local transfer - MTN Rwanda Credited A/C: 0788226778 Debited A/C: 00040-00653562-09 Amount:  RWF 35,000 Event #: 441951 Status: SUCCESS Date: 2021-03-15
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 75,000 Event #: 434149 Status: SUCCESS Date: 2021-03-14
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 25,000 Event #: 434141 Status: SUCCESS Date: 2021-03-14
+Local transfer - MTN Rwanda Credited A/C: 0785242596 Debited A/C: 00040-00653562-09 Amount:  RWF 4,200 Event #: 425162 Status: SUCCESS Date: 2021-03-12
+Local transfer - MTN Rwanda Credited A/C: 0788226778 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 410927 Status: SUCCESS Date: 2021-03-10
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 80,000 Event #: 410917 Status: SUCCESS Date: 2021-03-10
+BKSMS A/C:00040-0065####-09 Date:2021-03-09 13:49 Branch:HEAD QUARTER Credit:500000.0 Lib:FT2106825MDX--IncomingDisburse Ref.No:626252 Balance:485370
+BKSMS A/C:00040-0065####-09 Date:2021-03-09 14:03 Branch:HEAD QUARTER Debit:4000000.0 Lib:INTERNALtransfer Ref.No:390958 Balance:485370
+BKSMS A/C:00040-0065####-09 Date:2021-03-09 14:11 Branch:HEAD QUARTER Debit:1000000.0 Lib:INTERNALtransfer Ref.No:390963 Balance:485370
+BKSMS A/C:00040-0065####-09 Date:2021-03-09 13:54 Branch:HEAD QUARTER Debit:5900.0 Lib:-Outgoing-Facilitation-BKQuick Ref.No:180312 Balance:485370
+Local transfer - Bank of Kigali (BK) Credited A/C: 00040-00323615-56 Debited A/C: 00040-00653562-09 Amount: RWF 1,000,000 Event #: 390963 Status: SUCCESS Date: 2021-03-09
+Local transfer - Bank of Kigali (BK) Credited A/C: 00040-00323615-56 Debited A/C: 00040-00653562-09 Amount: RWF 4,000,000 Event #: 390958 Status: SUCCESS Date: 2021-03-09
+Muraho  inguzanyo yanyu ya BKquick ya 500000 yemewe ku nyungu ya 4/100 ku kwezi   5900 yo kwiga dosiye
+Hello ROMEO your BKquick loan request of RWF 500000 for 6 month(s) is being processed
+Local transfer - MTN Rwanda Credited A/C: 0783053178 Debited A/C: 00040-00653562-09 Amount:  RWF 10,000 Event #: 407791 Status: SUCCESS Date: 2021-03-09
+BKSMS A/C:00040-0065####-09 Date:2021-03-08 06:45 Branch:HEAD QUARTER Credit:500000.0 Lib:goodmorning Ref.No:390072 Balance:5001470
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 390360 Status: SUCCESS Date: 2021-03-06
+Local transfer - MTN Rwanda Credited A/C: 0788226778 Debited A/C: 00040-00653562-09 Amount:  RWF 32,000 Event #: 388624 Status: SUCCESS Date: 2021-03-05
+BKSMS A/C:00040-0065####-09 Date:2021-03-05 14:36 Branch:NYAMIRAMBO Credit:4500000.0 Lib:UMUTESIPROVIDENCE Ref.No:488839 Balance:4553870
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 25,000 Event #: 387967 Status: SUCCESS Date: 2021-03-05
+Local transfer - MTN Rwanda Credited A/C: 0786673976 Debited A/C: 00040-00653562-09 Amount:  RWF 106,250 Event #: 386627 Status: SUCCESS Date: 2021-03-05
+BKSMS A/C:00040-0065####-09 Date:2021-03-03 08:45 Branch:HEAD QUARTER Debit:1425000.0 Lib:INTERNALtransfer Ref.No:571015 Balance:185520
+Local transfer - Bank of Kigali (BK) Credited A/C: 00093-07728844-45 Debited A/C: 00040-00653562-09 Amount: RWF 1,425,000 Event #: 571015 Status: SUCCESS Date: 2021-03-03
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 372043 Status: SUCCESS Date: 2021-03-02
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 355682 Status: SUCCESS Date: 2021-02-28
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 350328 Status: SUCCESS Date: 2021-02-27
+Local transfer - MTN Rwanda Credited A/C: 0786294175 Debited A/C: 00040-00653562-09 Amount:  RWF 25,000 Event #: 338691 Status: SUCCESS Date: 2021-02-25
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 335858 Status: SUCCESS Date: 2021-02-25
+Local transfer - MTN Rwanda Credited A/C: 0786294175 Debited A/C: 00040-00653562-09 Amount:  RWF 25,000 Event #: 335784 Status: SUCCESS Date: 2021-02-25
+BKSMS A/C:00040-0065####-09 Date:2021-02-22 15:05 Branch:HEAD QUARTER Credit:851278.0 Lib:I21022201LJH5FT210537ZW08Natio Ref.No:875430 Balance:1901098
+Local transfer - MTN Rwanda Credited A/C: 0786294175 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 321079 Status: SUCCESS Date: 2021-02-22
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 28,000 Event #: 313208 Status: SUCCESS Date: 2021-02-20
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 301698 Status: SUCCESS Date: 2021-02-18
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 283655 Status: SUCCESS Date: 2021-02-14
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 80,000 Event #: 227833 Status: SUCCESS Date: 2021-02-02
+Local transfer - MTN Rwanda Credited A/C: 0788402484 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 206034 Status: SUCCESS Date: 2021-01-28
+BKSMS A/C:00040-0065####-09 Date:2021-01-25 10:50 Branch:HEAD QUARTER Credit:85869.0 Lib:FT21025MK337-IncomingReversal- Ref.No:595910 Balance:1385520
+Dear ROMEO, this is to advise that your query on Mobi Loan-Repayment No. CAS-196160-P9P6P4 has been resolved.
+Dear ROMEO, thank you for contacting The Bank of Kigali your request number is CAS-196160-P9P6P4. We shall update you on the progress
+Your BKquick Simple Savings A/C balance is RWF 0
+Your BKquick Loan A/C balance is RWF
+BKSMS A/C:00040-0065####-09 Date:2021-01-23 13:35 Branch:HEAD QUARTER Debit:85869.0 Lib:Outgoing-PAY-BKQuick Ref.No:028368 Balance:1299651
+BKSMS A/C:00040-0065####-09 Date:2021-01-23 13:33 Branch:HEAD QUARTER Debit:85869.0 Lib:Outgoing-PAY-BKQuick Ref.No:028369 Balance:1299651
+Your BKquick Loan A/C balance is RWF
+Your BKquick loan repayment of RWF 85869 was successful.
+Sorry, your BKquick repayment of RWF 85869 failed due to SSL_read:: shutdown while in init
+Your BKquick Loan A/C balance is RWF 85869
+BKSMS A/C:00040-0065####-09 Date:2021-01-22 17:14 Branch:HEAD QUARTER Credit:851812.0 Lib:I21012201IUH6FT21022JMLS7Natio Ref.No:694847 Balance:1471389
+BKSMS A/C:00040-0065####-09 Date:2021-01-22 12:47 Branch:HEAD QUARTER Debit:89110.0 Lib:AA20237S32GR-20210122-Outgoing Ref.No:027452 Balance:619577
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 156327 Status: SUCCESS Date: 2021-01-17
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 90,000 Event #: 121663 Status: SUCCESS Date: 2021-01-09
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 092292 Status: SUCCESS Date: 2021-01-03
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 70,000 Event #: 087836 Status: SUCCESS Date: 2021-01-02
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 30,000 Event #: 069545 Status: SUCCESS Date: 2020-12-30
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 067904 Status: SUCCESS Date: 2020-12-30
+Local transfer - MTN Rwanda Credited A/C: 0781988221 Debited A/C: 00040-00653562-09 Amount:  RWF 24,743 Event #: 060457 Status: SUCCESS Date: 2020-12-28
+Local transfer - MTN Rwanda Credited A/C: 0783263321 Debited A/C: 00040-00653562-09 Amount:  RWF 53,514 Event #: 060437 Status: SUCCESS Date: 2020-12-28
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 79,000 Event #: 048138 Status: SUCCESS Date: 2020-12-26
+Local transfer - MTN Rwanda Credited A/C: 0788623107 Debited A/C: 00040-00653562-09 Amount:  RWF 30,000 Event #: 014860 Status: SUCCESS Date: 2020-12-20
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 90,000 Event #: 012320 Status: SUCCESS Date: 2020-12-20
+Local transfer - MTN Rwanda Credited A/C: 0788402484 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 010991 Status: SUCCESS Date: 2020-12-19
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 40,000 Event #: 010752 Status: SUCCESS Date: 2020-12-19
+BKSMS A/C:00040-0065####-09 Date:2020-12-19 11:50 Branch:HEAD QUARTER Debit:89056.0 Lib:AA20237S32GR-20201221-Outgoing Ref.No:947422 Balance:1540044
+Your BKquick Loan A/C balance is RWF 256600
+Local transfer - MTN Rwanda Credited A/C: 0788538836 Debited A/C: 00040-00653562-09 Amount:  RWF 30,000 Event #: 002936 Status: SUCCESS Date: 2020-12-18
+BKSMS A/C:00040-0065####-09 Date:2020-12-17 15:09 Branch:HEAD QUARTER Debit:500000.0 Lib:INTERNALtransfer Ref.No:350717 Balance:1659300
+Local transfer - Bank of Kigali (BK) Credited A/C: 00040-00301234-82 Debited A/C: 00040-00653562-09 Amount: RWF 500,000 Event #: 350717 Status: SUCCESS Date: 2020-12-17
+BKSMS A/C:00040-0065####-09 Date:2020-12-17 14:27 Branch:HEAD QUARTER Credit:1851640.0 Lib:I20121701FRUWFT20352G63GBNatio Ref.No:472726 Balance:2159300
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 962507 Status: SUCCESS Date: 2020-12-10
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 952224 Status: SUCCESS Date: 2020-12-08
+Your OTP (One Time Password) for device 8.0.0 is 671438. This OTP will expire in 5 minute(s)
+BKSMS A/C:00040-0065####-09 Date:2020-12-07 15:13 Branch:HEAD QUARTER Credit:102200.0 Lib:FAILEDPULLAPP04122020 Ref.No:342668 Balance:508055
+BKSMS A/C:00040-0065####-09 Date:2020-12-07 15:08 Branch:HEAD QUARTER Credit:102200.0 Lib:FAILEDPULLAPP04122020 Ref.No:342668 Balance:508055
+Local transfer - MTN Rwanda Credited A/C: 0789513224 Debited A/C: 00040-00653562-09 Amount:  RWF 102,000 Event #: 931879 Status: SUCCESS Date: 2020-12-04
+Local transfer - MTN Rwanda Credited A/C: 0789513224 Debited A/C: 00040-00653562-09 Amount:  RWF 102,000 Event #: 931879 Status: SUCCESS Date: 2020-12-04
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 70,000 Event #: 930500 Status: SUCCESS Date: 2020-12-04
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 925687 Status: SUCCESS Date: 2020-12-03
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 904887 Status: SUCCESS Date: 2020-11-29
+Your BKquick Loan A/C balance is RWF 247365
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 898490 Status: SUCCESS Date: 2020-11-28
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 10,000 Event #: 879342 Status: SUCCESS Date: 2020-11-24
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 10,000 Event #: 879342 Status: SUCCESS Date: 2020-11-24
+Local transfer - MTN Rwanda Credited A/C: 0784713082 Debited A/C: 00040-00653562-09 Amount:  RWF 52,000 Event #: 879331 Status: SUCCESS Date: 2020-11-24
+Local transfer - MTN Rwanda Credited A/C: 0784713082 Debited A/C: 00040-00653562-09 Amount:  RWF 52,000 Event #: 879331 Status: SUCCESS Date: 2020-11-24
+BKSMS A/C:00040-0065####-09 Date:2020-11-24 20:53 Branch:HEAD QUARTER Credit:851812.0 Lib:I20112401CQ2WFT203282CCH8Natio Ref.No:305905 Balance:851812
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 56,282 Event #: 841727 Status: SUCCESS Date: 2020-11-13
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 816282 Status: SUCCESS Date: 2020-11-08
+BKSMS A/C:00040-0065####-09 Date:2020-11-06 11:14 Branch:NYAMIRAMBO Debit:903000.0 Lib:NTAZINDAROMEO Ref.No:694376 Balance:106682
+BKSMS A/C:00040-0065####-09 Date:2020-11-06 09:19 Branch:HEAD QUARTER Credit:400000.0 Lib:Joe Ref.No:329526 Balance:1009682
+BKSMS A/C:00040-0065####-09 Date:2020-11-04 16:46 Branch:HEAD QUARTER Credit:500000.0 Lib:Joe Ref.No:328640 Balance:609682
+Local transfer - MTN Rwanda Credited A/C: 0782286430 Debited A/C: 00040-00653562-09 Amount:  RWF 30,000 Event #: 789404 Status: SUCCESS Date: 2020-11-03
+Local transfer - MTN Rwanda Credited A/C: 0782286430 Debited A/C: 00040-00653562-09 Amount:  RWF 30,000 Event #: 789404 Status: SUCCESS Date: 2020-11-03
+Dear ROMEO,   Welcome to BK InternetBanking.   Kindly check your email to complete setup.   Queries? Call 0788143000/ 4455.   2020-11-03T13:02:23.253
+BKSMS A/C:00040-0065####-09 Date:2020-10-31 14:06 Branch:HEAD QUARTER Debit:300000.0 Lib:INTERNALtransfer Ref.No:326261 Balance:141382
+BKSMS A/C:00040-0065####-09 Date:2020-10-31 14:06 Branch:HEAD QUARTER Debit:300000.0 Lib:INTERNALtransfer Ref.No:326261 Balance:141382
+Local transfer - Bank of Kigali (BK) Credited A/C: 00040-00301234-82 Debited A/C: 00040-00653562-09 Amount: RWF 300,000 Event #: 326261 Status: SUCCESS Date: 2020-10-31
+Local transfer - MTN Rwanda Credited A/C: 0788623107 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 770948 Status: SUCCESS Date: 2020-10-31
+BKSMS A/C:00040-0065####-09 Date:2020-10-29 10:12 Branch:HEAD QUARTER Debit:49.0 Lib:AA20237S32GR-20201029-Outgoing Ref.No:800841 Balance:461582
+BKSMS A/C:00040-0065####-09 Date:2020-10-28 19:54 Branch:HEAD QUARTER Debit:89381.0 Lib:AA20237S32GR-20201028-Outgoing Ref.No:796826 Balance:461631
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 752680 Status: SUCCESS Date: 2020-10-28
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 738000 Status: SUCCESS Date: 2020-10-25
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 725285 Status: SUCCESS Date: 2020-10-23
+BKSMS A/C:00040-0065####-09 Date:2020-10-23 16:17 Branch:HEAD QUARTER Credit:851812.0 Lib:I20102301AFQLFT20297SW2H5Natio Ref.No:126851 Balance:851812
+BKSMS A/C:00040-0065####-09 Date:2020-10-21 08:00 Branch:HEAD QUARTER Debit:13.0 Lib:AA20237S32GR-20201021-Outgoing Ref.No:781028 Balance:0
+BKSMS A/C:00040-0065####-09 Date:2020-10-21 08:00 Branch:HEAD QUARTER Debit:13.0 Lib:AA20237S32GR-20201021-Outgoing Ref.No:781028 Balance:0
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 30,000 Event #: 693690 Status: SUCCESS Date: 2020-10-17
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 661909 Status: SUCCESS Date: 2020-10-11
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 588405 Status: SUCCESS Date: 2020-09-30
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 40,000 Event #: 583299 Status: SUCCESS Date: 2020-09-29
+Local transfer - MTN Rwanda Credited A/C: 0788226778 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 564718 Status: SUCCESS Date: 2020-09-26
+BKSMS A/C:00040-0065####-09 Date:2020-09-26 10:43 Branch:HEAD QUARTER Debit:400000.0 Lib:INTERNALtransfer Ref.No:306383 Balance:242015
+Local transfer - Bank of Kigali (BK) Credited A/C: 00040-00301234-82 Debited A/C: 00040-00653562-09 Amount: RWF 400,000 Event #: 306383 Status: SUCCESS Date: 2020-09-26
+Local transfer - Bank of Kigali (BK) Credited A/C: 00040-00301234-82 Debited A/C: 00040-00653562-09 Amount: RWF 400,000 Event #: 306383 Status: SUCCESS Date: 2020-09-26
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 550654 Status: SUCCESS Date: 2020-09-24
+BKSMS A/C:00040-0065####-09 Date:2020-09-24 10:02 Branch:HEAD QUARTER Debit:89198.0 Lib:AA20237S32GR-20200924-Outgoing Ref.No:701769 Balance:662215
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 545675 Status: SUCCESS Date: 2020-09-23
+BKSMS A/C:00040-0065####-09 Date:2020-09-23 17:28 Branch:HEAD QUARTER Credit:851812.0 Lib:I200923017U91FT20267DQJ8QNatio Ref.No:944177 Balance:851613
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 1,600 Event #: 506518 Status: SUCCESS Date: 2020-09-16
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 3,564 Event #: 506502 Status: SUCCESS Date: 2020-09-16
+Local transfer - MTN Rwanda Credited A/C: 0789650262 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 472795 Status: SUCCESS Date: 2020-09-11
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 40,000 Event #: 461893 Status: SUCCESS Date: 2020-09-09
+Local transfer - MTN Rwanda Credited A/C: 0788623107 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 433482 Status: SUCCESS Date: 2020-09-05
+BKSMS A/C:00040-0065####-09 Date:2020-09-04 16:09 Branch:HEAD QUARTER Credit:3295.0 Lib:RefALIEXPRESS020920 Ref.No:082995 Balance:165565
+Local transfer - MTN Rwanda Credited A/C: 0784713082 Debited A/C: 00040-00653562-09 Amount:  RWF 70,000 Event #: 424124 Status: SUCCESS Date: 2020-09-04
+Local transfer - MTN Rwanda Credited A/C: 0787060511 Debited A/C: 00040-00653562-09 Amount:  RWF 10,000 Event #: 399842 Status: SUCCESS Date: 2020-08-31
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 399004 Status: SUCCESS Date: 2020-08-31
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 392053 Status: SUCCESS Date: 2020-08-30
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 337346 Status: SUCCESS Date: 2020-08-22
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 336979 Status: SUCCESS Date: 2020-08-22
+Local transfer - MTN Rwanda Credited A/C: 0788402484 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 336969 Status: SUCCESS Date: 2020-08-22
+Local transfer - Bank of Kigali (BK) Credited A/C: 00044-07743724-92 Debited A/C: 00040-00653562-09 Amount: RWF 700,000 Event #: 407155 Status: SUCCESS Date: 2020-08-22
+BKSMS A/C:00040-0065####-09 Date:2020-08-21 20:17 Branch:HEAD QUARTER Credit:467100.0 Lib:FT20237KXLP4--IncomingDisburse Ref.No:498353 Balance:1313273
+BKSMS A/C:00040-0065####-09 Date:2020-08-21 20:17 Branch:HEAD QUARTER Debit:5512.0 Lib:-Outgoing-Facilitation-BKQuick Ref.No:615408 Balance:1313273
+Muraho  inguzanyo yanyu ya BKquick ya 467100 yemewe ku nyungu ya 4/100 ku kwezi   5512 yo kwiga dosiye
+Hello ROMEO your BKquick loan request of RWF 467100 for 6 month(s) is being processed
+BKSMS A/C:00040-0065####-09 Date:2020-08-21 19:53 Branch:HEAD QUARTER Credit:851812.0 Lib:I200821015DJ5FT20234T82YCNatio Ref.No:767274 Balance:851685
+Ikaze ROMEO kuri BKquick. Ryoherwa no kwizigamira ndetse n'Inguzanyo z'igihe kigufi ku nyungu nto
+Thank you for your interest in BKquick Loans and Savings. Your request is currently being processed.
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 229115 Status: SUCCESS Date: 2020-08-03
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 51,000 Event #: 212322 Status: SUCCESS Date: 2020-07-31
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 80,000 Event #: 181084 Status: SUCCESS Date: 2020-07-26
+BKSMS A/C:00040-0065####-09 Date:2020-07-24 17:16 Branch:HEAD QUARTER Debit:3400000.0 Lib:INTERNALtransfer Ref.No:384087 Balance:181873
+Local transfer - Bank of Kigali (BK) Credited A/C: 00044-07743724-92 Debited A/C: 00040-00653562-09 Amount: RWF 3,400,000 Event #: 384087 Status: SUCCESS Date: 2020-07-24
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 40,000 Event #: 163531 Status: SUCCESS Date: 2020-07-23
+Local transfer - MTN Rwanda Credited A/C: 0788226778 Debited A/C: 00040-00653562-09 Amount:  RWF 10,000 Event #: 161316 Status: SUCCESS Date: 2020-07-22
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 153668 Status: SUCCESS Date: 2020-07-21
+Local transfer - MTN Rwanda Credited A/C: 0787060511 Debited A/C: 00040-00653562-09 Amount:  RWF 10,000 Event #: 151250 Status: SUCCESS Date: 2020-07-20
+Local transfer - MTN Rwanda Credited A/C: 0788226778 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 151245 Status: SUCCESS Date: 2020-07-20
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 15,000 Event #: 141099 Status: SUCCESS Date: 2020-07-18
+Local transfer - Equity Bank Credited A/C: 4002111384181 Debited A/C: 00040-00653562-09 Amount:  RWF 5,000 Event #: 822523 Status: SUCCESS Date: 2020-07-18
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 30,000 Event #: 135227 Status: SUCCESS Date: 2020-07-17
+Local transfer - MTN Rwanda Credited A/C: 0788226778 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 135213 Status: SUCCESS Date: 2020-07-17
+Thank you for your interest in BKquick. The services is currently unavailable. Kindly call 4455 for further information
+Local transfer - MTN Rwanda Credited A/C: 0788649457 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 113742 Status: SUCCESS Date: 2020-07-13
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 108925 Status: SUCCESS Date: 2020-07-11
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 108925 Status: SUCCESS Date: 2020-07-11
+Thank you for your interest in BKquick. The services is currently unavailable. Kindly call 4455 for further information
+2021-06-04 09:49:52.761 22595-22595/com.example.readsms I/chatty: uid=10321(u0_a321) com.example.readsms identical 2 lines
+Thank you for your interest in BKquick. The services is currently unavailable. Kindly call 4455 for further information
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 8,500 Event #: 068566 Status: SUCCESS Date: 2020-07-04
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 8,500 Event #: 068566 Status: SUCCESS Date: 2020-07-04
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 300,000 Event #: 058688 Status: SUCCESS Date: 2020-07-02
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 300,000 Event #: 058688 Status: SUCCESS Date: 2020-07-02
+Local transfer - MTN Rwanda Credited A/C: 0788402484 Debited A/C: 00040-00653562-09 Amount:  RWF 130,000 Event #: 055954 Status: SUCCESS Date: 2020-07-02
+Local transfer - MTN Rwanda Credited A/C: 0788402484 Debited A/C: 00040-00653562-09 Amount:  RWF 130,000 Event #: 055954 Status: SUCCESS Date: 2020-07-02
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 051415 Status: SUCCESS Date: 2020-07-01
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 051415 Status: SUCCESS Date: 2020-07-01
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 036705 Status: SUCCESS Date: 2020-06-28
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 036705 Status: SUCCESS Date: 2020-06-28
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 009067 Status: SUCCESS Date: 2020-06-23
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 009067 Status: SUCCESS Date: 2020-06-23
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 998230 Status: SUCCESS Date: 2020-06-21
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 998230 Status: SUCCESS Date: 2020-06-21
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 64,000 Event #: 989763 Status: SUCCESS Date: 2020-06-19
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 64,000 Event #: 989763 Status: SUCCESS Date: 2020-06-19
+Local transfer - MTN Rwanda Credited A/C: 0788623107 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 976825 Status: SUCCESS Date: 2020-06-16
+Local transfer - MTN Rwanda Credited A/C: 0788623107 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 976825 Status: SUCCESS Date: 2020-06-16
+Local transfer - MTN Rwanda Credited A/C: 0788226778 Debited A/C: 00040-00653562-09 Amount:  RWF 18,000 Event #: 973346 Status: SUCCESS Date: 2020-06-16
+Local transfer - MTN Rwanda Credited A/C: 0788226778 Debited A/C: 00040-00653562-09 Amount:  RWF 18,000 Event #: 973346 Status: SUCCESS Date: 2020-06-16
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 958350 Status: SUCCESS Date: 2020-06-12
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 958350 Status: SUCCESS Date: 2020-06-12
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 945256 Status: SUCCESS Date: 2020-06-09
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 945256 Status: SUCCESS Date: 2020-06-09
+Your OTP (One Time Password) for device 8.0.0 is 798089. This OTP will expire in 5 minute(s)
+Your OTP (One Time Password) for device 8.0.0 is 798089. This OTP will expire in 5 minute(s)
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 888183 Status: SUCCESS Date: 2020-05-28
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 888183 Status: SUCCESS Date: 2020-05-28
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 25,000 Event #: 867737 Status: SUCCESS Date: 2020-05-23
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 25,000 Event #: 867737 Status: SUCCESS Date: 2020-05-23
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 848028 Status: SUCCESS Date: 2020-05-18
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 848028 Status: SUCCESS Date: 2020-05-18
+Local transfer - MTN Rwanda Credited A/C: 0788623107 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 753974 Status: SUCCESS Date: 2020-04-23
+Local transfer - MTN Rwanda Credited A/C: 0788623107 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 753974 Status: SUCCESS Date: 2020-04-23
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 39,000 Event #: 734021 Status: SUCCESS Date: 2020-04-16
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 39,000 Event #: 734021 Status: SUCCESS Date: 2020-04-16
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 705883 Status: SUCCESS Date: 2020-04-05
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 705883 Status: SUCCESS Date: 2020-04-05
+Local transfer - MTN Rwanda Credited A/C: 0786252531 Debited A/C: 00040-00653562-09 Amount:  RWF 5,000 Event #: 664484 Status: SUCCESS Date: 2020-03-22
+Mukiliya wacu, amashami yacu arakomeza kubaha serivisi kuva kuwa 1 kugera kuwa 5, dufungura 8.00 am kugeza 5.00 pm. Kubindi bisobanuro hamagara 4455
+Local transfer - MTN Rwanda Credited A/C: 0786252531 Debited A/C: 00040-00653562-09 Amount:  RWF 5,000 Event #: 655762 Status: SUCCESS Date: 2020-03-19
+Local transfer - MTN Rwanda Credited A/C: 0786252531 Debited A/C: 00040-00653562-09 Amount:  RWF 15,000 Event #: 655654 Status: SUCCESS Date: 2020-03-19
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 5,000 Event #: 654206 Status: SUCCESS Date: 2020-03-18
+Local transfer - MTN Rwanda Credited A/C: 0785601705 Debited A/C: 00040-00653562-09 Amount:  RWF 1,700 Event #: 654168 Status: SUCCESS Date: 2020-03-18
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 652087 Status: SUCCESS Date: 2020-03-17
+BKSMS A/C:00040-0065####-09 Date:2020-03-16 19:59 Branch:HEAD QUARTER Credit:20000.0 Lib:Depanse Ref.No:222170 Balance:155178
+Local transfer - MTN Rwanda Credited A/C: 0785783961 Debited A/C: 00040-00653562-09 Amount:  RWF 15,300 Event #: 651063 Status: SUCCESS Date: 2020-03-16
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 33,000 Event #: 639667 Status: SUCCESS Date: 2020-03-11
+Local transfer - MTN Rwanda Credited A/C: 0787609386 Debited A/C: 00040-00653562-09 Amount:  RWF 7,300 Event #: 639448 Status: SUCCESS Date: 2020-03-11
+BKSMS A/C:00040-0065####-09 Date:2020-03-06 21:23 Branch:HEAD QUARTER Debit:400100.0 Lib:INTERNALtransfer Ref.No:219039 Balance:190778
+Local transfer - Bank of Kigali (BK) Credited A/C: 00040-00326106-25 Debited A/C: 00040-00653562-09 Amount: RWF 400,000 Event #: 219039 Status: SUCCESS Date: 2020-03-06
+Local transfer - Bank of Kigali (BK) Credited A/C: 00040-00326106-25 Debited A/C: 00040-00653562-09 Amount: RWF 400,000 Event #: 219039 Status: SUCCESS Date: 2020-03-06
+BKSMS A/C:00040-0065####-09 Date:2020-03-05 17:23 Branch:HEAD QUARTER Credit:3526.0 Lib:REFALIEXPRESS03032020 Ref.No:701670 Balance:604258
+BKSMS A/C:00040-0065####-09 Date:2020-03-05 16:46 Branch:HEAD QUARTER Credit:3526.0 Lib:REFALIEXPRESS03032020 Ref.No:701670 Balance:604258
+BKSMS A/C:00040-0065####-09 Date:2020-03-05 17:23 Branch:HEAD QUARTER Credit:3526.0 Lib:REFALIEXPRESS03032020 Ref.No:701670 Balance:604258
+BKSMS A/C:00040-0065####-09 Date:2020-03-05 16:46 Branch:HEAD QUARTER Credit:3526.0 Lib:REFALIEXPRESS03032020 Ref.No:701670 Balance:604258
+BKSMS A/C:00040-0065####-09 Date:2020-03-03 16:16 Branch:HEAD QUARTER Credit:150000.0 Lib:SalaryFeb Ref.No:217656 Balance:600732
+BKSMS A/C:00040-0065####-09 Date:2020-03-03 16:20 Branch:HEAD QUARTER Credit:450000.0 Lib:allowance Ref.No:217660 Balance:600732
+BKSMS A/C:00040-0065####-09 Date:2020-02-20 16:52 Branch:HEAD QUARTER Credit:1000.0 Lib:20191201Pancancelled Ref.No:665392 Balance:24503
+BKSMS A/C:00040-0065####-09 Date:2020-02-20 16:40 Branch:HEAD QUARTER Credit:1000.0 Lib:20191201Pancancelled Ref.No:665392 Balance:24503
+Local transfer - MTN Rwanda Credited A/C: 0788226778 Debited A/C: 00040-00653562-09 Amount:  RWF 10,000 Event #: 593492 Status: SUCCESS Date: 2020-02-20
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 590243 Status: SUCCESS Date: 2020-02-18
+BKSMS A/C:00040-0065####-09 Date:2020-02-06 08:38 Branch:KACYIRU Debit:603000.0 Lib:NTAZINDAROMEO Ref.No:103583 Balance:83503
+BKSMS A/C:00040-0065####-09 Date:2020-02-05 11:14 Branch:HEAD QUARTER Credit:600000.0 Lib:Reward Ref.No:208224 Balance:686503
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 45,000 Event #: 555710 Status: SUCCESS Date: 2020-02-02
+Local transfer - MTN Rwanda Credited A/C: 0782286430 Debited A/C: 00040-00653562-09 Amount:  RWF 15,000 Event #: 552974 Status: SUCCESS Date: 2020-02-01
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 533459 Status: SUCCESS Date: 2020-01-24
+Local transfer - MTN Rwanda Credited A/C: 0788263021 Debited A/C: 00040-00653562-09 Amount:  RWF 20,500 Event #: 532490 Status: SUCCESS Date: 2020-01-23
+Local transfer - MTN Rwanda Credited A/C: 0788263021 Debited A/C: 00040-00653562-09 Amount:  RWF 20,500 Event #: 532490 Status: SUCCESS Date: 2020-01-23
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 525092 Status: SUCCESS Date: 2020-01-19
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 519918 Status: SUCCESS Date: 2020-01-16
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 512951 Status: SUCCESS Date: 2020-01-12
+BKSMS A/C:00040-0065####-09 Date:2019-12-31 14:25 Branch:HEAD QUARTER Credit:200000.0 Lib:RMSOFTLTD Ref.No:459661 Balance:339801
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 486409 Status: SUCCESS Date: 2019-12-29
+Local transfer - MTN Rwanda Credited A/C: 0788916070 Debited A/C: 00040-00653562-09 Amount:  RWF 18,800 Event #: 478112 Status: SUCCESS Date: 2019-12-25
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 43,000 Event #: 468670 Status: SUCCESS Date: 2019-12-22
+Local transfer - MTN Rwanda Credited A/C: 0783707673 Debited A/C: 00040-00653562-09 Amount:  RWF 10,000 Event #: 459809 Status: SUCCESS Date: 2019-12-18
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 30,000 Event #: 446475 Status: SUCCESS Date: 2019-12-10
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 2,300 Event #: 433762 Status: SUCCESS Date: 2019-12-04
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 6,000 Event #: 429968 Status: SUCCESS Date: 2019-12-02
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 429966 Status: SUCCESS Date: 2019-12-02
+BKSMS A/C:00040-0065####-09 Date:2019-12-01 18:16 Branch:HEAD QUARTER Debit:1000.0 Lib:250788560612 Ref.No:264065 Balance:361965
+BKSMS A/C:00040-0065####-09 Date:2019-12-01 18:16 Branch:HEAD QUARTER Debit:200.0 Lib:250788560612 Ref.No:264064 Balance:361965
+BKMoney received from  250788560612 PAN: 9471 5486 2924 0939 Passcode: 3500 Value: 1,000 Valid until: 2019-12-31 18:16:44
+Local transfer - MTN Rwanda Credited A/C: 0783854422 Debited A/C: 00040-00653562-09 Amount:  RWF 10,000 Event #: 425923 Status: SUCCESS Date: 2019-11-30
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 5,000 Event #: 410784 Status: SUCCESS Date: 2019-11-22
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 410783 Status: SUCCESS Date: 2019-11-22
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 5,000 Event #: 405416 Status: SUCCESS Date: 2019-11-18
+BKSMS A/C:00040-0065####-09 Date:2019-11-11 18:59 Branch:HEAD QUARTER Debit:12042.0 Lib:Auth881619030419AmazonPri Ref.No:377650 Balance:434113
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 392478 Status: SUCCESS Date: 2019-11-10
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 6,000 Event #: 379779 Status: SUCCESS Date: 2019-11-04
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 375162 Status: SUCCESS Date: 2019-11-01
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 6,000 Event #: 372267 Status: SUCCESS Date: 2019-10-31
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 5,000 Event #: 363897 Status: SUCCESS Date: 2019-10-27
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 363716 Status: SUCCESS Date: 2019-10-27
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 10,000 Event #: 356539 Status: SUCCESS Date: 2019-10-23
+Local transfer - MTN Rwanda Credited A/C: 0788310399 Debited A/C: 00040-00653562-09 Amount:  RWF 92,000 Event #: 346025 Status: SUCCESS Date: 2019-10-17
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 299457 Status: SUCCESS Date: 2019-09-19
+Local transfer - MTN Rwanda Credited A/C: 0788623107 Debited A/C: 00040-00653562-09 Amount:  RWF 3,000 Event #: 299202 Status: SUCCESS Date: 2019-09-19
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 5,000 Event #: 294940 Status: SUCCESS Date: 2019-09-16
+BKSMS A/C:00040-0065####-09 Date:2019-09-13 08:54 Branch:KACYIRU Credit:1200000.0 Lib:SELFDEPOSIT Ref.No:243306 Balance:788375
+BKSMS A/C:00040-0065####-09 Date:2019-09-13 08:58 Branch:HEAD QUARTER Debit:450100.0 Lib:INTERNALtransfer Ref.No:166055 Balance:788375
+Local transfer - Bank of Kigali (BK) Credited A/C: 00040-00326106-25 Debited A/C: 00040-00653562-09 Amount: RWF 450,000 Event #: 166055 Status: SUCCESS Date: 2019-09-13
+BKSMS A/C:00040-0065####-09 Date:2019-09-02 20:25 Branch:HEAD QUARTER Debit:1600100.0 Lib:INTERNALtransfer Ref.No:163431 Balance:51737
+Local transfer - Bank of Kigali (BK) Credited A/C: 00040-00326106-25 Debited A/C: 00040-00653562-09 Amount: RWF 1,600,000 Event #: 163431 Status: SUCCESS Date: 2019-09-02
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 274572 Status: SUCCESS Date: 2019-09-02
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 260345 Status: SUCCESS Date: 2019-08-24
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 255072 Status: SUCCESS Date: 2019-08-21
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 30,000 Event #: 245870 Status: SUCCESS Date: 2019-08-14
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 40,000 Event #: 241082 Status: SUCCESS Date: 2019-08-10
+BKSMS A/C:00040-0065####-09 Date:2019-08-10 16:06 Branch:HEAD QUARTER Debit:1000.0 Lib:PULL1866921628NTAZINDAROMEO Ref.No:552799 Balance:1841837
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 10,000 Event #: 237269 Status: SUCCESS Date: 2019-08-07
+BKSMS A/C:00040-0065####-09 Date:2019-08-05 08:28 Branch:HEAD QUARTER Debit:2500.0 Lib:PULL1857004162NTAZINDAROMEO Ref.No:536626 Balance:1852837
+BKSMS A/C:00040-0065####-09 Date:2019-08-05 07:23 Branch:HEAD QUARTER Debit:10000.0 Lib:PULL1856974633NTAZINDAROMEO Ref.No:536442 Balance:1852837
+BKSMS A/C:00040-0065####-09 Date:2019-07-30 12:02 Branch:HEAD QUARTER Debit:200100.0 Lib:000400030779143 Ref.No:154649 Balance:1890653
+Local transfer - Bank of Kigali (BK) Credited A/C: 00040-00307791-43 Debited A/C: 00040-00653562-09 Amount: RWF 200,000 Event #: 154649 Status: SUCCESS Date: 2019-07-30
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 10,000 Event #: 219662 Status: SUCCESS Date: 2019-07-26
+BKSMS A/C:00040-0065####-09 Date:2019-07-21 10:04 Branch:HEAD QUARTER Debit:30000.0 Lib:PULL1830979797NTAZINDAROMEO Ref.No:485761 Balance:2100753
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 30,000 Event #: 202812 Status: SUCCESS Date: 2019-07-14
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 7,000 Event #: 197123 Status: SUCCESS Date: 2019-07-10
+BKSMS A/C:00040-0065####-09 Date:2019-06-29 04:11 Branch:HEAD QUARTER Debit:10000.0 Lib:PULL1792334701NTAZINDAROMEO Ref.No:418197 Balance:2181117
+BKSMS A/C:00040-0065####-09 Date:2019-06-29 04:10 Branch:HEAD QUARTER Debit:50000.0 Lib:PULL1792334412NTAZINDAROMEO Ref.No:418196 Balance:2181117
+Local transfer - MTN Rwanda Credited A/C: 0788609037 Debited A/C: 00040-00653562-09 Amount:  RWF 100,000 Event #: 180792 Status: SUCCESS Date: 2019-06-28
+Local transfer - MTN Rwanda Credited A/C: 0788600257 Debited A/C: 00040-00653562-09 Amount:  RWF 200,000 Event #: 180633 Status: SUCCESS Date: 2019-06-28
+BKSMS A/C:00040-0065####-09 Date:2019-06-26 19:43 Branch:HEAD QUARTER Debit:22000.0 Lib:PULL1786672167NTAZINDAROMEO Ref.No:407180 Balance:2541117
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 5,000 Event #: 164833 Status: SUCCESS Date: 2019-06-17
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 3,000 Event #: 164832 Status: SUCCESS Date: 2019-06-17
+Local transfer - MTN Rwanda Credited A/C: 0788308934 Debited A/C: 00040-00653562-09 Amount:  RWF 3,000 Event #: 163338 Status: SUCCESS Date: 2019-06-15
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 5,000 Event #: 163062 Status: SUCCESS Date: 2019-06-15
+BKSMS A/C:00040-0065####-09 Date:2019-06-12 18:24 Branch:KACYIRU Debit:1003000.0 Lib:NTAZINDAROMEO Ref.No:334662 Balance:2579117
+BKSMS A/C:00040-0065####-09 Date:2019-06-11 21:10 Branch:HEAD QUARTER Credit:3500000.0 Lib:H Ref.No:142902 Balance:3582117
+BKSMS A/C:00040-0065####-09 Date:2019-06-03 13:06 Branch:HEAD QUARTER Debit:3100100.0 Lib:tr Ref.No:140919 Balance:83117
+Local transfer - Bank of Kigali (BK) Credited A/C: 00040-00326106-25 Debited A/C: 00040-00653562-09 Amount: RWF 3,100,000 Event #: 140919 Status: SUCCESS Date: 2019-06-03
+Your OTP (One Time Password) for device 7.0 is 698928. This OTP will expire in 5 minute(s)
+Your PIN has been reset. Login ID: nromeo7 PIN: 873379
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 20,000 Event #: 137058 Status: SUCCESS Date: 2019-05-24
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 25,000 Event #: 133327 Status: SUCCESS Date: 2019-05-21
+Local transfer - MTN Rwanda Credited A/C: 0786443899 Debited A/C: 00040-00653562-09 Amount:  RWF 5,000 Event #: 133324 Status: SUCCESS Date: 2019-05-21
+Local transfer - MTN Rwanda Credited A/C: 0784639287 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 125898 Status: SUCCESS Date: 2019-05-13
+BKSMS A/C:00040-0065####-09 Date:2019-05-04 16:13 Branch:HEAD QUARTER Debit:50000.0 Lib:PULL1667919357NTAZINDAROMEO Ref.No:232407 Balance:3390563
+BKSMS A/C:00040-0065####-09 Date:2019-04-30 20:40 Branch:HEAD QUARTER Debit:10000.0 Lib:PULL1659774571NTAZINDAROMEO Ref.No:218526 Balance:3463639
+BKSMS A/C:00040-0065####-09 Date:2019-04-29 20:43 Branch:HEAD QUARTER Credit:100000.0 Lib:Reimbursement Ref.No:131876 Balance:3473639
+BKSMS A/C:00040-0065####-09 Date:2019-04-27 06:18 Branch:HEAD QUARTER Debit:100100.0 Lib:a Ref.No:131297 Balance:3373639
+Local transfer - Bank of Kigali (BK) Credited A/C: 00040-00326106-25 Debited A/C: 00040-00653562-09 Amount: RWF 100,000 Event #: 131297 Status: SUCCESS Date: 2019-04-27
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 107716 Status: SUCCESS Date: 2019-04-24
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 80,000 Event #: 106345 Status: SUCCESS Date: 2019-04-22
+BKSMS A/C:00040-0065####-09 Date:2019-04-18 11:32 Branch:HEAD QUARTER Debit:50000.0 Lib:firstinstallment Ref.No:676979 Balance:3603739
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 30,000 Event #: 102438 Status: SUCCESS Date: 2019-04-18
+Local transfer - Equity Bank Credited A/C: 4002111384181 Debited A/C: 00040-00653562-09 Amount:  RWF 50,000 Event #: 676979 Status: SUCCESS Date: 2019-04-18
+BKSMS A/C:00040-0065####-09 Date:2019-04-17 18:07 Branch:HEAD QUARTER Debit:10000.0 Lib:PULL1631884519NTAZINDAROMEO Ref.No:182161 Balance:3683739
+BKSMS A/C:00040-0065####-09 Date:2019-04-14 18:32 Branch:HEAD QUARTER Debit:10000.0 Lib:PULL1625796374NTAZINDAROMEO Ref.No:174673 Balance:3693739
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 10,000 Event #: 098250 Status: SUCCESS Date: 2019-04-13
+BKSMS A/C:00040-0065####-09 Date:2019-04-05 19:34 Branch:HEAD QUARTER Debit:10000.0 Lib:PULL1608098002NTAZINDAROMEO Ref.No:150157 Balance:3743739
+BKSMS A/C:00040-0065####-09 Date:2019-04-05 08:06 Branch:HEAD QUARTER Debit:10000.0 Lib:PULL1606387625NTAZINDAROMEO Ref.No:147443 Balance:3753739
+BKSMS A/C:00040-0065####-09 Date:2019-03-31 16:21 Branch:HEAD QUARTER Debit:1000.0 Lib:test Ref.No:672425 Balance:3763939
+Local transfer - I and M Bank Credited A/C: 2000456-30-01 Debited A/C: 00040-00653562-09 Amount:  RWF 1,000 Event #: 672425 Status: SUCCESS Date: 2019-03-31
+Local transfer - MTN Rwanda Credited A/C: 0788434340 Debited A/C: 00040-00653562-09 Amount:  RWF 25,000 Event #: 087076 Status: SUCCESS Date: 2019-03-31
+Local transfer - MTN Rwanda Credited A/C: 0788434340 Debited A/C: 00040-00653562-09 Amount:  RWF 30,000 Event #: 087074 Status: SUCCESS Date: 2019-03-31
+Local transfer - MTN Rwanda Credited A/C: 0788560612 Debited A/C: 00040-00653562-09 Amount:  RWF 10,000 Event #: 086793 Status: SUCCESS Date: 2019-03-31
+BKSMS A/C:00040-0065####-09 Date:2019-03-29 17:53 Branch:HEAD QUARTER Debit:20000.0 Lib:PULL1592244601NTAZINDAROMEO Ref.No:127115 Balance:3830139
+BKSMS A/C:00040-0065####-09 Date:2019-03-23 16:26 Branch:HEAD QUARTER Debit:30000.0 Lib:PULL1579438363NTAZINDAROMEO Ref.No:109038 Balance:3870139
+BKSMS A/C:00040-0065####-09 Date:2019-03-23 07:11 Branch:HEAD QUARTER Debit:23500.0 Lib:PULL1578416381NTAZINDAROMEO Ref.No:107675 Balance:3900139
+BKSMS A/C:00040-0065####-09 Date:2019-03-23 07:08 Branch:HEAD QUARTER Debit:20000.0 Lib:PULL1578412378NTAZINDAROMEO Ref.No:107666 Balance:3900139
+BKSMS A/C:00040-0065####-09 Date:2019-03-23 07:05 Branch:HEAD QUARTER Debit:20000.0 Lib:PULL1578409230NTAZINDAROMEO Ref.No:107659 Balance:3900139
+BKSMS A/C:00040-0065####-09 Date:2019-03-23 07:04 Branch:HEAD QUARTER Debit:20000.0 Lib:PULL1578407978NTAZINDAROMEO Ref.No:107656 Balance:3900139
+BKSMS A/C:00040-0065####-09 Date:2019-03-22 20:22 Branch:HEAD QUARTER Debit:20000.0 Lib:PULL1577995766NTAZINDAROMEO Ref.No:107146 Balance:3983739
+Dear ROMEO, this is to advise that your query on Delayed / Failed Transfer to Wallet or Account No. BK-59587-H7H7 has been resolved.
+BKSMS A/C:00040-0065####-09 Date:2019-03-11 19:38 Branch:HEAD QUARTER Credit:650000.0 Lib:I1903110031BD20990243506016-SA Ref.No:208313 Balance:4003739
+BKSMS A/C:00040-0065####-09 Date:2019-03-11 14:08 Branch:HEAD QUARTER Debit:1000.0 Lib:try Ref.No:667069 Balance:3353839
+Local transfer - I and M Bank Credited A/C: 2000456-30-01 Debited A/C: 00040-00653562-09 Amount:  RWF 1,000 Event #: 667069 Status: SUCCESS Date: 2019-03-11
+Your OTP (One Time Password) for device 7.0 is 773012. This OTP will expire in 5 minute(s)
+Your OTP (One Time Password) for device Chrome/android/7.0 is 381754. This OTP will expire in 5 minute(s)
+BKSMS A/C:00040-0065####-09 Date:2019-03-10 23:05 Branch:HEAD QUARTER Debit:30000.0 Lib:PULL1553152787NTAZINDAROMEO Ref.No:077228 Balance:3354839
+BKSMS A/C:00040-0065####-09 Date:2019-03-10 23:01 Branch:HEAD QUARTER Debit:20000.0 Lib:PULL1553152473NTAZINDAROMEO Ref.No:077227 Balance:3354839
+BKSMS A/C:00040-0065####-09 Date:2019-03-10 18:51 Branch:HEAD QUARTER Debit:10000.0 Lib:PULL1552730584NTAZINDAROMEO Ref.No:076768 Balance:3404839
+BKSMS A/C:00040-0065####-09 Date:2019-03-08 15:05 Branch:HEAD QUARTER Debit:20000.0 Lib:PULL1548230784NTAZINDAROMEO Ref.No:070006 Balance:3414839
+BKSMS A/C:00040-0065####-09 Date:2019-03-07 08:40 Branch:HEAD QUARTER Debit:20000.0 Lib:PULL1545446614NTAZINDAROMEO Ref.No:065910 Balance:3434839
+BKSMS A/C:00040-0065####-09 Date:2019-03-05 17:41 Branch:HEAD QUARTER Debit:10000.0 Lib:PULL1542334363NTAZINDAROMEO Ref.No:061473 Balance:3454839
+BKSMS A/C:00040-0065####-09 Date:2019-03-05 17:36 Branch:HEAD QUARTER Debit:20000.0 Lib:PULL1542330987NTAZINDAROMEO Ref.No:061469 Balance:3454839
+BKSMS A/C:00040-0065####-09 Date:2019-03-05 17:35 Branch:HEAD QUARTER Debit:20000.0 Lib:PULL1542328286NTAZINDAROMEO Ref.No:061463 Balance:3454839
+Your EBanking profile has been activated. Log on to https://onlinebanking.bk.rw using the credentials below: Login ID: nromeo7 Password: 4ht7qje58mdbphynenyn PIN: 239355
+BKSMS A/C:00040-0065####-09 Date:2019-03-02 15:07 Branch:HEAD QUARTER Debit:10000.0 Lib:PULL1535828118NTAZINDAROMEO Ref.No:052581 Balance:3516835
+BKSMS A/C:00040-0065####-09 Date:2019-02-28 07:50 Branch:HEAD QUARTER Debit:10000.0 Lib:PULL1530401330NTAZINDAROMEO Ref.No:044108 Balance:3527035
+BKSMS A/C:00040-0065####-09 Date:2019-02-22 17:49 Branch:HEAD QUARTER Debit:10000.0 Lib:PULL1519390418NTAZINDAROMEO Ref.No:031286 Balance:3537035
+BKSMS A/C:00040-0065####-09 Date:2019-02-22 17:42 Branch:HEAD QUARTER Debit:10000.0 Lib:PULL1519369482NTAZINDAROMEO Ref.No:031252 Balance:3537035
+BKSMS A/C:00040-0065####-09 Date:2019-02-22 17:41 Branch:HEAD QUARTER Debit:10000.0 Lib:PULL1519366792NTAZINDAROMEO Ref.No:031248 Balance:3537035
+BKSMS A/C:00040-0065####-09 Date:2019-02-22 10:55 Branch:NYAMIRAMBO Credit:30000.0 Lib:VRSIMMACULEE Ref.No:677053 Balance:3567035
+BKSMS A/C:00040-0065####-09 Date:2019-02-18 16:09 Branch:HEAD QUARTER Credit:40000.0 Lib:FailedPull150219 Ref.No:789001 Balance:2887435
+Dear ROMEO, thank you for contacting The Bank of Kigali your request number is BK-59587-H7H7. We shall update you on the progress
+BKSMS A/C:00040-0065####-09 Date:2019-02-16 15:38 Branch:HEAD QUARTER Debit:20000.0 Lib:PULL1507690218NTAZINDAROMEO Ref.No:017065 Balance:2847435
+BKSMS A/C:00040-0065####-09 Date:2019-02-16 09:00 Branch:HEAD QUARTER Debit:20000.0 Lib:PULL1506994171NTAZINDAROMEO Ref.No:015998 Balance:2867435
+BKSMS A/C:00040-0065####-09 Date:2019-02-15 21:53 Branch:HEAD QUARTER Debit:2000.0 Lib:PULL1506636826NTAZINDAROMEO Ref.No:015449 Balance:2887685
+BKSMS A/C:00040-0065####-09 Date:2019-02-15 19:02 Branch:HEAD QUARTER Debit:40000.0 Lib:PULL1506205635NTAZINDAROMEO Ref.No:014888 Balance:2889735

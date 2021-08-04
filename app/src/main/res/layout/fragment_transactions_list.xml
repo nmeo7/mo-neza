@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".home.transactions_list.TransactionsListFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.l4digital.fastscroll.FastScroller
+        android:id="@+id/fast_scroller"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        app:bubbleColor="@color/colorAccent"
+        app:bubbleTextColor="@color/white"
+        app:handleColor="@color/colorPrimary"
+        app:showBubble="true"
+        app:showTrack="true"
+        app:bubbleSize="small"/>
+
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/swipeRefreshLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+
+        <se.emilsjolander.stickylistheaders.StickyListHeadersListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </com.baoyz.widget.PullRefreshLayout>
+
+</FrameLayout>

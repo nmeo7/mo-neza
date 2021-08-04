@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/one"
+        android:title="Button 1"
+        android:icon="@drawable/ic_qr_code_scan"
+        app:showAsAction="always"/>
+    <item android:id="@+id/two"
+        android:title="Export"
+        android:icon="@drawable/ic_sync"
+        app:showAsAction="never"/>
+    <item android:id="@+id/three"
+        android:title="Import"
+        android:icon="@drawable/ic_sync"
+        app:showAsAction="never"/>
+    <item android:id="@+id/four"
+        android:title="Refresh"
+        android:icon="@drawable/ic_sync"
+        app:showAsAction="never"/>
+    <item android:id="@+id/five"
+        android:title="Reset"
+        android:icon="@drawable/ic_sync"
+        app:showAsAction="never"/>
+    <item android:id="@+id/six"
+        android:title="More Stats"
+        android:icon="@drawable/ic_sync"
+        app:showAsAction="never"/>
+    <item android:id="@+id/seven"
+        android:title="Settings"
+        android:icon="@drawable/ic_sync"
+        app:showAsAction="never"/>
+</menu>

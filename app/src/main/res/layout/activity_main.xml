@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp" />
+
+    <eu.long1.spacetablayout.SpaceTabLayout
+        android:id="@+id/spaceTabLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_behavior="eu.long1.spacetablayout.SpaceTabLayoutBehavior"
+        app:number_of_tabs="three"
+        app:starting_position="one"
+        app:tab_color="@color/colorPrimary"
+        app:button_color="@color/colorAccent"
+        app:text_color="@color/colorPrimaryDark"
+        app:icon_one="@drawable/ic_dashboard"
+        app:icon_two="@drawable/ic_recent"
+        app:icon_three="@drawable/ic_actions"
+        app:text_one="Incamake"
+        app:text_two="Ibiheruka"
+        app:text_three="Ibikorwa"
+        />
+
+    <com.leinardi.android.speeddial.SpeedDialView
+        android:id="@+id/speedDial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="60dp"
+        app:sdMainFabClosedSrc="@drawable/ic_dashboard" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

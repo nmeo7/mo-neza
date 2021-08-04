@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".home.dashboard.DashboardFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_columnSpan="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Iminsi 14 iheruka:"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="0dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight=".5"
+                android:layout_width="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ayinjiye:" />
+                    <TextView
+                        android:id="@+id/dash_savings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="700" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight=".5"
+                android:layout_width="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ayasohotse:" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/dash_spendings"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="300" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" + " />
+                        <TextView
+                            android:id="@+id/dash_fee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" 300 "/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" Fee" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view2"
+            xmlns:card_view="https://schemas.android.com/apk/res-auto"
+            card_view:cardBackgroundColor="#000000"
+            card_view:cardCornerRadius="10dp"
+            card_view:cardElevation="5dp"
+            card_view:cardUseCompatPadding="true"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Watangiranye:" />
+                    <TextView
+                        android:id="@+id/dash_starting"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="100"
+                        android:gravity="end" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Usigaranye:" />
+                    <TextView
+                        android:id="@+id/dash_closing"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="500"
+                        android:gravity="end"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="24dp"/>
+                </LinearLayout>
+
+                <com.db.williamchart.view.LineChartView
+                    android:id="@+id/lineChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_margin="20dp"
+                    app:chart_axis="none"
+                    app:chart_gridEffect="dotted"
+                    app:chart_labelsColor="#FF70977F"
+                    app:chart_labelsSize="10sp"
+                    app:chart_lineThickness="3dp"
+                    app:chart_smoothLine="true" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_columnWeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ibyakozwe byose:"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="0dp"
+            />
+
+        <androidx.cardview.widget.CardView
+            xmlns:card_view="https://schemas.android.com/apk/res-auto"
+            card_view:cardBackgroundColor="#777777"
+            card_view:cardCornerRadius="10dp"
+            card_view:cardElevation="5dp"
+            card_view:cardUseCompatPadding="true"
+            android:layout_width="match_parent"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:layout_columnWeight="3"
+                    android:text="Ayabikijwe:"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/dash_deposit"
+                    android:layout_columnWeight="2"
+                    android:text="100"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="end"/>
+
+                <TextView
+                    android:layout_columnWeight="3"
+                    android:text="Ayakiriwe:"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/dash_received"
+                    android:layout_columnWeight="2"
+                    android:text="100"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="end" />
+
+                <TextView
+                    android:layout_columnWeight="3"
+                    android:text="Ayabikujwe:"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/dash_withdraws"
+                    android:layout_columnWeight="2"
+                    android:text="100"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="end" />
+
+                <TextView
+                    android:layout_columnWeight="3"
+                    android:text="Ayoherejwe:"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/dash_sent"
+                    android:layout_columnWeight="2"
+                    android:text="100"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="end" />
+
+                <TextView
+                    android:layout_columnWeight="3"
+                    android:text="Ayishyuwe:"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/dash_payments"
+                    android:layout_columnWeight="2"
+                    android:text="100"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="end" />
+
+                <TextView
+                    android:layout_columnWeight="3"
+                    android:text="Yose hamwe:"
+                    android:paddingTop="20dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/dash_total"
+                    android:layout_columnWeight="2"
+                    android:text="100"
+                    android:paddingTop="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="end" />
+
+                <TextView
+                    android:layout_columnWeight="3"
+                    android:text="Komisiyo yose:"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/dash_commission"
+                    android:layout_columnWeight="2"
+                    android:text="100"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="end" />
+
+                <TextView
+                    android:layout_columnWeight="3"
+                    android:text="Mean per day:"
+                    android:paddingTop="20dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_columnWeight="2"
+                    android:text="100"
+                    android:paddingTop="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="end" />
+
+                <TextView
+                    android:layout_columnWeight="3"
+                    android:text="median (per day too):"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_columnWeight="2"
+                    android:text="100"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="end" />
+
+                <TextView
+                    android:layout_columnWeight="3"
+                    android:text="Asigayeho:"
+                    android:paddingTop="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/dash_balance"
+                    android:layout_columnWeight="2"
+                    android:text="100"
+                    android:paddingTop="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="end"/>
+            </GridLayout>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>
