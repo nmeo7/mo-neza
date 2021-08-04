@@ -49,7 +49,7 @@ open class Message : RealmObject() {
             amount = value.toInt()
         if (key == "TIME")
         {
-            time = SimpleDateFormat("yyyy.MM.dd HH:mm", Locale.US).parse(value)?.time!!
+            time = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US).parse(value)?.time!!
         }
         if (key == "BALANCE")
             balance = value.toInt()

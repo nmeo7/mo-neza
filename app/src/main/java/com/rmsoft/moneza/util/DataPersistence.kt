@@ -32,13 +32,17 @@ class DataPersistence(var context: Activity) {
         mRealm.beginTransaction()
         mRealm.copyToRealmOrUpdate(m)
         mRealm.commitTransaction()
+
+        Log.i("MOMO_READ", m.toString())
     }
 
     fun find ()
     {
         create()
 
-        for (x in mRealm.where(Message::class.java).findAll()) {
+        Log.d("MOMO_READ", "Trying to read")
+
+        for (x in mRealm.where(Message::class.java).like("subject", "N*").findAll()) {
             Log.d("MOMO_READ", x.toString())
         }
     }

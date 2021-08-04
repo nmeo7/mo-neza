@@ -25,7 +25,7 @@ class MessageReadAll (private val activity: Activity, private var fromSms : Bool
 
     private fun readMessagesFromFile (context: Context)
     {
-        Log.d("READ_MOMO", "STARTING...")
+        Log.d("READ_MOMO", "STARTING ...")
 
         val inputStream: InputStream = context.resources.openRawResource(R.raw.momo)
         val bufferedReader = BufferedReader(InputStreamReader(inputStream))
@@ -34,11 +34,12 @@ class MessageReadAll (private val activity: Activity, private var fromSms : Bool
             var eachline = bufferedReader.readLine()
             while (eachline != null) {
                 val m = ParseMessage().parseMessage(eachline)
+                Log.i("MOMO_READ", m.toString())
                 persistence.save(m)
                 eachline = bufferedReader.readLine()
             }
         } catch (e: Exception) {
-            Log.e("", "ERROR!")
+            Log.e("MOMO_READ", e.toString())
         }
 
         Log.d("READ_MOMO", "DONE.")
@@ -78,6 +79,11 @@ class MessageReadAll (private val activity: Activity, private var fromSms : Bool
         }
 
         cursor.close()
+    }
+
+    fun readDatabase ()
+    {
+        persistence.find()
     }
 
     // Request code for creating a PDF document.

@@ -22,7 +22,7 @@ class TransactionsListFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
 
-        MessageReadAll(requireActivity()).readMessages(requireContext())
+        MessageReadAll(requireActivity(), false).readMessages(requireContext())
 
         return inflater.inflate(R.layout.fragment_transactions_list, container, false)
     }

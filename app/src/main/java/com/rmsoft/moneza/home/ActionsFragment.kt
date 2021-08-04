@@ -21,6 +21,7 @@ import com.google.android.material.textfield.TextInputLayout
 import com.rmsoft.moneza.R
 import com.rmsoft.moneza.actions.ActionsActivity
 import com.rmsoft.moneza.util.CheckPrivileges
+import com.rmsoft.moneza.util.DataPersistence
 
 
 /**
@@ -33,6 +34,9 @@ class ActionsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
+        DataPersistence(requireActivity()).find()
+
         return inflater.inflate(R.layout.fragment_actions, container, false)
     }
 
