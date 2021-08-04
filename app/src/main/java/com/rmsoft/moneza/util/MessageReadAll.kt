@@ -2,16 +2,20 @@ package com.rmsoft.moneza.util
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.database.Cursor
 import android.net.Uri
+import android.os.Build
+import android.provider.DocumentsContract
 import android.util.Log
+import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityCompat.startActivityForResult
 import com.rmsoft.moneza.R
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
 
-class MessageReadAll (activity: Activity) {
-    val FAKE_MESSAGES = true
+class MessageReadAll (private val activity: Activity, private var fromSms : Boolean = true) {
     val persistence = DataPersistence(activity)
 
     private fun saveMessage (data : Message)
@@ -19,7 +23,7 @@ class MessageReadAll (activity: Activity) {
         persistence.save(data)
     }
 
-    private fun readMessagesFake (context: Context)
+    private fun readMessagesFromFile (context: Context)
     {
         Log.d("READ_MOMO", "STARTING...")
 
@@ -40,7 +44,7 @@ class MessageReadAll (activity: Activity) {
         Log.d("READ_MOMO", "DONE.")
     }
 
-    private fun readMessagesReal (context: Context)
+    private fun readMessagesFromSmss (context: Context)
     {
 
         Log.d("READ_SMS", "Starting")
@@ -76,11 +80,54 @@ class MessageReadAll (activity: Activity) {
         cursor.close()
     }
 
+    // Request code for creating a PDF document.
+    val CREATE_FILE = 1
+
+    fun createFile(pickerInitialUri: Uri) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)
+            return
+
+        val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+                addCategory(Intent.CATEGORY_OPENABLE)
+                type = "text/plain"
+                putExtra(Intent.EXTRA_TITLE, "example.txt")
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    putExtra(DocumentsContract.EXTRA_INITIAL_URI, pickerInitialUri)
+                }
+            }
+
+        activity.startActivityForResult(intent, CREATE_FILE)
+    }
+
+    val PICK_PDF_FILE = 2
+
+    fun openFile(pickerInitialUri: Uri) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)
+            return
+
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            type = "text/plain"
+
+            // Optionally, specify a URI for the file that should appear in the
+            // system file picker when it loads.
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                putExtra(DocumentsContract.EXTRA_INITIAL_URI, pickerInitialUri)
+            }
+        }
+
+        activity.startActivityForResult(intent, PICK_PDF_FILE)
+
+    }
+
+
+
     fun readMessages (context: Context)
     {
-        if (FAKE_MESSAGES)
-            readMessagesFake(context)
+        if (fromSms)
+            readMessagesFromSmss(context)
         else
-            readMessagesReal(context)
+            readMessagesFromFile(context)
     }
 }
