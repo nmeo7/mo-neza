@@ -3,10 +3,8 @@ package com.rmsoft.moneza.home.dashboard
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.provider.DocumentsContract
+import android.provider.ContactsContract
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +12,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.rmsoft.moneza.R
-import com.rmsoft.moneza.util.MessageReadAll
 import java.io.*
 
 
@@ -101,10 +98,15 @@ class DashboardFragment : Fragment() {
 
 
 
+        /*
         var chooseFile = Intent(Intent.ACTION_GET_CONTENT)
         chooseFile.type = "text/plain"
         chooseFile = Intent.createChooser(chooseFile, "Choose a file")
-        startActivityForResult(chooseFile, 3)
+        startActivityForResult(chooseFile, 3) */
+
+
+        val intentContact = Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI)
+        requireActivity().startActivityForResult(intentContact, 5 /*PICK_CONTACT*/)
     }
 
 
