@@ -75,76 +75,7 @@ class DashboardFragment : Fragment() {
         val closing = view.findViewById<TextView>(R.id.dash_closing)
         val fee = view.findViewById<TextView>(R.id.dash_fee)
 
-        // MessageReadAll(requireActivity()).createFile(Uri.EMPTY)
-        // MessageReadAll(requireActivity()).openFile (Uri.EMPTY)
-
-
-        /*
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)
-            return
-
-        val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
-            addCategory(Intent.CATEGORY_OPENABLE)
-            type = "text/plain"
-            putExtra(Intent.EXTRA_TITLE, "example.txt")
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                putExtra(DocumentsContract.EXTRA_INITIAL_URI, Uri.EMPTY)
-            }
-        }
-
-        startActivityForResult(intent, 4) */
-
-
-
-
-        /*
-        var chooseFile = Intent(Intent.ACTION_GET_CONTENT)
-        chooseFile.type = "text/plain"
-        chooseFile = Intent.createChooser(chooseFile, "Choose a file")
-        startActivityForResult(chooseFile, 3) */
-
-
-        val intentContact = Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI)
-        requireActivity().startActivityForResult(intentContact, 5 /*PICK_CONTACT*/)
-    }
-
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        when (requestCode) {
-            3 -> if (resultCode == RESULT_OK) {
-                val fileUri = data?.data
-                val filePath = fileUri?.path
-                Log.i("filePath", filePath.toString())
-                Log.i("filePath", fileUri.toString())
-
-                val contentResolver = requireContext().contentResolver
-                val stringBuilder = StringBuilder()
-                contentResolver.openInputStream(fileUri!!)?.use { inputStream ->
-                    BufferedReader(InputStreamReader(inputStream)).use { reader ->
-                        var line: String? = reader.readLine()
-                        while (line != null) {
-                            stringBuilder.append(line)
-                            line = reader.readLine()
-                        }
-                    }
-                }
-                Log.i("filePath_content", "content $stringBuilder")
-            }
-
-            4 -> if (resultCode == RESULT_OK) {
-                val outputStream: OutputStream
-                val fileUri = data?.data
-                try {
-                    outputStream = requireActivity().contentResolver.openOutputStream(fileUri!!)!!
-                    val bw = BufferedWriter(OutputStreamWriter(outputStream))
-                    bw.write("bison is bision")
-                    bw.flush()
-                    bw.close()
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                }
-            }
-        }
+        // val intentContact = Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI)
+        // requireActivity().startActivityForResult(intentContact, 5 /*PICK_CONTACT*/)
     }
 }

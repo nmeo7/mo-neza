@@ -11,29 +11,36 @@ import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat.startActivityForResult
 import com.rmsoft.moneza.R
+import com.rmsoft.moneza.home.transactions_list.Contact
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
+import java.util.ArrayList
 
 class MessageReadAll (private val activity: Activity, private var fromSms : Boolean = true) {
-    val persistence = DataPersistence(activity)
+    private val persistence = DataPersistence(activity)
 
     private fun saveMessage (data : Message)
     {
         persistence.save(data)
     }
 
-    private fun readMessagesFromFile (context: Context)
+    private fun readMessagesFromFile (context: Context) : ArrayList<Contact>
     {
         Log.d("READ_MOMO", "STARTING ...")
 
         val inputStream: InputStream = context.resources.openRawResource(R.raw.momo)
         val bufferedReader = BufferedReader(InputStreamReader(inputStream))
 
+
+        val contacts = ArrayList<Contact>()
+
         try {
             var eachline = bufferedReader.readLine()
             while (eachline != null) {
                 val m = ParseMessage().parseMessage(eachline)
+                contacts.add(Contact(m.subject!!, false, 1))
+
                 Log.i("MOMO_READ", m.toString())
                 persistence.save(m)
                 eachline = bufferedReader.readLine()
@@ -43,12 +50,15 @@ class MessageReadAll (private val activity: Activity, private var fromSms : Bool
         }
 
         Log.d("READ_MOMO", "DONE.")
+
+        return contacts
     }
 
-    private fun readMessagesFromSmss (context: Context)
+    private fun readMessagesFromSmss (context: Context) : ArrayList<Contact>
     {
 
         Log.d("READ_SMS", "Starting")
+        val contacts = ArrayList<Contact>()
 
 
         val cursor: Cursor? = context.contentResolver.query(
@@ -71,6 +81,7 @@ class MessageReadAll (private val activity: Activity, private var fromSms : Bool
                 val m = ParseMessage().parseMessage(msgData)
                 persistence.save(m)
 
+                contacts.add(Contact(m.subject!!, false, 0))
                 // use msgData
             } while (cursor.moveToNext())
         } else {
@@ -79,6 +90,7 @@ class MessageReadAll (private val activity: Activity, private var fromSms : Bool
         }
 
         cursor.close()
+        return contacts
     }
 
     fun readDatabase ()
@@ -129,11 +141,11 @@ class MessageReadAll (private val activity: Activity, private var fromSms : Bool
 
 
 
-    fun readMessages (context: Context)
+    fun readMessages (context: Context) : ArrayList<Contact>
     {
         if (fromSms)
-            readMessagesFromSmss(context)
+            return readMessagesFromSmss(context)
         else
-            readMessagesFromFile(context)
+            return readMessagesFromFile(context)
     }
 }

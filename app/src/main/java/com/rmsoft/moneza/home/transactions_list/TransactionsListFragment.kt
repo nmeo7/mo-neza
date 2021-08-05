@@ -11,8 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.l4digital.fastscroll.FastScroller
 import com.rmsoft.moneza.R
 import com.rmsoft.moneza.transaction_details.TransactionDetails
+import com.rmsoft.moneza.util.DataPersistence
 import com.rmsoft.moneza.util.MessageReadAll
 import se.emilsjolander.stickylistheaders.StickyListHeadersListView
+import java.util.ArrayList
 
 
 class TransactionsListFragment : Fragment() {
@@ -21,9 +23,6 @@ class TransactionsListFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-
-        MessageReadAll(requireActivity(), false).readMessages(requireContext())
-
         return inflater.inflate(R.layout.fragment_transactions_list, container, false)
     }
 
@@ -31,7 +30,7 @@ class TransactionsListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val stickyList = view.findViewById(R.id.list) as StickyListHeadersListView
-        val adapter: TransactionsAdapter? = TransactionsAdapter(requireContext())
+        val adapter: TransactionsAdapter = TransactionsAdapter(requireContext())
 
         stickyList.adapter = adapter
 
@@ -53,7 +52,14 @@ class TransactionsListFragment : Fragment() {
         // Lookup the recyclerview in activity layout
         val rvContacts = view.findViewById<View>(R.id.list2) as RecyclerView
         // Initialize contacts
-        val contacts = Contact.createContactsList(20)
+
+
+        val contacts = DataPersistence(requireActivity()).find ()
+        // MessageReadAll(requireActivity(), false).readMessages(requireContext())
+
+
+
+
         // Create adapter passing in the sample user data
         val adapter2 = ContactsAdapter(contacts)
         // Attach the adapter to the recyclerview to populate items
