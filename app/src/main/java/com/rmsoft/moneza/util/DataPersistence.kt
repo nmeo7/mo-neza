@@ -2,33 +2,25 @@ package com.rmsoft.moneza.util
 
 import android.app.Activity
 import android.util.Log
-import com.rmsoft.moneza.home.transactions_list.Contact
 import io.realm.Realm
 import io.realm.RealmConfiguration
 
-class DataPersistence(var context: Activity) {
+class DataPersistence constructor (var context: Activity) {
 
-    private lateinit var mRealm : Realm
-    var initialized = false
+    private var config : RealmConfiguration
 
-    private fun create() {
-        if (initialized)
-            return
-
+    init {
         Realm.init(context)
-        val config = RealmConfiguration.Builder()
-            .name("test.db")
-            .schemaVersion(1)
-            .deleteRealmIfMigrationNeeded()
-            .build()
 
-        mRealm = Realm.getInstance(config)
-
-        initialized = true
+        config = RealmConfiguration.Builder()
+                .name("test.db")
+                .schemaVersion(1)
+                .deleteRealmIfMigrationNeeded()
+                .build()
     }
 
     fun save (m: Message) {
-        create()
+        val mRealm = Realm.getInstance(config)
 
         mRealm.beginTransaction()
         mRealm.copyToRealmOrUpdate(m)
@@ -37,20 +29,42 @@ class DataPersistence(var context: Activity) {
         Log.i("MOMO_READ", m.toString())
     }
 
-    fun find () : ArrayList<Contact>
+    fun find () : ArrayList<Message>
     {
-        create()
+        val mRealm = Realm.getInstance(config)
 
         Log.d("MOMO_READ", "Trying to read")
 
-        val ret = ArrayList<Contact>()
+        val ret = ArrayList<Message>()
 
-        for (x in mRealm.where(Message::class.java).like("subject", "N*").findAll()) {
+        var day = ""
+
+        for (x in mRealm.where(Message::class.java).like("subject", "*").findAll()) {
             Log.d("MOMO_READ", x.toString())
-            ret.add( Contact(x.subject!!, false, 1) )
+            val newDay = x.getDay()
+
+            if (newDay != day)
+            {
+                val d = Message()
+                d.subject = newDay
+                d.type = "DAY"
+                day = newDay
+                ret.add(d)
+            }
+            ret.add( x )
 
         }
 
         return ret
+    }
+
+    fun reset ()
+    {
+        val mRealm = Realm.getInstance(config)
+
+        while (!mRealm.isClosed)
+            mRealm.close()
+
+        Realm.deleteRealm(config)
     }
 }

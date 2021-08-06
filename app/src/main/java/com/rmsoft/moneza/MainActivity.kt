@@ -19,6 +19,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.rmsoft.moneza.util.DataPersistence
 import com.rmsoft.moneza.util.MessageReadAll
 import java.io.*
 
@@ -95,6 +96,7 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.reset -> {
+                DataPersistence(this).reset()
                 true
             }
             else -> super.onOptionsItemSelected(item)

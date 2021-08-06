@@ -22,22 +22,6 @@ open class Message : RealmObject() {
     var subject: String? = null
     var subjectNumber: String? = null
     var message: String? = null
-    fun setContent(text: String?, textHash: String?, amount: Int, balance: Int,
-                   fee: Int, type: String?, time: Long, timeTxt: String?, transactionId: String?,
-                   subject: String?, subjectNumber: String?, message: String?) {
-        hash = "id2"
-        this.text = text
-        this.textHash = textHash
-        this.amount = amount
-        this.balance = balance
-        this.fee = fee
-        this.type = type
-        this.time = time
-        this.timeTxt = timeTxt
-        this.transactionId = transactionId
-        this.subject = subject
-        this.subjectNumber = subjectNumber
-    }
 
     fun setContent(key: String, value : String)
     {
@@ -90,5 +74,20 @@ open class Message : RealmObject() {
                 ", subject='" + subject + '\'' +
                 ", subjectNumber='" + subjectNumber + '\'' +
                 ", message='" + message + '\''
+    }
+
+    fun getDay () : String
+    {
+        val date = Date(time)
+        val format = SimpleDateFormat("dd/MM/yyyy", Locale.US)
+        val today = format.format(System.currentTimeMillis())
+        val yesterday = format.format(System.currentTimeMillis() - 3600 * 1000 * 24)
+        val day = format.format(date)
+
+        if (day == today)
+            return "Uno munsi"
+        if (day == yesterday)
+            return "Ejo hashize"
+        return format.format(date)
     }
 }

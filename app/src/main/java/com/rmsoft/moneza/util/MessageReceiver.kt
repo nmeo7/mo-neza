@@ -48,6 +48,14 @@ class MessageReceiver : BroadcastReceiver() {
                 // Log and display the SMS message.
                 Log.d(TAG, "onReceive: $strMessage")
                 Toast.makeText(context, strMessage, Toast.LENGTH_LONG).show()
+
+
+                if (msgs[i]?.originatingAddress == "")
+                {
+                    val m = ParseMessage().parseMessage (msgs[i]?.messageBody.toString())
+                    // DataPersistence(activity) ???
+                    // maybe here find a way to save data locally before persisting it to the realm database
+                }
             }
         }
     }

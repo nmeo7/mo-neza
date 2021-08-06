@@ -11,7 +11,7 @@ import androidx.core.content.ContextCompat
 
 class CheckPrivileges (private var context: Context, private var activity: Activity) {
 
-    private fun runtimeAskPrivileges (permission: String) : Boolean
+    fun runtimeAskPrivileges (permission: String) : Boolean
     {
         val myVersion = Build.VERSION.SDK_INT
 

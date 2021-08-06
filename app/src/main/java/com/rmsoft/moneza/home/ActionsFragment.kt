@@ -35,7 +35,8 @@ class ActionsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        DataPersistence(requireActivity()).find()
+        val dataPersistence = DataPersistence(requireActivity())
+        dataPersistence.find()
 
         return inflater.inflate(R.layout.fragment_actions, container, false)
     }

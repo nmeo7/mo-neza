@@ -1,5 +1,6 @@
 package com.rmsoft.moneza.util
 
+import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -8,10 +9,7 @@ import android.net.Uri
 import android.os.Build
 import android.provider.DocumentsContract
 import android.util.Log
-import androidx.annotation.RequiresApi
-import androidx.core.app.ActivityCompat.startActivityForResult
 import com.rmsoft.moneza.R
-import com.rmsoft.moneza.home.transactions_list.Contact
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
@@ -25,7 +23,7 @@ class MessageReadAll (private val activity: Activity, private var fromSms : Bool
         persistence.save(data)
     }
 
-    private fun readMessagesFromFile (context: Context) : ArrayList<Contact>
+    private fun readMessagesFromFile (context: Context) : ArrayList<Message>
     {
         Log.d("READ_MOMO", "STARTING ...")
 
@@ -33,13 +31,13 @@ class MessageReadAll (private val activity: Activity, private var fromSms : Bool
         val bufferedReader = BufferedReader(InputStreamReader(inputStream))
 
 
-        val contacts = ArrayList<Contact>()
+        val contacts = ArrayList<Message>()
 
         try {
             var eachline = bufferedReader.readLine()
             while (eachline != null) {
                 val m = ParseMessage().parseMessage(eachline)
-                contacts.add(Contact(m.subject!!, false, 1))
+                contacts.add(m)
 
                 Log.i("MOMO_READ", m.toString())
                 persistence.save(m)
@@ -54,11 +52,14 @@ class MessageReadAll (private val activity: Activity, private var fromSms : Bool
         return contacts
     }
 
-    private fun readMessagesFromSmss (context: Context) : ArrayList<Contact>
+    private fun readMessagesFromSmss (context: Context) : ArrayList<Message>
     {
+        val contacts = ArrayList<Message>()
+
+        if (  CheckPrivileges(context,activity).runtimeAskPrivileges (Manifest.permission.READ_SMS) )
+            return contacts
 
         Log.d("READ_SMS", "Starting")
-        val contacts = ArrayList<Contact>()
 
 
         val cursor: Cursor? = context.contentResolver.query(
@@ -81,7 +82,7 @@ class MessageReadAll (private val activity: Activity, private var fromSms : Bool
                 val m = ParseMessage().parseMessage(msgData)
                 persistence.save(m)
 
-                contacts.add(Contact(m.subject!!, false, 0))
+                contacts.add(m)
                 // use msgData
             } while (cursor.moveToNext())
         } else {
@@ -141,7 +142,7 @@ class MessageReadAll (private val activity: Activity, private var fromSms : Bool
 
 
 
-    fun readMessages (context: Context) : ArrayList<Contact>
+    fun readMessages (context: Context) : ArrayList<Message>
     {
         if (fromSms)
             return readMessagesFromSmss(context)

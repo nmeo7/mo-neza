@@ -29,20 +29,6 @@ class TransactionsListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val stickyList = view.findViewById(R.id.list) as StickyListHeadersListView
-        val adapter: TransactionsAdapter = TransactionsAdapter(requireContext())
-
-        stickyList.adapter = adapter
-
-        val intent = Intent(context, TransactionDetails::class.java)
-
-        stickyList.setOnItemClickListener { parent, v, position, id -> startActivity(intent) }
-
-        stickyList.setOnItemLongClickListener { parent, v, position, id ->
-            startActivity(intent)
-            true
-        }
-
 
 
 
@@ -54,14 +40,14 @@ class TransactionsListFragment : Fragment() {
         // Initialize contacts
 
 
-        val contacts = DataPersistence(requireActivity()).find ()
+        val messages = DataPersistence(requireActivity()).find ()
         // MessageReadAll(requireActivity(), false).readMessages(requireContext())
 
 
 
 
         // Create adapter passing in the sample user data
-        val adapter2 = ContactsAdapter(contacts)
+        val adapter2 = TransactionsAdapter(messages)
         // Attach the adapter to the recyclerview to populate items
         rvContacts.adapter = adapter2
         // Set layout manager to position the items
@@ -70,7 +56,7 @@ class TransactionsListFragment : Fragment() {
 
         rvContacts.addItemDecoration(HeaderItemDecoration(rvContacts) { itemPosition ->
             if (itemPosition >= 0 && itemPosition < adapter2.itemCount) {
-                contacts[itemPosition].type == 0
+                messages[itemPosition].type == "DAY"
             } else false
         })
 
