@@ -3,7 +3,10 @@ package com.rmsoft.moneza.util
 import android.Manifest
 import android.app.Activity
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
+import android.content.SharedPreferences
+import android.content.SharedPreferences.Editor
 import android.database.Cursor
 import android.net.Uri
 import android.os.Build
@@ -13,17 +16,41 @@ import com.rmsoft.moneza.R
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
-import java.util.ArrayList
+import java.util.*
 
-class MessageReadAll (private val activity: Activity, private var fromSms : Boolean = true) {
+
+class MessageReadAll(private val activity: Activity, private var fromSms: Boolean = true) {
     private val persistence = DataPersistence(activity)
+    private val MY_PREFS_NAME = "PREFS"
 
-    private fun saveMessage (data : Message)
+    private fun saveMessage(data: Message)
     {
         persistence.save(data)
     }
 
-    private fun readMessagesFromFile (context: Context) : ArrayList<Message>
+    private fun checkSyncTime(context: Context, date: Long) : Boolean
+    {
+        val prefs: SharedPreferences = context.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE)
+        val lastSync = prefs.getLong("syncTime", 0)
+
+        return lastSync < date
+    }
+
+    private fun updateSyncTime(context: Context)
+    {
+        val editor: Editor = context.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit()
+        editor.putLong("syncTime", System.currentTimeMillis())
+        editor.apply()
+    }
+
+    fun resetSyncTime(context: Context)
+    {
+        val editor: Editor = context.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit()
+        editor.putLong("syncTime", 0)
+        editor.apply()
+    }
+
+    private fun readMessagesFromFile(context: Context) : ArrayList<Message>
     {
         Log.d("READ_MOMO", "STARTING ...")
 
@@ -52,15 +79,12 @@ class MessageReadAll (private val activity: Activity, private var fromSms : Bool
         return contacts
     }
 
-    private fun readMessagesFromSmss (context: Context) : ArrayList<Message>
+    private fun readMessagesFromSmss(context: Context) : ArrayList<Message>
     {
         val contacts = ArrayList<Message>()
 
-        if (  CheckPrivileges(context,activity).runtimeAskPrivileges (Manifest.permission.READ_SMS) )
+        if (  CheckPrivileges(context, activity).runtimeAskPrivileges(Manifest.permission.READ_SMS) )
             return contacts
-
-        Log.d("READ_SMS", "Starting")
-
 
         val cursor: Cursor? = context.contentResolver.query(
                 Uri.parse("content://sms/inbox"), null, null, null, null
@@ -69,12 +93,22 @@ class MessageReadAll (private val activity: Activity, private var fromSms : Bool
         if (cursor?.moveToFirst()!!) { // must check the result to prevent exception
             do {
                 var msgData = ""
+                var date = ""
+
+                for (idx in 0 until cursor.columnCount) {
+                    if (cursor.getColumnName(idx).toString() == "date")
+                        date += cursor.getString(idx)
+                }
+
                 if (cursor.getString(2) != "M-Money")
+                    continue
+
+                if (checkSyncTime(context, date.toLong()))
                     continue
 
                 for (idx in 0 until cursor.columnCount) {
                     if (cursor.getColumnName(idx).toString() == "body")
-                        msgData += cursor.getString( idx )
+                        msgData += cursor.getString(idx)
                 }
                 msgData = msgData.replace('\n', ' ').trim()
                 // Log.d("READ_SMS", msgData.replace('\n', ' ').trim())
@@ -86,10 +120,10 @@ class MessageReadAll (private val activity: Activity, private var fromSms : Bool
                 // use msgData
             } while (cursor.moveToNext())
         } else {
-            // empty box, no SMS
-            Log.d("READ_SMS", "Emptiness")
+            Log.d("READ_SMS", "Empty")
         }
 
+        updateSyncTime (context)
         cursor.close()
         return contacts
     }
@@ -142,7 +176,7 @@ class MessageReadAll (private val activity: Activity, private var fromSms : Bool
 
 
 
-    fun readMessages (context: Context) : ArrayList<Message>
+    fun readMessages(context: Context) : ArrayList<Message>
     {
         if (fromSms)
             return readMessagesFromSmss(context)

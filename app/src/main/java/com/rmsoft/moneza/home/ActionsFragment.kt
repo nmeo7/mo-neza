@@ -16,6 +16,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
+import com.example.flatdialoglibrary.dialog.FlatDialog
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.rmsoft.moneza.R
@@ -67,8 +68,28 @@ class ActionsFragment : Fragment() {
             val DRAWABLE_RIGHT = 2
             val DRAWABLE_BOTTOM = 3
             if (event.action == MotionEvent.ACTION_UP) {
-                if (event.rawX >= number.right - number.compoundDrawables.get(DRAWABLE_RIGHT).bounds.width()) {
+                if (event.rawX >= number.right - number.compoundDrawables[DRAWABLE_RIGHT].bounds.width()) {
                     // your action here
+                    Log.i("clicked", "clicked")
+                    v.performClick()
+                    true
+                }
+                if (event.rawX >= number.left - number.compoundDrawables[DRAWABLE_LEFT].bounds.width()) {
+                    val flatDialog = FlatDialog(requireContext())
+                    flatDialog.setTitle("Login")
+                        .setSubtitle("write your profile info here")
+                        .setFirstTextFieldHint("email")
+                        .setSecondTextFieldHint("password")
+                        .setFirstButtonText("CONNECT")
+                        .setSecondButtonText("CANCEL")
+                        .withFirstButtonListner {
+                            // do something ...
+                        }
+                        .withSecondButtonListner {
+                            flatDialog.dismiss()
+                        }
+                        .show()
+
                     Log.i("clicked", "clicked")
                     v.performClick()
                     true

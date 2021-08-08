@@ -1,40 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp" />
+        android:layout_height="match_parent">
 
-    <eu.long1.spacetablayout.SpaceTabLayout
-        android:id="@+id/spaceTabLayout"
+
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/mobile_navigation" />
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.MoNeza.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/Theme.MoNeza.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="56dp" />
+
+        <eu.long1.spacetablayout.SpaceTabLayout
+            android:id="@+id/spaceTabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_behavior="eu.long1.spacetablayout.SpaceTabLayoutBehavior"
+            app:number_of_tabs="three"
+            app:starting_position="one"
+            app:tab_color="@color/colorPrimary"
+            app:button_color="@color/colorAccent"
+            app:text_color="@color/colorPrimaryDark"
+            app:icon_one="@drawable/ic_dashboard"
+            app:icon_two="@drawable/ic_recent"
+            app:icon_three="@drawable/ic_actions"
+            app:text_one="Incamake"
+            app:text_two="Ibiheruka"
+            app:text_three="Ibikorwa"
+            />
+
+        <com.leinardi.android.speeddial.SpeedDialView
+            android:id="@+id/speedDial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="60dp"
+            app:sdMainFabClosedSrc="@drawable/ic_dashboard" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_behavior="eu.long1.spacetablayout.SpaceTabLayoutBehavior"
-        app:number_of_tabs="three"
-        app:starting_position="one"
-        app:tab_color="@color/colorPrimary"
-        app:button_color="@color/colorAccent"
-        app:text_color="@color/colorPrimaryDark"
-        app:icon_one="@drawable/ic_dashboard"
-        app:icon_two="@drawable/ic_recent"
-        app:icon_three="@drawable/ic_actions"
-        app:text_one="Incamake"
-        app:text_two="Ibiheruka"
-        app:text_three="Ibikorwa"
-        />
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer" />
 
-    <com.leinardi.android.speeddial.SpeedDialView
-        android:id="@+id/speedDial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="60dp"
-        app:sdMainFabClosedSrc="@drawable/ic_dashboard" />
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

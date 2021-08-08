@@ -4,12 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/transactions_list"
     tools:context=".home.transactions_list.TransactionsListFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list2"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <com.l4digital.fastscroll.FastScroller
         android:id="@+id/fast_scroller"
@@ -22,18 +28,5 @@
         app:showBubble="true"
         app:showTrack="true"
         app:bubbleSize="small"/>
-
-    <com.baoyz.widget.PullRefreshLayout
-        android:id="@+id/swipeRefreshLayout2"
-        android:layout_width="0dp"
-        android:layout_height="0dp">
-
-        <se.emilsjolander.stickylistheaders.StickyListHeadersListView
-            android:id="@+id/list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
-
-    </com.baoyz.widget.PullRefreshLayout>
 
 </FrameLayout>

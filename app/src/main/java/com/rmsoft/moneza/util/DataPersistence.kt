@@ -4,6 +4,7 @@ import android.app.Activity
 import android.util.Log
 import io.realm.Realm
 import io.realm.RealmConfiguration
+import io.realm.Sort
 
 class DataPersistence constructor (var context: Activity) {
 
@@ -25,8 +26,6 @@ class DataPersistence constructor (var context: Activity) {
         mRealm.beginTransaction()
         mRealm.copyToRealmOrUpdate(m)
         mRealm.commitTransaction()
-
-        Log.i("MOMO_READ", m.toString())
     }
 
     fun find () : ArrayList<Message>
@@ -39,8 +38,8 @@ class DataPersistence constructor (var context: Activity) {
 
         var day = ""
 
-        for (x in mRealm.where(Message::class.java).like("subject", "*").findAll()) {
-            Log.d("MOMO_READ", x.toString())
+        for (x in mRealm.where(Message::class.java) .like("subject", "*") .findAllSorted("time", Sort.DESCENDING)) {
+            Log.d("MOMO_READ_ALL", x.toString())
             val newDay = x.getDay()
 
             if (newDay != day)
@@ -58,6 +57,12 @@ class DataPersistence constructor (var context: Activity) {
         return ret
     }
 
+    fun aggregates ()
+    {
+        val mRealm = Realm.getInstance(config)
+        mRealm.where(Message::class.java).sum("amount")
+    }
+
     fun reset ()
     {
         val mRealm = Realm.getInstance(config)
@@ -66,5 +71,7 @@ class DataPersistence constructor (var context: Activity) {
             mRealm.close()
 
         Realm.deleteRealm(config)
+
+        MessageReadAll(context).resetSyncTime(context)
     }
 }

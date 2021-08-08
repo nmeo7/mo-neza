@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.l4digital.fastscroll.FastScroller
@@ -51,7 +52,7 @@ class TransactionsAdapter(private val transactions: List<Message>) : RecyclerVie
     }
 
     override fun getSectionText(p0: Int): CharSequence {
-        return p0.toString()
+        return transactions[p0].getDay()
     }
 
 
@@ -59,9 +60,6 @@ class TransactionsAdapter(private val transactions: List<Message>) : RecyclerVie
     override fun getItemViewType(position: Int): Int {
         val item = transactions[position]
         return when (item.type) {
-            "1" -> {
-                TYPE_ONE
-            }
             "DAY" -> {
                 TYPE_TWO
             }
@@ -74,10 +72,28 @@ class TransactionsAdapter(private val transactions: List<Message>) : RecyclerVie
 
     private fun initLayoutOne(viewHolder: ViewHolderOne, position: Int) {
         // Get the data model based on position
-        val contact: Message = transactions[position]
+        val message: Message = transactions[position]
         // Set item views based on your views and data model
-        val textView = viewHolder.nameTextView
-        textView.text = contact.subject
+
+        val subject = viewHolder.subject
+        val amount = viewHolder.amount
+        val fee = viewHolder.fee
+        val balance = viewHolder.balance
+        val time = viewHolder.time
+        val type = viewHolder.type
+
+        subject.text = message.subject
+        amount.text = message.parseAmount(message.amount)
+        fee.text = message.parseAmount(message.fee)
+        balance.text = message.parseAmount(message.balance)
+        time.text = message.getTime()
+        type.text = message.type
+
+
+        if (message.type == "RECEIVING" || message.type == "DEPOSIT")
+            viewHolder.icon.setImageResource(R.drawable.ic_receive)
+        else
+            viewHolder.icon.setImageResource(R.drawable.ic_send)
     }
 
     private fun initLayoutTwo(viewHolder: ViewHolderTwo, position: Int) {
@@ -90,8 +106,13 @@ class TransactionsAdapter(private val transactions: List<Message>) : RecyclerVie
 
     // Static inner class to initialize the views of rows
     internal class ViewHolderOne(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val nameTextView: TextView = itemView.findViewById(R.id.contact_name)
-        val messageButton: Button = itemView.findViewById(R.id.message_button)
+        val subject: TextView = itemView.findViewById(R.id.subject)
+        val amount: TextView = itemView.findViewById(R.id.amount)
+        val fee: TextView = itemView.findViewById(R.id.fee)
+        val balance: TextView = itemView.findViewById(R.id.balance)
+        val time: TextView = itemView.findViewById(R.id.time)
+        val type: TextView = itemView.findViewById(R.id.type)
+        val icon: ImageView = itemView.findViewById(R.id.item_icon)
 
     }
 

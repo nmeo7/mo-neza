@@ -1,5 +1,6 @@
 package com.rmsoft.moneza
 
+import android.app.Fragment
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -8,27 +9,87 @@ import android.provider.DocumentsContract
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.navigation.NavigationView
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.navigation.NavigationView
+import com.google.android.material.snackbar.Snackbar
+import com.leinardi.android.speeddial.SpeedDialView
+import com.rmsoft.moneza.home.ActionsFragment
+import com.rmsoft.moneza.home.dashboard.DashboardFragment
+import com.rmsoft.moneza.home.transactions_list.TransactionsListFragment
 import com.rmsoft.moneza.util.DataPersistence
 import com.rmsoft.moneza.util.MessageReadAll
+import eu.long1.spacetablayout.SpaceTabLayout
 import java.io.*
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var tabLayout: SpaceTabLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val fragmentList = ArrayList<androidx.fragment.app.Fragment>()
+        fragmentList.add(DashboardFragment())
+        fragmentList.add(ActionsFragment())
+        fragmentList.add(TransactionsListFragment())
+
+        val viewPager = findViewById<ViewPager>(R.id.viewPager)
+        tabLayout = findViewById<SpaceTabLayout>(R.id.spaceTabLayout)
+
+        tabLayout.initialize(
+            viewPager, supportFragmentManager,
+            fragmentList, savedInstanceState
+        )
+
+        val speedDialView = findViewById<SpeedDialView>(R.id.speedDial)
+        speedDialView.inflate(R.menu.menu_speed_dial)
+        speedDialView.visibility = View.GONE
+
+        viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrollStateChanged(state: Int) {}
+            override fun onPageScrolled(position: Int,positionOffset: Float,positionOffsetPixels: Int) {}
+
+            override fun onPageSelected(position: Int) {
+                // Check if this is the page you want.
+                if (position != 2) {
+                    speedDialView.close()
+                    speedDialView.visibility = View.GONE
+                }
+                else
+                    speedDialView.visibility = View.VISIBLE
+            }
+        })
+
+        speedDialView.setOnActionSelectedListener(SpeedDialView.OnActionSelectedListener { actionItem ->
+            speedDialView.close() // To close the Speed Dial with animation
+            false
+        })
+
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
+        val drawerLayout: DrawerLayout = findViewById(R.id.activity_main)
+        appBarConfiguration = AppBarConfiguration(setOf(
+                R.id.nav_actions, R.id.nav_transactions_list, R.id.nav_dashboard), drawerLayout)
+        val navController = findNavController(R.id.nav_host_fragment)
+
+        setupActionBarWithNavController(navController, appBarConfiguration)
+
+        /*
         setContentView(R.layout.activity_main2)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -46,7 +107,12 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(setOf(
                 R.id.nav_actions, R.id.nav_transactions_list, R.id.nav_dashboard), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        navView.setupWithNavController(navController)*/
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        tabLayout.saveState(outState)
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -75,8 +141,7 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.export -> {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
-                {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                     val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
                         addCategory(Intent.CATEGORY_OPENABLE)
                         type = "text/plain"
@@ -92,11 +157,13 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.refresh -> {
-                MessageReadAll(this, false).readMessages(this)
+                MessageReadAll(this, true).readMessages(this)
+
                 true
             }
             R.id.reset -> {
                 DataPersistence(this).reset()
+
                 true
             }
             else -> super.onOptionsItemSelected(item)

@@ -41,13 +41,18 @@ open class Message : RealmObject() {
             message = value
         if (key == "TYPE")
             type = value
-        if (key == "RECIPIENT")
-            subject = value
 
-        if (key == "SENDER")
-            subject = value
-        if (key == "SERVICE")
-            subject = value
+        if (key == "FEE")
+            fee = value.toInt()
+
+        if (key == "RECIPIENT" || key == "SENDER" || key == "SERVICE")
+        {
+            val s = value.split(" (250")
+            subject = s[0]
+
+            if (s.size > 1)
+                subjectNumber = "0" + s[1].replace(")", "")
+        }
     }
 
     fun makeHash (message : String) {
@@ -78,6 +83,9 @@ open class Message : RealmObject() {
 
     fun getDay () : String
     {
+        if (type == "DAY")
+            return subject!!
+
         val date = Date(time)
         val format = SimpleDateFormat("dd/MM/yyyy", Locale.US)
         val today = format.format(System.currentTimeMillis())
@@ -89,5 +97,25 @@ open class Message : RealmObject() {
         if (day == yesterday)
             return "Ejo hashize"
         return format.format(date)
+    }
+
+    fun getTime () : String {
+        val date = Date(time)
+        val format = SimpleDateFormat("hh:mm", Locale.US)
+        return format.format(date)
+    }
+
+    fun parseAmount (num : Int) : String {
+        var ret = ""
+
+        for (i in 0..num.toString().length - 1)
+        {
+            if (i % 3 == 0)
+                ret = " $ret";
+
+            ret = num.toString()[num.toString().length - i - 1].toString() + ret
+        }
+
+        return ret.trim()
     }
 }

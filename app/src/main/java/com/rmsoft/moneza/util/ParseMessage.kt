@@ -46,9 +46,9 @@ class ParseMessage {
 
     private fun parseTransfer(msg: String): String {
         var st = msg
-        st = st.replace("*165*S*", "\nTRANSACTION_ID ")
+        st = st.replace("*165*S*", "\nAMOUNT ")
         st = st.replace(" RWF transferred to ", "\nRECIPIENT ")
-        st = st.replace(" from ", "\nSENDER ")
+        st = st.replace(" from ", "\nMY_ACCOUNT ")
         st = st.replace(" at 20", "\nTIME 20")
         st = st.replace(" . Fee was: ", "\nFEE ")
         st = st.replace(" RWF. New balance: ", "\nBALANCE ")
@@ -136,7 +136,7 @@ class ParseMessage {
         if (messageType(msg) == Type.WITHDRAWAL) msg1 = parseWithdrawal(msg)
         if (messageType(msg) == Type.OTHER) Log.d("READ_MOMO", msg)
         val r = toDict(msg1)
-        Log.d("READ_MOMO", r.toString())
+        // Log.d("READ_MOMO", r.toString())
 
         return r
     }
