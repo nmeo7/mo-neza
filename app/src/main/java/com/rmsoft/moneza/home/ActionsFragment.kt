@@ -54,6 +54,8 @@ class ActionsFragment : Fragment() {
         number.addTextChangedListener(textWatcher)
         amount.addTextChangedListener(textWatcherMoney)
 
+        amountLayout.suffixText = "Fee"
+
         numberLayout = view.findViewById(R.id.number_layout) as TextInputLayout
 
         number.onFocusChangeListener = OnFocusChangeListener { v, hasFocus ->
@@ -74,7 +76,7 @@ class ActionsFragment : Fragment() {
                     v.performClick()
                     true
                 }
-                if (event.rawX >= number.left - number.compoundDrawables[DRAWABLE_LEFT].bounds.width()) {
+                if (event.rawX <= number.left + number.compoundDrawables[DRAWABLE_LEFT].bounds.width() + 64) {
                     val flatDialog = FlatDialog(requireContext())
                     flatDialog.setTitle("Login")
                         .setSubtitle("write your profile info here")
