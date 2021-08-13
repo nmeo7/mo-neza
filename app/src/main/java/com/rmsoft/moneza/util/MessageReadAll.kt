@@ -33,6 +33,8 @@ class MessageReadAll(private val activity: Activity, private var fromSms: Boolea
         val prefs: SharedPreferences = context.getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE)
         val lastSync = prefs.getLong("syncTime", 0)
 
+        Log.i("SyncTime", (lastSync < date).toString())
+
         return lastSync < date
     }
 
@@ -86,8 +88,12 @@ class MessageReadAll(private val activity: Activity, private var fromSms: Boolea
         if (  CheckPrivileges(context, activity).runtimeAskPrivileges(Manifest.permission.READ_SMS) )
             return contacts
 
+        val projection = arrayOf("_id", "address", "person", "body", "date", "type")
+        val sender = "M-Money"
+        val selection = "person LIKE'%$sender'"
+
         val cursor: Cursor? = context.contentResolver.query(
-                Uri.parse("content://sms/inbox"), null, null, null, null
+                Uri.parse("content://sms/inbox"), projection, selection, null, "date desc"
         )
 
         if (cursor?.moveToFirst()!!) { // must check the result to prevent exception
@@ -95,10 +101,11 @@ class MessageReadAll(private val activity: Activity, private var fromSms: Boolea
                 var msgData = ""
                 var date = ""
 
-                for (idx in 0 until cursor.columnCount) {
-                    if (cursor.getColumnName(idx).toString() == "date")
-                        date += cursor.getString(idx)
-                }
+                // for (idx in 0 until cursor.columnCount) {
+                    // if (cursor.getColumnName(idx).toString() == "date")
+                        // date += cursor.getString(idx)
+                // }
+                date = cursor.getString(4)
 
                 if (cursor.getString(2) != "M-Money")
                     continue
@@ -106,11 +113,11 @@ class MessageReadAll(private val activity: Activity, private var fromSms: Boolea
                 if (checkSyncTime(context, date.toLong()))
                     continue
 
-                for (idx in 0 until cursor.columnCount) {
-                    if (cursor.getColumnName(idx).toString() == "body")
-                        msgData += cursor.getString(idx)
-                }
-                msgData = msgData.replace('\n', ' ').trim()
+                // for (idx in 0 until cursor.columnCount) {
+                    // if (cursor.getColumnName(idx).toString() == "body")
+                        // msgData += cursor.getString(idx)
+                // }
+                msgData = cursor.getString(3).replace('\n', ' ').trim()
                 // Log.d("READ_SMS", msgData.replace('\n', ' ').trim())
 
                 val m = ParseMessage().parseMessage(msgData)
@@ -123,7 +130,7 @@ class MessageReadAll(private val activity: Activity, private var fromSms: Boolea
             Log.d("READ_SMS", "Empty")
         }
 
-        updateSyncTime (context)
+        updateSyncTime(context)
         cursor.close()
         return contacts
     }

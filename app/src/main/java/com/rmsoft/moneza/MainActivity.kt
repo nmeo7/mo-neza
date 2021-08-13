@@ -133,13 +133,14 @@ class MainActivity : AppCompatActivity() {
                 // open qr
                 true
             }
+            /*
             R.id.import_ -> {
                 var chooseFile = Intent(Intent.ACTION_GET_CONTENT)
                 chooseFile.type = "text/plain"
                 chooseFile = Intent.createChooser(chooseFile, "Choose a file")
                 startActivityForResult(chooseFile, 3)
                 true
-            }
+            }*/
             R.id.export -> {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                     val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
@@ -156,6 +157,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 true
             }
+            /*
             R.id.refresh -> {
                 MessageReadAll(this, true).readMessages(this)
 
@@ -165,7 +167,7 @@ class MainActivity : AppCompatActivity() {
                 DataPersistence(this).reset()
 
                 true
-            }
+            }*/
             else -> super.onOptionsItemSelected(item)
         }
     }

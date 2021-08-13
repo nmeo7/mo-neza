@@ -2,16 +2,28 @@
     <!-- Base application theme. -->
     <style name="Theme.MoNeza" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/colorPrimaryDark</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryDark</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="toolbarStyle">@style/custom_toolbar</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="custom_toolbar" parent="@style/Widget.AppCompat.Toolbar" >
+        <item name="titleTextColor">@color/colorPrimaryDark</item>
     </style>
 
     <style name="Theme.MoNeza.NoActionBar">
@@ -19,7 +31,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.MoNeza.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.MoNeza.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+        <item name="android:background">@color/colorAccent</item>
+    </style>
 
     <style name="Theme.MoNeza.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

@@ -60,14 +60,20 @@ class TransactionsListFragment : Fragment(), SwipeRefreshLayout.OnRefreshListene
     override fun onRefresh() {
         val mSwipeRefreshLayout = view?.findViewById(R.id.swipe_container) as SwipeRefreshLayout
         Log.i("TRANSACTION_FRAGMENT", "Refreshed")
+        reReadMessages ()
         refreshAdapter ()
         mSwipeRefreshLayout.isRefreshing = false
     }
 
-    private fun refreshAdapter ()
-    {
+    private fun reReadMessages () {
+        Log.i("MessageReadAll", "Starting...")
         MessageReadAll(requireActivity(), true).readMessages(requireContext())
+        Log.i("MessageReadAll", "Done.")
+    }
 
+    private fun refreshAdapter () {
+
+        Log.i("MessageReadAll", "Starting...")
         val messages = DataPersistence(requireActivity()).find ()
         // MessageReadAll(requireActivity(), false).readMessages(requireContext())
 
@@ -87,6 +93,7 @@ class TransactionsListFragment : Fragment(), SwipeRefreshLayout.OnRefreshListene
 
         fastScroller.setSectionIndexer(adapter2)
         fastScroller.attachRecyclerView(rvContacts)
+        Log.i("MessageReadAll", "Done.")
     }
 
 

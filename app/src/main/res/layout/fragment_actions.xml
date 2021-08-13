@@ -11,7 +11,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_button"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_height="wrap_content">
 
 
@@ -24,9 +24,9 @@
                 android:id="@+id/lav_thumbUp"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="0dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="24dp"
                 app:lottie_autoPlay="true"
                 app:lottie_fileName="sun.json"
                 app:lottie_loop="true" />
@@ -35,14 +35,15 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_margin="8dp"
-                android:layout_marginTop="40dp"
                 android:textSize="24sp"
                 android:hint="Nimero, Kode, etc."
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:boxCornerRadiusTopStart="16dp"
                 app:boxCornerRadiusTopEnd="16dp"
                 app:boxCornerRadiusBottomStart="16dp"
-                app:boxCornerRadiusBottomEnd="16dp">
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxStrokeColor="@color/colorSecondary"
+                app:hintTextColor="@color/colorSecondaryDark">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/number"
                     android:layout_height="wrap_content"
@@ -72,6 +73,11 @@
                 android:inputType="phone"
                 android:hint="Amafaranga"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxStrokeColor="@color/colorSecondary"
+                app:hintTextColor="@color/colorSecondaryDark"
+                app:errorTextColor="@color/red"
+                app:errorIconTint="@color/red"
+                app:boxStrokeErrorColor="@color/red"
                 app:boxCornerRadiusTopStart="16dp"
                 app:boxCornerRadiusTopEnd="16dp"
                 app:boxCornerRadiusBottomStart="16dp"
@@ -89,15 +95,15 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:padding="0dp"
-                android:layout_marginBottom="48dp">
+                android:layout_marginBottom="0dp">
 
                 <com.google.android.material.chip.ChipGroup
                     android:id="@+id/chipGroup"
@@ -189,49 +195,37 @@
                 </com.google.android.material.chip.ChipGroup>
 
             </HorizontalScrollView>
+
+            <Button
+                android:id="@+id/action_balance"
+                android:text="Kubikuza"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="24dp"
+                android:layout_width="match_parent"
+                android:padding="16dp"
+                android:background="@drawable/button_bg"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/amount_layout"
+                app:backgroundTint="@color/colorSecondary"
+                />
+            <LinearLayout
+                android:id="@+id/bottom_button"
+                android:text="Kubikuza"
+                android:layout_height="72dp"
+                android:layout_width="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/amount_layout"
+                android:orientation="horizontal">
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
 
-    <LinearLayout
-        android:id="@+id/bottom_button"
-        android:text="Kubikuza"
-        android:layout_height="90dp"
-        android:layout_width="match_parent"
-        android:layout_marginBottom="0dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@drawable/button_bg_bottom"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/action_balance"
-            android:text="Kubikuza"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_margin="0dp"
-            android:layout_width="0dp"
-            android:layout_marginBottom="0dp"
-            android:layout_marginTop="4dp"
-            android:layout_columnWeight="1"
-            android:layout_columnSpan="2"
-            android:background="@drawable/button_bg_bottom_left"
-            />
-        <ImageButton
-            android:layout_height="match_parent"
-            android:layout_width="90dp"
-            android:layout_margin="0dp"
-            android:layout_marginBottom="0dp"
-            android:layout_marginTop="4dp"
-            android:layout_columnWeight="1"
-            android:layout_columnSpan="2"
-            android:background="@drawable/button_bg_bottom_right"
-            app:icon="@drawable/ic_qr_code_scan"
-            android:gravity="center"
-            android:layout_gravity="center"
-            app:iconGravity="textEnd"
-            />
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
