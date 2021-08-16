@@ -88,9 +88,9 @@ class MessageReadAll(private val activity: Activity, private var fromSms: Boolea
         if (  CheckPrivileges(context, activity).runtimeAskPrivileges(Manifest.permission.READ_SMS) )
             return contacts
 
-        val projection = arrayOf("_id", "address", "person", "body", "date", "type")
+        val projection = arrayOf("_id", "address", "body")
         val sender = "M-Money"
-        val selection = "person LIKE'%$sender'"
+        val selection = "address LIKE'%$sender'"
 
         val cursor: Cursor? = context.contentResolver.query(
                 Uri.parse("content://sms/inbox"), projection, selection, null, "date desc"
@@ -98,26 +98,27 @@ class MessageReadAll(private val activity: Activity, private var fromSms: Boolea
 
         if (cursor?.moveToFirst()!!) { // must check the result to prevent exception
             do {
+                // Log.i("READ_SMS1", ">> " + cursor.getString(4))
                 var msgData = ""
-                var date = ""
+                // var date = ""
 
                 // for (idx in 0 until cursor.columnCount) {
                     // if (cursor.getColumnName(idx).toString() == "date")
                         // date += cursor.getString(idx)
                 // }
-                date = cursor.getString(4)
+                // date = cursor.getString(4)
 
-                if (cursor.getString(2) != "M-Money")
+                if (cursor.getString(1) != "M-Money")
                     continue
 
-                if (checkSyncTime(context, date.toLong()))
-                    continue
+                // if (checkSyncTime(context, date.toLong()))
+                    // continue
 
                 // for (idx in 0 until cursor.columnCount) {
                     // if (cursor.getColumnName(idx).toString() == "body")
                         // msgData += cursor.getString(idx)
                 // }
-                msgData = cursor.getString(3).replace('\n', ' ').trim()
+                msgData = cursor.getString(2).replace('\n', ' ').trim()
                 // Log.d("READ_SMS", msgData.replace('\n', ' ').trim())
 
                 val m = ParseMessage().parseMessage(msgData)

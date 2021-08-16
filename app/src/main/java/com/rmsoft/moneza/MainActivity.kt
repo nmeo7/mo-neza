@@ -1,6 +1,5 @@
 package com.rmsoft.moneza
 
-import android.app.Fragment
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -12,28 +11,24 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.viewpager.widget.ViewPager
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 import com.leinardi.android.speeddial.SpeedDialView
 import com.rmsoft.moneza.home.ActionsFragment
 import com.rmsoft.moneza.home.dashboard.DashboardFragment
 import com.rmsoft.moneza.home.transactions_list.TransactionsListFragment
 import com.rmsoft.moneza.util.DataPersistence
-import com.rmsoft.moneza.util.MessageReadAll
 import eu.long1.spacetablayout.SpaceTabLayout
 import java.io.*
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var tabLayout: SpaceTabLayout
@@ -51,8 +46,8 @@ class MainActivity : AppCompatActivity() {
         tabLayout = findViewById<SpaceTabLayout>(R.id.spaceTabLayout)
 
         tabLayout.initialize(
-            viewPager, supportFragmentManager,
-            fragmentList, savedInstanceState
+                viewPager, supportFragmentManager,
+                fragmentList, savedInstanceState
         )
 
         val speedDialView = findViewById<SpeedDialView>(R.id.speedDial)
@@ -61,15 +56,14 @@ class MainActivity : AppCompatActivity() {
 
         viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {}
-            override fun onPageScrolled(position: Int,positionOffset: Float,positionOffsetPixels: Int) {}
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
 
             override fun onPageSelected(position: Int) {
                 // Check if this is the page you want.
                 if (position != 2) {
                     speedDialView.close()
                     speedDialView.visibility = View.GONE
-                }
-                else
+                } else
                     speedDialView.visibility = View.VISIBLE
             }
         })
@@ -108,6 +102,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_actions, R.id.nav_transactions_list, R.id.nav_dashboard), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)*/
+
+        setNavigationViewListener()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -170,6 +166,26 @@ class MainActivity : AppCompatActivity() {
             }*/
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        // Handle navigation view item clicks here.
+        when (item.itemId) {
+            R.id.nav_dashboard -> {
+                DataPersistence(this).reset()
+            }
+        }
+
+        Log.i("NavigationItemSelected", item.toString())
+        //close navigation drawer
+        val mDrawerLayout = findViewById<DrawerLayout>(R.id.activity_main)
+        mDrawerLayout.closeDrawer(GravityCompat.START)
+        return true
+    }
+
+    private fun setNavigationViewListener() {
+        val navigationView = findViewById<View>(R.id.nav_view) as NavigationView
+        navigationView.setNavigationItemSelectedListener(this)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

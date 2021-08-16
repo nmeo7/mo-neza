@@ -105,10 +105,10 @@ open class Message : RealmObject() {
         return format.format(date)
     }
 
-    fun parseAmount (num : Int) : String {
+    fun parseAmount (num : Number) : String {
         var ret = ""
 
-        for (i in 0..num.toString().length - 1)
+        for (i in num.toString().indices)
         {
             if (i % 3 == 0)
                 ret = " $ret";

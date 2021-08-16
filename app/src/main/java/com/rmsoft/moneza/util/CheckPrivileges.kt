@@ -46,6 +46,11 @@ class CheckPrivileges (private var context: Context, private var activity: Activ
         return runtimeAskPrivileges (Manifest.permission.CALL_PHONE)
     }
 
+    fun requestReadContactPermission () : Boolean
+    {
+        return runtimeAskPrivileges (Manifest.permission.READ_CONTACTS)
+    }
+
     fun requestCameraPermission () : Boolean
     {
         return runtimeAskPrivileges (Manifest.permission.CAMERA)

@@ -51,6 +51,7 @@ class ParseMessage {
         st = st.replace(" from ", "\nMY_ACCOUNT ")
         st = st.replace(" at 20", "\nTIME 20")
         st = st.replace(" . Fee was: ", "\nFEE ")
+        st = st.replace(" .Fee was: ", "\nFEE ")
         st = st.replace(" RWF. New balance: ", "\nBALANCE ")
         st = st.replace(" . New balance: ", "\nBALANCE ")
         st = st.replace(" RWF. ", "\nEXTRA ")
@@ -66,7 +67,7 @@ class ParseMessage {
             st = st.replace(" . Your new balance:", "\nBALANCE ")
             st = st.replace(" RWF.", "\nEXTRA ")
         }
-        if (st.startsWith("*134*R")) {
+        else if (st.startsWith("*134*R")) {
             st = st.replace("*134*R*You have received ", "\nAMOUNT ")
             st = st.replace(" RWF from ", "\nSENDER ")
             st = st.replace(" on your mobile money account at ", "\nTIME ")
@@ -100,10 +101,10 @@ class ParseMessage {
             st = st.replace(" RWF . Message: ", "\nMESSAGE ")
             st = st.replace(". *EN#", "\nEXTRA ")
         }
-        if (st.startsWith("=*161*")) {
+        else if (st.startsWith("=*161*")) {
             st = st.replace("=*161*TxId:", "\nTRANSACTION_ID ")
             st = st.replace("*S*Your payment of ", "\nAMOUNT ")
-            st = st.replace(" RWF to ", "\nRECEIVER ")
+            st = st.replace(" RWF to ", "\nRECIPIENT ")
             st = st.replace(" has been completed at ", "\nTIME ")
             st = st.replace(". Message: ", "\nMESSAGE ")
             st = st.replace(". Your new balance: ", "\nBALANCE ")
@@ -112,9 +113,9 @@ class ParseMessage {
             st = st.replace(". External Transaction Id: ", "\nEXTERNAL_TX_ID ")
             st = st.replace(".*EN#", "\nEXTRAS ")
         }
-        if (st.startsWith("*164*S")) {
+        else if (st.startsWith("*164*S")) {
             st = st.replace("*164*S*Y'ello,A transaction of ", "\nAMOUNT ")
-            st = st.replace(" RWF by ", "\nRECEIVER ")
+            st = st.replace(" RWF by ", "\nRECIPIENT ")
             st = st.replace(" on your MOMO account was successfully completed at ", "\nTIME ")
             st = st.replace(". Message from debit receiver: ", "\nMESSAGE ")
             st = st.replace(". Your new balance:", "\nBALANCE ")
@@ -136,7 +137,7 @@ class ParseMessage {
         if (messageType(msg) == Type.WITHDRAWAL) msg1 = parseWithdrawal(msg)
         if (messageType(msg) == Type.OTHER) Log.d("READ_MOMO", msg)
         val r = toDict(msg1)
-        // Log.d("READ_MOMO", r.toString())
+        Log.d("PARSE_MOMO", r.toString())
 
         return r
     }

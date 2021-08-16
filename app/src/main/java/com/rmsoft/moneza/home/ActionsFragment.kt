@@ -1,8 +1,11 @@
 package com.rmsoft.moneza.home
 
+import android.app.Activity
 import android.content.Intent
+import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
@@ -15,8 +18,8 @@ import android.view.View.OnTouchListener
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
-import com.example.flatdialoglibrary.dialog.FlatDialog
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.rmsoft.moneza.R
@@ -31,8 +34,8 @@ import com.rmsoft.moneza.util.DataPersistence
 class ActionsFragment : Fragment() {
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
 
@@ -40,6 +43,11 @@ class ActionsFragment : Fragment() {
         dataPersistence.find()
 
         return inflater.inflate(R.layout.fragment_actions, container, false)
+    }
+
+    private fun setButtonText ()
+    {
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -64,6 +72,30 @@ class ActionsFragment : Fragment() {
             }
         }
 
+        val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val contactUri = result.data!!.data!!
+
+                val cursor = context?.contentResolver?.query(contactUri, null,null, null, null);
+
+                Log.i ("PEOPLE", contactUri.toString())
+
+                // If the cursor returned is valid, get the phone number
+                if (cursor != null && cursor.moveToFirst()) {
+                    val numberIndex = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)
+                    var num = cursor.getString(numberIndex)
+                    Log.i ("PEOPLE", num)
+                    if (num.startsWith("+25"))
+                        num = num.replace("+25", "")
+                    number.setText(num)
+                    Log.i ("PEOPLE", num)
+                }
+
+                cursor?.close();
+            }
+        }
+
+
         number.setOnTouchListener(OnTouchListener { v, event ->
             val DRAWABLE_LEFT = 0
             val DRAWABLE_TOP = 1
@@ -73,9 +105,18 @@ class ActionsFragment : Fragment() {
                 if (event.rawX >= number.right - number.compoundDrawables[DRAWABLE_RIGHT].bounds.width()) {
                     // your action here
                     Log.i("clicked", "clicked")
+
+                    if (!CheckPrivileges(requireContext(), requireActivity()).requestReadContactPermission())
+                    {
+                        val i = Intent(Intent.ACTION_PICK)
+                        i.type = ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE
+                        resultLauncher.launch(i)
+                    }
+
                     v.performClick()
                     true
                 }
+                /*
                 if (event.rawX <= number.left + number.compoundDrawables[DRAWABLE_LEFT].bounds.width() + 64) {
                     val flatDialog = FlatDialog(requireContext())
                     flatDialog.setTitle("Login")
@@ -96,6 +137,7 @@ class ActionsFragment : Fragment() {
                     v.performClick()
                     true
                 }
+                */
             }
             v.performClick()
             false
@@ -108,8 +150,25 @@ class ActionsFragment : Fragment() {
             numberValue = number.text.toString().replace(" ", "")
             amountValue = amount.text.toString().replace(" ", "")
 
+            if (numberValue == "" && amountValue == "")
+            {
+                var ussdCode = "*182*7*2#"
+                Log.i("ussdCode", ussdCode)
 
-            if (numberValue.startsWith("07") && numberValue.length == 10)
+                ussdCode = ussdCode.substring(0, ussdCode.length - 1)
+                val ussdCodeNew = ussdCode + Uri.encode("#")
+                startActivity(Intent(Intent.ACTION_CALL, Uri.parse("tel:$ussdCodeNew")))
+            }
+            else if (numberValue == "" && amountValue.isNotEmpty())
+            {
+                var ussdCode = "*182*2*1*1*1*$amountValue#"
+                Log.i("ussdCode", ussdCode)
+
+                ussdCode = ussdCode.substring(0, ussdCode.length - 1)
+                val ussdCodeNew = ussdCode + Uri.encode("#")
+                startActivity(Intent(Intent.ACTION_CALL, Uri.parse("tel:$ussdCodeNew")))
+            }
+            else if (numberValue.startsWith("07") && numberValue.length == 10)
             {
                 var ussdCode = "*182*1*1*$numberValue*$amountValue#"
                 Log.i("ussdCode", ussdCode)
@@ -187,7 +246,7 @@ class ActionsFragment : Fragment() {
 
                 if ((newValue.startsWith("07") && newValue.length <= 10) || newValue == "0") {
                     for (i in newValue.indices) {
-                        if (i == 4 || i == 6 || i == 8)
+                        if (i == 4 || i == 7)
                             ret += " "
                         ret += newValue[i]
                     }
@@ -223,8 +282,12 @@ class ActionsFragment : Fragment() {
                     ret = newValue
                 }
 
+                if (newValue == "" && numberValue == "") {
+                    button?.text = "Kubikuza"
+                }
+
                 number.setText(ret.trim())
-                number.setSelection(number.length()-0)
+                number.setSelection(number.length() - 0)
             }
         }
     }
@@ -250,7 +313,16 @@ class ActionsFragment : Fragment() {
                 }
 
                 amount.setText(ret.trim())
-                amount.setSelection(amount.length()-0)
+                amount.setSelection(amount.length() - 0)
+            }
+
+            val button = view?.findViewById<Button>(R.id.action_balance)
+            if (newValue.isNotEmpty() && numberValue == "") {
+                button?.text = "Kwigurira ama unite"
+            }
+
+            if (newValue == "" && numberValue == "") {
+                button?.text = "Kubikuza"
             }
         }
     }

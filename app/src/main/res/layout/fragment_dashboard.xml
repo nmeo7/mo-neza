@@ -288,25 +288,29 @@
                     android:layout_columnWeight="3"
                     android:text="Mean per day:"
                     android:paddingTop="20dp"
-                    android:layout_marginBottom="8dp"/>
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:layout_columnWeight="2"
                     android:text="100"
                     android:paddingTop="20dp"
                     android:layout_marginBottom="8dp"
-                    android:gravity="end" />
+                    android:gravity="end"
+                    android:visibility="gone" />
 
                 <TextView
                     android:layout_columnWeight="3"
                     android:text="median (per day too):"
-                    android:layout_marginBottom="8dp" />
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone" />
 
                 <TextView
                     android:layout_columnWeight="2"
                     android:text="100"
                     android:layout_marginBottom="8dp"
-                    android:gravity="end" />
+                    android:gravity="end"
+                    android:visibility="gone" />
 
                 <TextView
                     android:layout_columnWeight="3"
