@@ -6,12 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.l4digital.fastscroll.FastScroller
 import com.rmsoft.moneza.R
+import com.rmsoft.moneza.StateMachine
 import com.rmsoft.moneza.util.DataPersistence
+import com.rmsoft.moneza.util.Message
 import com.rmsoft.moneza.util.MessageReadAll
 
 
@@ -55,7 +58,16 @@ class TransactionsListFragment : Fragment(), SwipeRefreshLayout.OnRefreshListene
             // mSwipeRefreshLayout.isRefreshing = true
         })
 
+
     }
+
+    private val viewModel: StateMachine by activityViewModels()
+
+
+    fun onItemClicked(item: Message) {
+        viewModel.selectMessage(item)
+    }
+
 
     override fun onRefresh() {
         val mSwipeRefreshLayout = view?.findViewById(R.id.swipe_container) as SwipeRefreshLayout
@@ -77,7 +89,14 @@ class TransactionsListFragment : Fragment(), SwipeRefreshLayout.OnRefreshListene
         val messages = DataPersistence(requireActivity()).find ()
         // MessageReadAll(requireActivity(), false).readMessages(requireContext())
 
-        adapter2 = TransactionsAdapter(messages)
+        val listener = object: OnItemClickListener {
+            override fun onItemClick(item: Message?) {
+                Log.i("onItemClick", item?.subject!!)
+                onItemClicked (item)
+            }
+        }
+
+        adapter2 = TransactionsAdapter(messages, listener)
         // Attach the adapter to the recyclerview to populate items
         rvContacts.adapter = adapter2
         rvContacts.adapter?.notifyDataSetChanged()

@@ -1,10 +1,8 @@
 package com.rmsoft.moneza.home.transactions_list
 
-import android.content.ClipData.Item
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -13,7 +11,7 @@ import com.rmsoft.moneza.R
 import com.rmsoft.moneza.util.Message
 
 
-class TransactionsAdapter(private val transactions: List<Message>) : RecyclerView.Adapter<RecyclerView.ViewHolder>(), FastScroller.SectionIndexer
+class TransactionsAdapter(private val transactions: List<Message>, private val listener: OnItemClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>(), FastScroller.SectionIndexer
 {
     private val TYPE_ONE = 0
     private val TYPE_TWO = 1
@@ -94,6 +92,8 @@ class TransactionsAdapter(private val transactions: List<Message>) : RecyclerVie
             viewHolder.icon.setImageResource(R.drawable.ic_receive)
         else
             viewHolder.icon.setImageResource(R.drawable.ic_send)
+
+        viewHolder.bind(message, listener)
     }
 
     private fun initLayoutTwo(viewHolder: ViewHolderTwo, position: Int) {
@@ -103,6 +103,7 @@ class TransactionsAdapter(private val transactions: List<Message>) : RecyclerVie
         date.text = contact.subject
     }
 
+    val self = this
 
     // Static inner class to initialize the views of rows
     internal class ViewHolderOne(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -114,10 +115,14 @@ class TransactionsAdapter(private val transactions: List<Message>) : RecyclerVie
         val type: TextView = itemView.findViewById(R.id.type)
         val icon: ImageView = itemView.findViewById(R.id.item_icon)
 
+        private lateinit var transaction : Message
+
+        fun bind(message: Message, listener: OnItemClickListener) {
+            itemView.setOnClickListener { listener.onItemClick(message) }
+        }
     }
 
     internal class ViewHolderTwo(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val date: TextView = itemView.findViewById(R.id.date)
-
     }
 }

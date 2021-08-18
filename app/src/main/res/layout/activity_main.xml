@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             app:layout_behavior="eu.long1.spacetablayout.SpaceTabLayoutBehavior"
             app:number_of_tabs="three"
-            app:starting_position="one"
+            app:starting_position="two"
             app:tab_color="@color/colorPrimary"
             app:button_color="@color/colorAccent"
             app:text_color="@color/colorPrimaryDark"

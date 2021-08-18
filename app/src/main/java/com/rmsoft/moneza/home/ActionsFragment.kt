@@ -20,9 +20,12 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.rmsoft.moneza.R
+import com.rmsoft.moneza.StateMachine
 import com.rmsoft.moneza.actions.ActionsActivity
 import com.rmsoft.moneza.util.CheckPrivileges
 import com.rmsoft.moneza.util.DataPersistence
@@ -32,6 +35,8 @@ import com.rmsoft.moneza.util.DataPersistence
  * A simple [Fragment] subclass.
  */
 class ActionsFragment : Fragment() {
+
+    private val viewModel: StateMachine by activityViewModels()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -207,6 +212,12 @@ class ActionsFragment : Fragment() {
                 startActivity(Intent(Intent.ACTION_CALL, Uri.parse("tel:$ussdCodeNew")))
             }
         }
+
+        viewModel.selectedMessage.observe(viewLifecycleOwner, Observer { message ->
+            amount.setText(message.amount.toString())
+            number.setText(message.subjectNumber)
+        })
+
     }
 
 
