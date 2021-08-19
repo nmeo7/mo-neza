@@ -16,8 +16,24 @@
 
     <group android:id="@+id/grp2">
         <item
+            android:id="@+id/withdrawal"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Kubikuza" />
+        <item
+            android:id="@+id/balance_2"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Kureba Asigaye" />
+        <item
+            android:id="@+id/hashcode"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="*128#" />
+    </group>
+
+    <group android:id="@+id/grp3">
+        <item
             android:id="@+id/nav_dashboard"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Reset" />
+            android:iconTint="@color/red"
+            android:title="Gutangira byose" />
     </group>
 </menu>

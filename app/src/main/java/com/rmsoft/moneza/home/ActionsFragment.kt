@@ -29,6 +29,7 @@ import com.rmsoft.moneza.StateMachine
 import com.rmsoft.moneza.actions.ActionsActivity
 import com.rmsoft.moneza.util.CheckPrivileges
 import com.rmsoft.moneza.util.DataPersistence
+import com.rmsoft.moneza.util.Message
 
 
 /**
@@ -211,6 +212,12 @@ class ActionsFragment : Fragment() {
                 val ussdCodeNew = ussdCode + Uri.encode("#")
                 startActivity(Intent(Intent.ACTION_CALL, Uri.parse("tel:$ussdCodeNew")))
             }
+
+            val item = Message()
+            item.subjectNumber = numberValue
+            item.amount = amountValue.toInt()
+
+            viewModel.selectMessage(item)
         }
 
         viewModel.selectedMessage.observe(viewLifecycleOwner, Observer { message ->

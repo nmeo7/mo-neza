@@ -22,7 +22,7 @@ class ParseMessage {
             ret.setContent(key, value)
         }
 
-        ret.makeHash(st)
+        ret.makeHash()
         return ret
     }
 

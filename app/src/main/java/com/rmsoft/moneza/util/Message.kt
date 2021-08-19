@@ -55,12 +55,14 @@ open class Message : RealmObject() {
         }
     }
 
-    fun makeHash (message : String) {
+    fun makeHash () {
 
         val md = MessageDigest.getInstance("MD5")
         hash = BigInteger(
                 1,
-                md.digest(message.toByteArray())).toString(16).padStart(32,
+                md.digest(
+                        subject?.toByteArray()!! + time.toString().toByteArray() + amount.toString().toByteArray() + balance.toString().toByteArray()))
+                .toString(16).padStart(32,
                 '0')
     }
 

@@ -29,6 +29,7 @@ import com.rmsoft.moneza.home.ActionsFragment
 import com.rmsoft.moneza.home.dashboard.DashboardFragment
 import com.rmsoft.moneza.home.transactions_list.TransactionsListFragment
 import com.rmsoft.moneza.util.DataPersistence
+import com.rmsoft.moneza.util.Message
 import com.rmsoft.moneza.util.MessageReceiver
 import com.tapadoo.alerter.Alerter
 import eu.long1.spacetablayout.SpaceTabLayout
@@ -41,15 +42,22 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var tabLayout: SpaceTabLayout
 
     private val viewModel: StateMachine by viewModels()
+    var currentNumber = ""
 
-    fun notifySmsReceived(strMessage: String) {
-        Log.d("notifySmsReceived", "onReceive: $strMessage")
+    fun notifySmsReceived(message: Message) {
+        // Log.d("notifySmsReceived", "onReceive: $strMessage")
 
         Alerter.create(this)
-                .setTitle("Payment Completed")
-                .setText(strMessage)
-                .addButton("Ok", 0) {}
-                .setDuration(10000)
+                .setTitle("Kwishyura " + message.subject!!)
+                .setText("Waba wifuza kuyihuza na kode $currentNumber?")
+                .setBackgroundColorRes(R.color.colorPrimaryDark)
+                .addButton("Ok", R.style.AlertButton) {
+                    message.subjectNumber = currentNumber.replace(" ", "")
+                    DataPersistence(this).save(message)
+                    Log.i("Connect", message.toString())
+                    Alerter.hide()
+                }
+                .setDuration(24000)
                 .show()
     }
 
@@ -127,11 +135,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         viewModel.selectedMessage.observe(this, Observer { item ->
             viewPager.setCurrentItem(1, true)
+            if (item != null) {
+                if (item.subjectNumber != null)
+                    currentNumber = item.subjectNumber!!
+            }
         })
 
-        val messageReceiver = MessageReceiver(this)
-        val filter = IntentFilter("android.provider.Telephony.SMS_RECEIVED")
-        registerReceiver(messageReceiver, filter)
+        // val messageReceiver = MessageReceiver(this)
+        // val filter = IntentFilter("android.provider.Telephony.SMS_RECEIVED")
+        // registerReceiver(messageReceiver, filter)
 
     }
 

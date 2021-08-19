@@ -7,9 +7,9 @@ import androidx.collection.ArrayMap
 import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.Sort
-import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.Exception
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
@@ -30,9 +30,14 @@ class DataPersistence constructor (var context: Context) {
     fun save (m: Message) {
         val mRealm = Realm.getInstance(config)
 
-        mRealm.beginTransaction()
-        mRealm.copyToRealmOrUpdate(m)
-        mRealm.commitTransaction()
+        val x = mRealm.where(Message::class.java).equalTo("hash", m.hash).count()
+
+        if (x == 0L)
+        {
+            mRealm.beginTransaction()
+            mRealm.copyToRealm(m)
+            mRealm.commitTransaction()
+        }
     }
 
     fun find () : ArrayList<Message>
