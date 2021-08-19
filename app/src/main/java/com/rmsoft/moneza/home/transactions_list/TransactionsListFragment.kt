@@ -79,7 +79,7 @@ class TransactionsListFragment : Fragment(), SwipeRefreshLayout.OnRefreshListene
 
     private fun reReadMessages () {
         Log.i("MessageReadAll", "Starting...")
-        MessageReadAll(requireActivity(), true).readMessages(requireContext())
+        MessageReadAll(requireActivity(), true).readMessages(requireContext(), requireActivity())
         Log.i("MessageReadAll", "Done.")
     }
 

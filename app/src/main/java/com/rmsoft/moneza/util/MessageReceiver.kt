@@ -7,9 +7,9 @@ import android.content.Intent
 import android.os.Build
 import android.telephony.SmsMessage
 import android.util.Log
-import android.widget.Toast
+import com.rmsoft.moneza.MainActivity
 
-class MessageReceiver : BroadcastReceiver() {
+class MessageReceiver() : BroadcastReceiver() {
 
     private val TAG: String = "Sms Receiver"
     val pdu_type = "pdus"
@@ -17,6 +17,9 @@ class MessageReceiver : BroadcastReceiver() {
     @TargetApi(Build.VERSION_CODES.M)
     @Override
     override fun onReceive(context: Context, intent: Intent) {
+
+        // val persistence = DataPersistence(this)
+
         // Get the SMS message.
         val bundle = intent.extras
         val msgs: Array<SmsMessage?>
@@ -46,14 +49,13 @@ class MessageReceiver : BroadcastReceiver() {
                 strMessage += "SMS from " + msgs[i]?.originatingAddress
                 strMessage += """ :${msgs[i]?.messageBody.toString()}"""
                 // Log and display the SMS message.
-                Log.d(TAG, "onReceive: $strMessage")
-                Toast.makeText(context, strMessage, Toast.LENGTH_LONG).show()
 
+                // maContext.notifySmsReceived(strMessage)
 
                 if (msgs[i]?.originatingAddress == "")
                 {
                     val m = ParseMessage().parseMessage (msgs[i]?.messageBody.toString())
-                    // DataPersistence(activity) ???
+                    DataPersistence(context)
                     // maybe here find a way to save data locally before persisting it to the realm database
                 }
             }

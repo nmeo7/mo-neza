@@ -1,6 +1,7 @@
 package com.rmsoft.moneza.util
 
 import android.app.Activity
+import android.content.Context
 import android.util.Log
 import androidx.collection.ArrayMap
 import io.realm.Realm
@@ -12,7 +13,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
-class DataPersistence constructor (var context: Activity) {
+class DataPersistence constructor (var context: Context) {
 
     private var config : RealmConfiguration
 

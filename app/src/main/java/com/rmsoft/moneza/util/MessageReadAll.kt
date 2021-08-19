@@ -19,7 +19,7 @@ import java.io.InputStreamReader
 import java.util.*
 
 
-class MessageReadAll(private val activity: Activity, private var fromSms: Boolean = true) {
+class MessageReadAll(private val activity: Context, private var fromSms: Boolean = true) {
     private val persistence = DataPersistence(activity)
     private val MY_PREFS_NAME = "PREFS"
 
@@ -81,7 +81,7 @@ class MessageReadAll(private val activity: Activity, private var fromSms: Boolea
         return contacts
     }
 
-    private fun readMessagesFromSmss(context: Context) : ArrayList<Message>
+    private fun readMessagesFromSmss(context: Context, activity: Activity) : ArrayList<Message>
     {
         val contacts = ArrayList<Message>()
 
@@ -144,50 +144,12 @@ class MessageReadAll(private val activity: Activity, private var fromSms: Boolea
     // Request code for creating a PDF document.
     val CREATE_FILE = 1
 
-    fun createFile(pickerInitialUri: Uri) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)
-            return
-
-        val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
-                addCategory(Intent.CATEGORY_OPENABLE)
-                type = "text/plain"
-                putExtra(Intent.EXTRA_TITLE, "example.txt")
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    putExtra(DocumentsContract.EXTRA_INITIAL_URI, pickerInitialUri)
-                }
-            }
-
-        activity.startActivityForResult(intent, CREATE_FILE)
-    }
-
-    val PICK_PDF_FILE = 2
-
-    fun openFile(pickerInitialUri: Uri) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)
-            return
-
-        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
-            addCategory(Intent.CATEGORY_OPENABLE)
-            type = "text/plain"
-
-            // Optionally, specify a URI for the file that should appear in the
-            // system file picker when it loads.
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                putExtra(DocumentsContract.EXTRA_INITIAL_URI, pickerInitialUri)
-            }
-        }
-
-        activity.startActivityForResult(intent, PICK_PDF_FILE)
-
-    }
 
 
-
-    fun readMessages(context: Context) : ArrayList<Message>
+    fun readMessages(context: Context, activity: Activity) : ArrayList<Message>
     {
         if (fromSms)
-            return readMessagesFromSmss(context)
+            return readMessagesFromSmss(context, activity)
         else
             return readMessagesFromFile(context)
     }

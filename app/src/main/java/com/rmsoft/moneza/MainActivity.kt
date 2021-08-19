@@ -1,6 +1,7 @@
 package com.rmsoft.moneza
 
 import android.content.Intent
+import android.content.IntentFilter
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -9,12 +10,14 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -26,6 +29,7 @@ import com.rmsoft.moneza.home.ActionsFragment
 import com.rmsoft.moneza.home.dashboard.DashboardFragment
 import com.rmsoft.moneza.home.transactions_list.TransactionsListFragment
 import com.rmsoft.moneza.util.DataPersistence
+import com.rmsoft.moneza.util.MessageReceiver
 import eu.long1.spacetablayout.SpaceTabLayout
 import java.io.*
 
@@ -37,6 +41,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private val viewModel: StateMachine by viewModels()
 
+    fun notifySmsReceived(strMessage: String) {
+        Log.d("notifySmsReceived", "onReceive: $strMessage")
+        Toast.makeText(this, strMessage, Toast.LENGTH_LONG).show()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -115,6 +123,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         })
 
 
+        // val fltr_smsreceived = IntentFilter("android.provider.Telephony.SMS_RECEIVED")
+        // registerReceiver(BR_smsreceiver, fltr_smsreceived)
+        // val smsReceiver = MessageReceiver(this) //passing context
+        // LocalBroadcastManager.getInstance(this).registerReceiver(smsReceiver, fltr_smsreceived)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
