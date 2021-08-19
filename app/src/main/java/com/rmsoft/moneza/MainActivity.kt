@@ -30,6 +30,7 @@ import com.rmsoft.moneza.home.dashboard.DashboardFragment
 import com.rmsoft.moneza.home.transactions_list.TransactionsListFragment
 import com.rmsoft.moneza.util.DataPersistence
 import com.rmsoft.moneza.util.MessageReceiver
+import com.tapadoo.alerter.Alerter
 import eu.long1.spacetablayout.SpaceTabLayout
 import java.io.*
 
@@ -43,7 +44,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     fun notifySmsReceived(strMessage: String) {
         Log.d("notifySmsReceived", "onReceive: $strMessage")
-        Toast.makeText(this, strMessage, Toast.LENGTH_LONG).show()
+
+        Alerter.create(this)
+                .setTitle("Payment Completed")
+                .setText(strMessage)
+                .addButton("Ok", 0) {}
+                .setDuration(10000)
+                .show()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -122,11 +129,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             viewPager.setCurrentItem(1, true)
         })
 
+        val messageReceiver = MessageReceiver(this)
+        val filter = IntentFilter("android.provider.Telephony.SMS_RECEIVED")
+        registerReceiver(messageReceiver, filter)
 
-        // val fltr_smsreceived = IntentFilter("android.provider.Telephony.SMS_RECEIVED")
-        // registerReceiver(BR_smsreceiver, fltr_smsreceived)
-        // val smsReceiver = MessageReceiver(this) //passing context
-        // LocalBroadcastManager.getInstance(this).registerReceiver(smsReceiver, fltr_smsreceived)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

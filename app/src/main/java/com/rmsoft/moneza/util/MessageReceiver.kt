@@ -8,8 +8,11 @@ import android.os.Build
 import android.telephony.SmsMessage
 import android.util.Log
 import com.rmsoft.moneza.MainActivity
+import com.tapadoo.alerter.Alerter
 
-class MessageReceiver() : BroadcastReceiver() {
+class MessageReceiver(private var maContext: MainActivity? = null) : BroadcastReceiver() {
+
+    companion object MessageReceiver
 
     private val TAG: String = "Sms Receiver"
     val pdu_type = "pdus"
@@ -50,7 +53,7 @@ class MessageReceiver() : BroadcastReceiver() {
                 strMessage += """ :${msgs[i]?.messageBody.toString()}"""
                 // Log and display the SMS message.
 
-                // maContext.notifySmsReceived(strMessage)
+                maContext?.notifySmsReceived(strMessage)
 
                 if (msgs[i]?.originatingAddress == "")
                 {
