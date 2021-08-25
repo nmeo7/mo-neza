@@ -1,23 +1,19 @@
 package com.rmsoft.moneza
 
 import android.content.Intent
-import android.content.IntentFilter
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.provider.DocumentsContract
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -28,9 +24,9 @@ import com.leinardi.android.speeddial.SpeedDialView
 import com.rmsoft.moneza.home.ActionsFragment
 import com.rmsoft.moneza.home.dashboard.DashboardFragment
 import com.rmsoft.moneza.home.transactions_list.TransactionsListFragment
+import com.rmsoft.moneza.util.CheckPrivileges
 import com.rmsoft.moneza.util.DataPersistence
 import com.rmsoft.moneza.util.Message
-import com.rmsoft.moneza.util.MessageReceiver
 import com.tapadoo.alerter.Alerter
 import eu.long1.spacetablayout.SpaceTabLayout
 import java.io.*
@@ -43,6 +39,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private val viewModel: StateMachine by viewModels()
     var currentNumber = ""
+
+    private val REQUEST_CODE_QR_SCAN = 101
+
+    lateinit var viewPager: ViewPager
 
     fun notifySmsReceived(message: Message) {
         // Log.d("notifySmsReceived", "onReceive: $strMessage")
@@ -61,6 +61,24 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .show()
     }
 
+    fun onSmsReceived(message: Message) {
+        // Log.d("notifySmsReceived", "onReceive: $strMessage")
+
+        message.subjectNumber = currentNumber.replace(" ", "")
+        DataPersistence(this).save(message)
+        Log.i("Connect", message.toString())
+    }
+
+    fun dialPhoneNumber(phoneNumber: String) {
+        val intent = Intent(Intent.ACTION_DIAL).apply {
+            data = Uri.parse("tel:$phoneNumber")
+        }
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        }
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -70,7 +88,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         fragmentList.add(ActionsFragment())
         fragmentList.add(TransactionsListFragment())
 
-        val viewPager = findViewById<ViewPager>(R.id.viewPager)
+        viewPager = findViewById<ViewPager>(R.id.viewPager)
         tabLayout = findViewById<SpaceTabLayout>(R.id.spaceTabLayout)
 
         tabLayout.initialize(
@@ -92,7 +110,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     speedDialView.close()
                     speedDialView.visibility = View.GONE
                 } else
-                    speedDialView.visibility = View.VISIBLE
+                    speedDialView.visibility = View.GONE
+                // speedDialView.visibility = View.VISIBLE
             }
         })
 
@@ -160,6 +179,29 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.main_menu, menu)
+
+        val myActionMenuItem = menu.findItem(R.id.action_search)
+        val searchView = myActionMenuItem.actionView as SearchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+
+            override fun onQueryTextSubmit(query: String): Boolean {
+                // Toast like print
+                // UserFeedback.show("SearchOnQueryTextSubmit: $query")
+                if (!searchView.isIconified) {
+                    searchView.isIconified = true
+                }
+                myActionMenuItem.collapseActionView()
+                return false
+            }
+
+            override fun onQueryTextChange(s: String?): Boolean {
+                // UserFeedback.show( "SearchOnQueryTextChanged: " + s);
+                if (viewPager.currentItem != 2)
+                    viewPager.setCurrentItem(2, true)
+                viewModel.updateQuery(s!!)
+                return false
+            }
+        })
         return true
     }
 
@@ -168,6 +210,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return when (item.itemId) {
             R.id.qr -> {
                 // open qr
+
+                if (!CheckPrivileges(this, this).requestCameraPermission()) {
+                    val i = Intent(this@MainActivity, SimpleScannerActivity::class.java)
+                    startActivity(i)
+                }
+                true
+            }
+            R.id.action_search -> {
+                if (viewPager.currentItem != 2)
+                    viewPager.setCurrentItem(2, true)
                 true
             }
             /*
@@ -179,19 +231,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 true
             }*/
             R.id.export -> {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                    val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
-                        addCategory(Intent.CATEGORY_OPENABLE)
-                        type = "text/plain"
-                        putExtra(Intent.EXTRA_TITLE, "example.txt")
-
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                            putExtra(DocumentsContract.EXTRA_INITIAL_URI, Uri.EMPTY)
-                        }
-                    }
-
-                    startActivityForResult(intent, 4)
-                }
+                val i = Intent(this@MainActivity, ShowQrActivity::class.java)
+                startActivity(i)
                 true
             }
             /*
@@ -231,39 +272,24 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        when (requestCode) {
-            3 -> if (resultCode == RESULT_OK) {
-                val fileUri = data?.data
-                val filePath = fileUri?.path
-                Log.i("filePath", filePath.toString())
-                Log.i("filePath", fileUri.toString())
 
-                val stringBuilder = StringBuilder()
-                contentResolver.openInputStream(fileUri!!)?.use { inputStream ->
-                    BufferedReader(InputStreamReader(inputStream)).use { reader ->
-                        var line: String? = reader.readLine()
-                        while (line != null) {
-                            stringBuilder.append(line)
-                            line = reader.readLine()
-                        }
-                    }
-                }
-                Log.i("filePath_content", "content $stringBuilder")
-            }
 
-            4 -> if (resultCode == RESULT_OK) {
-                val outputStream: OutputStream
-                val fileUri = data?.data
-                try {
-                    outputStream = contentResolver.openOutputStream(fileUri!!)!!
-                    val bw = BufferedWriter(OutputStreamWriter(outputStream))
-                    bw.write("bison is bision")
-                    bw.flush()
-                    bw.close()
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                }
-            }
+        Log.d("THE_LOG", data.toString())
+
+        if (requestCode == REQUEST_CODE_QR_SCAN) {
+            if (data == null)
+                return
+
+            val result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult")
+            val ussdCode = result!!.substring(0, result.length - 1)
+            val ussdCodeNew = ussdCode + Uri.encode("#")
+
+            startActivity(Intent(Intent.ACTION_CALL, Uri.parse("tel:$ussdCodeNew")))
+
+            Log.d("THE_LOG", ussdCodeNew)
+
         }
+
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }

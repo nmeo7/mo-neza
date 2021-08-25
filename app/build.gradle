@@ -70,6 +70,7 @@ dependencies {
     implementation 'com.airbnb.android:lottie:4.0.0'
     implementation 'com.github.josinSbazin:android_ExpandableLayout:0.8'
     implementation 'com.github.mejdi14:Flat-Dialog-Android:1.0.5'
+    implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.3'
 
     implementation 'com.android.support:multidex:1.0.3'
 

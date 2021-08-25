@@ -262,7 +262,8 @@
                     android:layout_columnWeight="3"
                     android:text="Yose hamwe:"
                     android:paddingTop="20dp"
-                    android:layout_marginBottom="8dp"/>
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/dash_total"
@@ -270,11 +271,12 @@
                     android:text="100"
                     android:paddingTop="20dp"
                     android:layout_marginBottom="8dp"
-                    android:gravity="end" />
+                    android:gravity="end"
+                    android:visibility="gone" />
 
                 <TextView
                     android:layout_columnWeight="3"
-                    android:text="Komisiyo yose:"
+                    android:text="Komisiyo:"
                     android:layout_marginBottom="8dp" />
 
                 <TextView

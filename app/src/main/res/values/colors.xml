@@ -2,13 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
 
-    <color name="colorPrimary">#EBCF8A</color>
-    <color name="colorPrimaryDark">#402e32</color>
-    <color name="colorAccent">#fff8e6</color>
+    <color name="colorPrimary">#FFD0E6</color>
+    <color name="colorPrimaryDark">#241333</color>
+    <color name="colorAccent">#BE80E6</color>
 
-    <color name="colorSecondary">#B5EC75</color>
-    <color name="colorSecondaryDark">#09530C</color>
+    <color name="colorSecondary">#BC54FF</color>
+    <color name="colorSecondaryDark">#C67CF6</color>
 
     <color name="red">#BC0606</color>
     <color name="yellow">#F1D90A</color>

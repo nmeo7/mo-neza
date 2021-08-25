@@ -3,17 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:id="@+id/grp1">
-        <item
-            android:id="@+id/nav_actions"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_transactions_list"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Refresh" />
-    </group>
-
     <group android:id="@+id/grp2">
         <item
             android:id="@+id/withdrawal"
@@ -29,11 +18,26 @@
             android:title="*128#" />
     </group>
 
+    <group android:id="@+id/grp1">
+        <item
+            android:id="@+id/nav_actionsx"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Amasezerano" />
+        <item
+            android:id="@+id/nav_transactions_list"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="kuri twitter" />
+    </group>
+
     <group android:id="@+id/grp3">
+        <item
+            android:id="@+id/nav_actions"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Ururimi" />
         <item
             android:id="@+id/nav_dashboard"
             android:icon="@drawable/ic_menu_slideshow"
             android:iconTint="@color/red"
-            android:title="Gutangira byose" />
+            android:title="Gusiba byose" />
     </group>
 </menu>

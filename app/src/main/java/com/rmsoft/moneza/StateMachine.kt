@@ -13,4 +13,15 @@ class StateMachine : ViewModel() {
     fun selectMessage(message: Message) {
         mutableSelectedMessage.value = message
     }
+
+
+    private val mutableSearchQuery = MutableLiveData<String>()
+    val searchQuery: LiveData<String> get() = mutableSearchQuery
+
+    fun updateQuery(query: String) {
+        mutableSearchQuery.value = query
+    }
+
+
+
 }

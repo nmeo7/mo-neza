@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -28,11 +29,15 @@ class TransactionsListFragment : Fragment(), SwipeRefreshLayout.OnRefreshListene
     }
 
     private lateinit var adapter2 : TransactionsAdapter
+    private lateinit var adapter3 : TransactionsAdapter
+    private lateinit var ads : RecyclerView
     private lateinit var rvContacts : RecyclerView
     private lateinit var fastScroller : FastScroller
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        ads = view.findViewById<View>(R.id.list3) as RecyclerView
 
         rvContacts = view.findViewById<View>(R.id.list2) as RecyclerView
         fastScroller = view.findViewById(R.id.fast_scroller) as FastScroller
@@ -59,6 +64,11 @@ class TransactionsListFragment : Fragment(), SwipeRefreshLayout.OnRefreshListene
         })
 
 
+        viewModel.searchQuery.observe(viewLifecycleOwner, Observer { query ->
+            Log.i("onQueryTextChange", query)
+            refreshAdapter (query)
+        })
+
     }
 
     private val viewModel: StateMachine by activityViewModels()
@@ -79,15 +89,32 @@ class TransactionsListFragment : Fragment(), SwipeRefreshLayout.OnRefreshListene
 
     private fun reReadMessages () {
         Log.i("MessageReadAll", "Starting...")
-        MessageReadAll(requireActivity(), true).readMessages(requireContext(), requireActivity())
+        MessageReadAll(requireActivity(), false).readMessages(requireContext(), requireActivity())
         Log.i("MessageReadAll", "Done.")
     }
 
-    private fun refreshAdapter () {
+    private fun refreshAdapter (query: String = "") {
 
         Log.i("MessageReadAll", "Starting...")
-        val messages = DataPersistence(requireActivity()).find ()
+        val messages = DataPersistence(requireActivity()).find (query)
         // MessageReadAll(requireActivity(), false).readMessages(requireContext())
+
+        val ads = arrayOf(Message(), Message())
+
+        ads[0].type = "AD"
+        ads[0].subject = "company 1"
+        ads[1].type = "AD"
+        ads[1].subject = "company 2"
+
+        if (messages.size > 3)
+            messages.add(3, ads[0])
+        else
+            messages.add(ads[0])
+
+        if (messages.size < 14)
+            messages.add(ads[1])
+        else
+            messages.add(13, ads[1])
 
         val listener = object: OnItemClickListener {
             override fun onItemClick(item: Message?) {
@@ -100,14 +127,19 @@ class TransactionsListFragment : Fragment(), SwipeRefreshLayout.OnRefreshListene
         // Attach the adapter to the recyclerview to populate items
         rvContacts.adapter = adapter2
         rvContacts.adapter?.notifyDataSetChanged()
+        adapter2.notifyDataSetChanged()
         // Set layout manager to position the items
         rvContacts.layoutManager = LinearLayoutManager(context)
         // That's all!
 
+        for (x in 0 until rvContacts.itemDecorationCount)
+            rvContacts.removeItemDecoration(rvContacts.getItemDecorationAt(x))
+
         rvContacts.addItemDecoration(HeaderItemDecoration(rvContacts) { itemPosition ->
-            if (itemPosition >= 0 && itemPosition < adapter2.itemCount) {
+            if (itemPosition >= 0 && itemPosition < messages.size)
                 messages[itemPosition].type == "DAY"
-            } else false
+            else
+                false
         })
 
         fastScroller.setSectionIndexer(adapter2)

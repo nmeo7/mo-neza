@@ -9,4 +9,11 @@
         android:title="Export"
         android:icon="@drawable/ic_sync"
         app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_loupe"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        android:title="Search"/>
 </menu>

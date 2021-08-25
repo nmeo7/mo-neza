@@ -22,7 +22,6 @@ class ParseMessage {
             ret.setContent(key, value)
         }
 
-        ret.makeHash()
         return ret
     }
 
@@ -137,6 +136,10 @@ class ParseMessage {
         if (messageType(msg) == Type.WITHDRAWAL) msg1 = parseWithdrawal(msg)
         if (messageType(msg) == Type.OTHER) Log.d("READ_MOMO", msg)
         val r = toDict(msg1)
+
+        r.text = msg
+        r.makeHash()
+
         Log.d("PARSE_MOMO", r.toString())
 
         return r

@@ -4,9 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.util.Log
 import androidx.collection.ArrayMap
-import io.realm.Realm
-import io.realm.RealmConfiguration
-import io.realm.Sort
+import io.realm.*
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.Exception
@@ -21,7 +19,7 @@ class DataPersistence constructor (var context: Context) {
         Realm.init(context)
 
         config = RealmConfiguration.Builder()
-                .name("test.db")
+                .name("messages.db")
                 .schemaVersion(1)
                 .deleteRealmIfMigrationNeeded()
                 .build()
@@ -40,7 +38,7 @@ class DataPersistence constructor (var context: Context) {
         }
     }
 
-    fun find () : ArrayList<Message>
+    fun find (query: String = "") : ArrayList<Message>
     {
         val mRealm = Realm.getInstance(config)
 
@@ -50,7 +48,22 @@ class DataPersistence constructor (var context: Context) {
 
         var day = ""
 
-        for (x in mRealm.where(Message::class.java) .like("subject", "*") .findAllSorted("time", Sort.DESCENDING)) {
+        var q : RealmQuery<Message>
+
+        if (query != "")
+        {
+            q = mRealm.where(Message::class.java).like("subject", "$query*")
+            val qq = (query + " " + query.toUpperCase(Locale.ROOT) + " " + query.capitalize(Locale.ROOT)).split(" ")
+
+            for (x in qq)
+            {
+                q = q.or().like("subject", "*$x*")
+            }
+        }
+        else
+            q = mRealm.where(Message::class.java)
+
+        for (x in q.findAllSorted("time", Sort.DESCENDING)) {
             Log.d("MOMO_READ_ALL", x.toString())
             val newDay = x.getDay()
 

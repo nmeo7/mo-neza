@@ -7,6 +7,11 @@
     android:id="@+id/transactions_list"
     tools:context=".home.transactions_list.TransactionsListFragment">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_container"
         android:layout_width="match_parent"
@@ -27,6 +32,7 @@
         app:handleColor="@color/colorPrimary"
         app:showBubble="true"
         app:showTrack="true"
+        android:showDividers="middle"
         app:bubbleSize="small"/>
 
 </FrameLayout>

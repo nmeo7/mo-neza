@@ -1,6 +1,7 @@
 package com.rmsoft.moneza.home
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.database.Cursor
 import android.net.Uri
@@ -213,11 +214,20 @@ class ActionsFragment : Fragment() {
                 startActivity(Intent(Intent.ACTION_CALL, Uri.parse("tel:$ussdCodeNew")))
             }
 
-            val item = Message()
-            item.subjectNumber = numberValue
-            item.amount = amountValue.toInt()
+            // val item = Message()
+            // item.subjectNumber = numberValue
+            // item.amount = amountValue.toInt()
 
-            viewModel.selectMessage(item)
+            // viewModel.selectMessage(item)
+
+            val sharedPref = activity?.getSharedPreferences("number_amount", Context.MODE_PRIVATE)
+            with (sharedPref?.edit()) {
+                this?.putString("NUMBER", numberValue)
+                this?.putString("AMOUNT", amountValue)
+                this?.apply()
+            }
+
+
         }
 
         viewModel.selectedMessage.observe(viewLifecycleOwner, Observer { message ->

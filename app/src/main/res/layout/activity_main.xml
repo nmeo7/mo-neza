@@ -58,11 +58,12 @@
             app:button_color="@color/colorAccent"
             app:text_color="@color/colorPrimaryDark"
             app:icon_one="@drawable/ic_dashboard"
-            app:icon_two="@drawable/ic_recent"
-            app:icon_three="@drawable/ic_actions"
-            app:text_one="Incamake"
-            app:text_two="Ibiheruka"
-            app:text_three="Ibikorwa"
+            app:icon_two="@drawable/ic_actions"
+            app:icon_three="@drawable/ic_recent"
+            app:text_one="Imibare"
+            app:text_two="Gukora Vuba"
+            app:text_three="Byose"
+            android:clipChildren="true"
             />
 
         <com.leinardi.android.speeddial.SpeedDialView

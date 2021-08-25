@@ -13,10 +13,12 @@ import android.os.Message
 import android.provider.ContactsContract
 import android.telephony.SmsMessage
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.rmsoft.moneza.MainActivity
 import com.rmsoft.moneza.R
+import com.rmsoft.moneza.StateMachine
 
 
 class MessageReceiver : BroadcastReceiver() {
@@ -73,13 +75,28 @@ class MessageReceiver : BroadcastReceiver() {
             {
                 val m = ParseMessage().parseMessage(msgBody)
                 // maybe here find a way to save data locally before persisting it to the realm database
+                var saved = false
 
-                // if (m.type == "PAYMENT")
+                if (m.type == "PAYMENT")
+                {
+                    val sharedPref = context.getSharedPreferences("number_amount", Context.MODE_PRIVATE)
+                    val amount = sharedPref.getString("AMOUNT", "0")
+                    val number = sharedPref.getString("NUMBER", "")
+
+                    if (m.amount == amount?.toInt())
+                    {
+                        m.subjectNumber = number
+                        DataPersistence(context).save(m)
+                        Log.i("Connect", m.toString())
+                        saved = true
+                    }
+                }
                     // maContext?.notifySmsReceived(m)
-                // else
+
+                if (!saved)
                     DataPersistence(context).save(m)
 
-                showNotification(context)
+                // showNotification(context)
             }
         }
     }

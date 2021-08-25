@@ -21,6 +21,7 @@ open class Message : RealmObject() {
     var transactionId: String? = null
     var subject: String? = null
     var subjectNumber: String? = null
+    var alias: String? = null
     var message: String? = null
 
     fun setContent(key: String, value : String)
@@ -53,6 +54,9 @@ open class Message : RealmObject() {
             if (s.size > 1)
                 subjectNumber = "0" + s[1].replace(")", "")
         }
+
+        if (key == "ALIAS")
+            alias = value
     }
 
     fun makeHash () {
@@ -60,8 +64,7 @@ open class Message : RealmObject() {
         val md = MessageDigest.getInstance("MD5")
         hash = BigInteger(
                 1,
-                md.digest(
-                        subject?.toByteArray()!! + time.toString().toByteArray() + amount.toString().toByteArray() + balance.toString().toByteArray()))
+                md.digest(text?.toByteArray()!! ))
                 .toString(16).padStart(32,
                 '0')
     }

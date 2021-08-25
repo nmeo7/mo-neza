@@ -15,6 +15,7 @@ class TransactionsAdapter(private val transactions: List<Message>, private val l
 {
     private val TYPE_ONE = 0
     private val TYPE_TWO = 1
+    private val TYPE_AD = 2
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
@@ -22,6 +23,10 @@ class TransactionsAdapter(private val transactions: List<Message>, private val l
             TYPE_ONE -> {
                 val view: View = LayoutInflater.from(parent.context).inflate(R.layout.layout_transaction_row, parent, false)
                 ViewHolderOne(view)
+            }
+            TYPE_AD -> {
+                val view: View = LayoutInflater.from(parent.context).inflate(R.layout.layout_ad_row, parent, false)
+                ViewHolderAd(view)
             }
             TYPE_TWO -> {
                 val view: View = LayoutInflater.from(parent.context).inflate(R.layout.layout_date_row, parent, false)
@@ -39,6 +44,7 @@ class TransactionsAdapter(private val transactions: List<Message>, private val l
         when (holder.itemViewType) {
             TYPE_ONE -> initLayoutOne(holder as ViewHolderOne, position)
             TYPE_TWO -> initLayoutTwo(holder as ViewHolderTwo, position)
+            TYPE_AD -> initLayoutAd(holder as ViewHolderAd, position)
             else -> {
             }
         }
@@ -60,6 +66,9 @@ class TransactionsAdapter(private val transactions: List<Message>, private val l
         return when (item.type) {
             "DAY" -> {
                 TYPE_TWO
+            }
+            "AD" -> {
+                TYPE_AD
             }
             else -> {
                 TYPE_ONE
@@ -103,6 +112,13 @@ class TransactionsAdapter(private val transactions: List<Message>, private val l
         date.text = contact.subject
     }
 
+    private fun initLayoutAd(viewHolder: ViewHolderAd, position: Int) {
+        val contact: Message = transactions[position]
+
+        val ad = viewHolder.ad
+        ad.text = contact.subject
+    }
+
     val self = this
 
     // Static inner class to initialize the views of rows
@@ -124,5 +140,9 @@ class TransactionsAdapter(private val transactions: List<Message>, private val l
 
     internal class ViewHolderTwo(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val date: TextView = itemView.findViewById(R.id.date)
+    }
+
+    internal class ViewHolderAd(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val ad: TextView = itemView.findViewById(R.id.ad)
     }
 }
