@@ -49,8 +49,8 @@
                     android:layout_width="match_parent"
                     android:inputType="phone"
                     android:padding="16dp"
-                    android:drawableRight="@drawable/ic_loupe"
-                    android:drawableEnd="@drawable/ic_loupe"
+                    android:drawableRight="@drawable/ic_contact_book"
+                    android:drawableEnd="@drawable/ic_contact_book"
                     android:drawableStart="@drawable/ic_smartphone"
                     android:drawableLeft="@drawable/ic_smartphone"
                     android:drawablePadding="16dp"
@@ -103,90 +103,99 @@
 
                 <com.google.android.material.chip.ChipGroup
                     android:id="@+id/chipGroup"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:singleLine="true">
 
                     <com.google.android.material.chip.Chip
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="guhaha 🌾"/>
+                        android:text="guhaha 🌾"
+                        app:chipStrokeWidth="1dp"
+                        app:chipStrokeColor="@color/colorAccent"/>
 
                     <com.google.android.material.chip.Chip
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="gusohoka 🍻"/>
+                        android:text="kubaho 🏠"
+                        app:chipStrokeWidth="1dp"
+                        app:chipStrokeColor="@color/colorAccent"/>
 
                     <com.google.android.material.chip.Chip
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="gukina 🎮"/>
+                        android:text="kugenda 🚌"
+                        app:chipStrokeWidth="1dp"
+                        app:chipStrokeColor="@color/colorAccent"/>
 
                     <com.google.android.material.chip.Chip
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="gutanga 🌹"/>
+                        android:text="kwiyitaho 💇‍"
+                        app:chipStrokeWidth="1dp"
+                        app:chipStrokeColor="@color/colorAccent"/>
 
                     <com.google.android.material.chip.Chip
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="kwaguka 📚"/>
+                        android:text="kwaguka 📚"
+                        app:chipStrokeWidth="1dp"
+                        app:chipStrokeColor="@color/colorAccent"/>
 
                     <com.google.android.material.chip.Chip
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="kubaho 🏠"/>
+                        android:text="gutanga 🌹"
+                        app:chipStrokeWidth="1dp"
+                        app:chipStrokeColor="@color/colorAccent"/>
 
                     <com.google.android.material.chip.Chip
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="kwiyitaho 💇‍"/>
+                        android:text="kwambara 👖"
+                        app:chipStrokeWidth="1dp"
+                        app:chipStrokeColor="@color/colorAccent"/>
 
                     <com.google.android.material.chip.Chip
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="kugenda 🚌"/>
+                        android:text="gusohoka 🍻"
+                        app:chipStrokeWidth="1dp"
+                        app:chipStrokeColor="@color/colorAccent"/>
 
                     <com.google.android.material.chip.Chip
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="kwambara 👖"/>
+                        android:text="gukina 🎮"
+                        app:chipStrokeWidth="1dp"
+                        app:chipStrokeColor="@color/colorAccent"/>
 
                 </com.google.android.material.chip.ChipGroup>
 
@@ -202,6 +211,7 @@
                 android:layout_width="match_parent"
                 android:padding="16dp"
                 android:background="@drawable/button_bg"
+                app:backgroundTint="@color/colorSecondary"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -211,7 +221,7 @@
             <LinearLayout
                 android:id="@+id/bottom_button"
                 android:text="Kubikuza"
-                android:layout_height="72dp"
+                android:layout_height="160dp"
                 android:layout_width="match_parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

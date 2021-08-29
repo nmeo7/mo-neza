@@ -18,11 +18,20 @@
 
         <item name="android:fontFamily">@font/rubik</item>
         <item name="fontFamily">@font/rubik</item>
+        <item name="searchViewStyle">@style/SearchViewStyle</item>
+        <item name="fontWeight">700</item>
+
+        <item name="chipStyle">@style/MaterialChips</item>
+        <item name="checkedChip">@style/MaterialChipsChecked</item>
+
+        <item name="buttonStyle">@style/btn</item>
+
     </style>
 
     <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">true</item>
         <item name="color">@color/colorPrimaryDark</item>
+        <item name="text_color">@color/colorPrimaryDark</item>
     </style>
 
     <style name="custom_toolbar" parent="@style/Widget.AppCompat.Toolbar" >
@@ -39,5 +48,36 @@
     </style>
 
     <style name="Theme.MoNeza.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="ActionBar" parent="Base.ThemeOverlay.AppCompat.ActionBar">
+        <item name="searchViewStyle">@style/SearchViewStyle</item>
+    </style>
+
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="searchIcon">@drawable/ic_loupe</item>
+    </style>
+
+    <style name="MaterialChips" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/background_color_chip_state_list</item>
+    </style>
+
+    <style name="MaterialChipsChecked" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <!-- ... -->
+        <item name="chipBackgroundColor">@color/colorPrimaryDark</item>
+        <item name="strokeColor">@color/colorAccent</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="btn" parent="ThemeOverlay.AppCompat">
+        <item name="colorButtonNormal">@color/colorSecondary</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="colorAccent">@color/colorSecondary</item>
+    </style>
+
+    <style name="ToolbarColoredBackArrow" parent="Theme.MoNeza">
+        <item name="android:textColorSecondary">@color/colorPrimaryDark</item>
+    </style>
+
 
 </resources>

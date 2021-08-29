@@ -59,21 +59,19 @@ class ParseMessage {
 
     private fun parseReceiving(msg: String): String {
         var st = msg
-        if (st.startsWith("*165*R")) {
-            st = st.replace("*165*R*You have received ", "\nAMOUNT ")
-            st = st.replace(" RWF from ", "\nSENDER ")
-            st = st.replace(" on your mobile money account at ", "\nTIME ")
-            st = st.replace(" . Your new balance:", "\nBALANCE ")
-            st = st.replace(" RWF.", "\nEXTRA ")
-        }
-        else if (st.startsWith("*134*R")) {
-            st = st.replace("*134*R*You have received ", "\nAMOUNT ")
-            st = st.replace(" RWF from ", "\nSENDER ")
-            st = st.replace(" on your mobile money account at ", "\nTIME ")
-            st = st.replace(". Message from sender: ", "\nMESSAGE ")
-            st = st.replace(".Your NEW BALANCE: ", "\nBALANCE ")
-            st = st.replace(" RWF.", "\nEXTRA ")
-        }
+
+        st = st.replace("=", "")
+        st = st.replace("*165*R*", "")
+        st = st.replace("*134*R", "")
+
+        st = st.replace("You have received ", "\nAMOUNT ")
+        st = st.replace(" RWF from ", "\nSENDER ")
+        st = st.replace(" on your mobile money account at ", "\nTIME ")
+        st = st.replace(" . Your new balance:", "\nBALANCE ")
+        st = st.replace(" RWF.", "\nEXTRA ")
+        st = st.replace(". Message from sender: ", "\nMESSAGE ")
+        st = st.replace(".Your NEW BALANCE: ", "\nBALANCE ")
+
         return "TYPE RECEIVING$st"
     }
 
@@ -90,38 +88,40 @@ class ParseMessage {
 
     private fun parsePayment(msg: String): String {
         var st = msg
-        if (st.startsWith("*162*")) {
-            st = st.replace("*162*TxId:", "\nTRANSACTION_ID ")
-            st = st.replace("*S*Your payment of ", "\nAMOUNT ")
-            st = st.replace(" RWF to ", "\nSERVICE ")
-            st = st.replace(" with token ", "\nTOKEN ")
-            st = st.replace(" has been completed at ", "\nTIME ")
-            st = st.replace(". Your new balance: ", "\nBALANCE ")
-            st = st.replace(" RWF . Message: ", "\nMESSAGE ")
-            st = st.replace(". *EN#", "\nEXTRA ")
-        }
-        else if (st.startsWith("=*161*")) {
-            st = st.replace("=*161*TxId:", "\nTRANSACTION_ID ")
-            st = st.replace("*S*Your payment of ", "\nAMOUNT ")
-            st = st.replace(" RWF to ", "\nRECIPIENT ")
-            st = st.replace(" has been completed at ", "\nTIME ")
-            st = st.replace(". Message: ", "\nMESSAGE ")
-            st = st.replace(". Your new balance: ", "\nBALANCE ")
-            st = st.replace(" RWF. Fee was ", "\nFEE ")
-            st = st.replace(" RWF. Coupon amount was ", "\nCOUPON ")
-            st = st.replace(". External Transaction Id: ", "\nEXTERNAL_TX_ID ")
-            st = st.replace(".*EN#", "\nEXTRAS ")
-        }
-        else if (st.startsWith("*164*S")) {
-            st = st.replace("*164*S*Y'ello,A transaction of ", "\nAMOUNT ")
-            st = st.replace(" RWF by ", "\nRECIPIENT ")
-            st = st.replace(" on your MOMO account was successfully completed at ", "\nTIME ")
-            st = st.replace(". Message from debit receiver: ", "\nMESSAGE ")
-            st = st.replace(". Your new balance:", "\nBALANCE ")
-            st = st.replace(" RWF. Fee was ", "\nFEE ")
-            st = st.replace(" RWF. Financial Transaction Id: ", "\nFINANCIAL_TX_ID ")
-            st = st.replace(". External Transaction Id: ", "\nEXTERNAL_TX_ID ")
-            st = st.replace(".*EN#", "\nEXTRAS ")
+        when {
+            st.startsWith("*162*") -> {
+                st = st.replace("*162*TxId:", "\nTRANSACTION_ID ")
+                st = st.replace("*S*Your payment of ", "\nAMOUNT ")
+                st = st.replace(" RWF to ", "\nSERVICE ")
+                st = st.replace(" with token ", "\nTOKEN ")
+                st = st.replace(" has been completed at ", "\nTIME ")
+                st = st.replace(". Your new balance: ", "\nBALANCE ")
+                st = st.replace(" RWF . Message: ", "\nMESSAGE ")
+                st = st.replace(". *EN#", "\nEXTRA ")
+            }
+            st.startsWith("=*161*") -> {
+                st = st.replace("=*161*TxId:", "\nTRANSACTION_ID ")
+                st = st.replace("*S*Your payment of ", "\nAMOUNT ")
+                st = st.replace(" RWF to ", "\nRECIPIENT ")
+                st = st.replace(" has been completed at ", "\nTIME ")
+                st = st.replace(". Message: ", "\nMESSAGE ")
+                st = st.replace(". Your new balance: ", "\nBALANCE ")
+                st = st.replace(" RWF. Fee was ", "\nFEE ")
+                st = st.replace(" RWF. Coupon amount was ", "\nCOUPON ")
+                st = st.replace(". External Transaction Id: ", "\nEXTERNAL_TX_ID ")
+                st = st.replace(".*EN#", "\nEXTRAS ")
+            }
+            st.startsWith("*164*S") -> {
+                st = st.replace("*164*S*Y'ello,A transaction of ", "\nAMOUNT ")
+                st = st.replace(" RWF by ", "\nRECIPIENT ")
+                st = st.replace(" on your MOMO account was successfully completed at ", "\nTIME ")
+                st = st.replace(". Message from debit receiver: ", "\nMESSAGE ")
+                st = st.replace(". Your new balance:", "\nBALANCE ")
+                st = st.replace(" RWF. Fee was ", "\nFEE ")
+                st = st.replace(" RWF. Financial Transaction Id: ", "\nFINANCIAL_TX_ID ")
+                st = st.replace(". External Transaction Id: ", "\nEXTERNAL_TX_ID ")
+                st = st.replace(".*EN#", "\nEXTRAS ")
+            }
         }
         st = "TYPE PAYMENT$st"
         return st
@@ -129,12 +129,14 @@ class ParseMessage {
 
     fun parseMessage(msg: String) : Message {
         var msg1 = ""
-        if (messageType(msg) == Type.PAYMENT) msg1 = parsePayment(msg)
-        if (messageType(msg) == Type.DEPOSIT) msg1 = parseDeposit(msg)
-        if (messageType(msg) == Type.RECEIVING) msg1 = parseReceiving(msg)
-        if (messageType(msg) == Type.TRANSFER) msg1 = parseTransfer(msg)
-        if (messageType(msg) == Type.WITHDRAWAL) msg1 = parseWithdrawal(msg)
-        if (messageType(msg) == Type.OTHER) Log.d("READ_MOMO", msg)
+        val msg2 = msg.replace("=", "")
+
+        if (messageType(msg2) == Type.PAYMENT) msg1 = parsePayment(msg2)
+        if (messageType(msg2) == Type.DEPOSIT) msg1 = parseDeposit(msg2)
+        if (messageType(msg2) == Type.RECEIVING) msg1 = parseReceiving(msg2)
+        if (messageType(msg2) == Type.TRANSFER) msg1 = parseTransfer(msg2)
+        if (messageType(msg2) == Type.WITHDRAWAL) msg1 = parseWithdrawal(msg2)
+        if (messageType(msg2) == Type.OTHER) Log.d("READ_MOMO", msg2)
         val r = toDict(msg1)
 
         r.text = msg
@@ -146,18 +148,19 @@ class ParseMessage {
     }
 
     private fun messageType(msg: String): Type {
-        if (msg.startsWith("=*161*")) return Type.PAYMENT
+        if (msg.startsWith("*161*")) return Type.PAYMENT
         if (msg.startsWith("*162*")) return Type.PAYMENT
         if (msg.startsWith("*164*S*")) return Type.PAYMENT
 
         // ok.
         if (msg.startsWith("*165*S*")) return Type.TRANSFER
-        if (msg.startsWith("You have transferred")) return Type.TRANSFER
+        if (msg.startsWith("you have transferred", true)) return Type.TRANSFER
 
         // ok.
         if (msg.startsWith("*153*TxId:")) return Type.WITHDRAWAL
 
         // ok.
+        if (msg.contains("you have received ", true)) return Type.RECEIVING
         if (msg.startsWith("*165*R*")) return Type.RECEIVING
         if (msg.startsWith("*134*R*")) return Type.RECEIVING
 

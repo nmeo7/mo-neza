@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:theme="@style/DrawerArrowStyle"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!--We are using this image
-        view to display our QR code-->
     <ImageView
         android:id="@+id/idIVQrcode"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         android:contentDescription="Qr" />
 
     <!--Edit text to enter text
@@ -27,11 +27,13 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:autofillHints=""
-        android:hint="amount"
-        android:inputType="text" />
+        android:hint="nimero yawe"
+
+        android:inputType="phone" />
 
     <!--Button for creating a QR code-->
     <Button
+        android:visibility="gone"
         android:id="@+id/idBtnGenerateQR"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

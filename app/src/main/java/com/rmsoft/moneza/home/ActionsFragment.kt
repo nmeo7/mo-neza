@@ -1,12 +1,15 @@
 package com.rmsoft.moneza.home
 
+import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
 import android.provider.ContactsContract
+import android.telephony.TelephonyManager
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
@@ -19,10 +22,14 @@ import android.view.View.OnTouchListener
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import com.google.android.material.chip.Chip
+import com.google.android.material.chip.ChipGroup
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.rmsoft.moneza.R
@@ -154,6 +161,15 @@ class ActionsFragment : Fragment() {
             if (CheckPrivileges(requireContext(), requireActivity()).requestCallPhonePermission ())
                 return@setOnClickListener
 
+
+            val tm = requireContext().getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+
+            if (tm.networkOperatorName != "MTN Rwanda")
+            {
+                Toast.makeText(requireActivity(), "Iki gikorwa kibasha gukorwa kuri simu kadi ya MTN gusa!", Toast.LENGTH_LONG).show();
+                return@setOnClickListener
+            }
+
             numberValue = number.text.toString().replace(" ", "")
             amountValue = amount.text.toString().replace(" ", "")
 
@@ -220,10 +236,24 @@ class ActionsFragment : Fragment() {
 
             // viewModel.selectMessage(item)
 
+            val chipGroup = view.findViewById<ChipGroup>(R.id.chipGroup)
+
+            var msg = ""
+
+            for (x in chipGroup.checkedChipIds)
+            {
+                msg += "; " + view.findViewById<Chip>(x).text
+            }
+
+            Log.i("CHIPS", msg)
+
+
             val sharedPref = activity?.getSharedPreferences("number_amount", Context.MODE_PRIVATE)
             with (sharedPref?.edit()) {
                 this?.putString("NUMBER", numberValue)
                 this?.putString("AMOUNT", amountValue)
+                this?.putString("MESSAGE", msg)
+                this?.putLong("TIME", System.currentTimeMillis())
                 this?.apply()
             }
 

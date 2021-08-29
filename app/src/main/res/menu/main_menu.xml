@@ -7,7 +7,7 @@
         app:showAsAction="always"/>
     <item android:id="@+id/export"
         android:title="Export"
-        android:icon="@drawable/ic_sync"
+        android:icon="@drawable/ic_qr_code"
         app:showAsAction="always"/>
 
     <item
@@ -15,5 +15,6 @@
         android:icon="@drawable/ic_loupe"
         app:showAsAction="always|collapseActionView"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
+        android:iconTint="@color/black"
         android:title="Search"/>
 </menu>

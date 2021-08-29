@@ -20,6 +20,7 @@
         android:layout_gravity="center"
         android:text="come on"
         android:background="@drawable/date_background"
+        android:textColor="@color/black"
         android:padding="8dp"
         android:layout_margin="0dp"
         />

@@ -1,12 +1,14 @@
 package com.rmsoft.moneza
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.EditText
 import androidx.appcompat.widget.SearchView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -19,7 +21,9 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.viewpager.widget.ViewPager
+import com.borax12.materialdaterangepicker.date.DatePickerDialog
 import com.google.android.material.navigation.NavigationView
+import com.leavjenn.smoothdaterangepicker.date.SmoothDateRangePickerFragment
 import com.leinardi.android.speeddial.SpeedDialView
 import com.rmsoft.moneza.home.ActionsFragment
 import com.rmsoft.moneza.home.dashboard.DashboardFragment
@@ -30,9 +34,11 @@ import com.rmsoft.moneza.util.Message
 import com.tapadoo.alerter.Alerter
 import eu.long1.spacetablayout.SpaceTabLayout
 import java.io.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, DatePickerDialog.OnDateSetListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var tabLayout: SpaceTabLayout
@@ -59,6 +65,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 }
                 .setDuration(24000)
                 .show()
+
+
     }
 
     fun onSmsReceived(message: Message) {
@@ -164,6 +172,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // val filter = IntentFilter("android.provider.Telephony.SMS_RECEIVED")
         // registerReceiver(messageReceiver, filter)
 
+
+        val now = Calendar.getInstance()
+        var dpd = DatePickerDialog.newInstance(
+            this,
+            now[Calendar.YEAR],
+            now[Calendar.MONTH],
+            now[Calendar.DAY_OF_MONTH]
+        )
+        // dpd.show(fragmentManager, "Datepickerdialog")
+
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -202,6 +220,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 return false
             }
         })
+
+        // val searchView = menu.findItem(R.id.action_search).actionView as SearchView
+
+        val txtSearch = searchView.findViewById<EditText>(androidx.appcompat.R.id.search_src_text)
+        txtSearch.hint = "gushaka..."
+        txtSearch.setHintTextColor(Color.DKGRAY)
+        txtSearch.setTextColor(Color.BLACK)
         return true
     }
 
@@ -291,5 +316,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
         super.onActivityResult(requestCode, resultCode, data)
+    }
+
+    override fun onDateSet(
+        view: DatePickerDialog?,
+        year: Int,
+        monthOfYear: Int,
+        dayOfMonth: Int,
+        yearEnd: Int,
+        monthOfYearEnd: Int,
+        dayOfMonthEnd: Int
+    ) {
+
     }
 }

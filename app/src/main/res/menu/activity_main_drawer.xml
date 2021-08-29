@@ -6,37 +6,38 @@
     <group android:id="@+id/grp2">
         <item
             android:id="@+id/withdrawal"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_withdraw"
             android:title="Kubikuza" />
         <item
-            android:id="@+id/balance_2"
-            android:icon="@drawable/ic_menu_gallery"
+            android:id="@+id/balance"
+            android:icon="@drawable/ic_wallet"
             android:title="Kureba Asigaye" />
-        <item
-            android:id="@+id/hashcode"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="*128#" />
     </group>
 
     <group android:id="@+id/grp1">
         <item
-            android:id="@+id/nav_actionsx"
-            android:icon="@drawable/ic_menu_camera"
+            android:id="@+id/language"
+            android:icon="@drawable/ic_translation"
+            android:title="Change Language" />
+        <item
+            android:id="@+id/agreements"
+            android:icon="@drawable/ic_contract"
             android:title="Amasezerano" />
         <item
-            android:id="@+id/nav_transactions_list"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="kuri twitter" />
+            android:id="@+id/share"
+            android:icon="@drawable/ic_share"
+            android:title="Gusangiza" />
     </group>
 
     <group android:id="@+id/grp3">
         <item
-            android:id="@+id/nav_actions"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Ururimi" />
+            android:id="@+id/spam"
+            android:icon="@drawable/ic_spam"
+            android:iconTint="@color/red"
+            android:title="Spam" />
         <item
-            android:id="@+id/nav_dashboard"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:id="@+id/reset"
+            android:icon="@drawable/ic_delete"
             android:iconTint="@color/red"
             android:title="Gusiba byose" />
     </group>

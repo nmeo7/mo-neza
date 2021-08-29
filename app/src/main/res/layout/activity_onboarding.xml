@@ -31,6 +31,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:tabBackground="@drawable/indicator_selector"
+        app:tabIndicatorColor="@color/colorPrimaryDark"
+
         app:tabIndicatorHeight="0dp">
 
     </com.google.android.material.tabs.TabLayout>
@@ -51,10 +53,10 @@
             android:layout_height="48dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/rounded"
+            android:background="@drawable/button_bg"
+            app:backgroundTint="@color/colorSecondary"
             android:text="ibindi .."
             android:textAllCaps="false"
-            android:textColor="#fff"
             android:textSize="17sp" />
     </LinearLayout>
 
@@ -79,7 +81,6 @@
             android:background="@drawable/rounded"
             android:text="Twagiye!"
             android:textAllCaps="false"
-            android:textColor="#fff"
             android:textSize="17sp" />
     </LinearLayout>
 

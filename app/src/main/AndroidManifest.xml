@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS"/>
 
     <application
         android:allowBackup="true"
@@ -15,7 +17,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoNeza">
-        <activity android:name=".ShowQrActivity"></activity>
+        <activity android:name=".MainActivity2"></activity>
+        <activity
+            android:name=".ShowQrActivity"
+            android:label="Qr Code">
+        </activity>
         <activity android:name=".SimpleScannerActivity" />
         <activity
             android:name=".MainActivity"

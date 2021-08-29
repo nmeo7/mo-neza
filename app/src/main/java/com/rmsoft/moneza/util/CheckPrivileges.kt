@@ -35,7 +35,8 @@ class CheckPrivileges (private var context: Context, private var activity: Activ
             activity,
             arrayOf(
                 Manifest.permission.RECEIVE_SMS,
-                Manifest.permission.READ_SMS
+                Manifest.permission.READ_SMS,
+                Manifest.permission.READ_PHONE_STATE
             ),
             101
         )

@@ -82,10 +82,22 @@ class MessageReceiver : BroadcastReceiver() {
                     val sharedPref = context.getSharedPreferences("number_amount", Context.MODE_PRIVATE)
                     val amount = sharedPref.getString("AMOUNT", "0")
                     val number = sharedPref.getString("NUMBER", "")
+                    val time = sharedPref.getLong("TIME", Long.MAX_VALUE)
+                    val message = sharedPref.getString("MESSAGE", "")
 
-                    if (m.amount == amount?.toInt())
+                    // reset the shared prefs
+                    with (sharedPref?.edit()) {
+                        this?.putString("NUMBER", "")
+                        this?.putString("AMOUNT", "")
+                        this?.putString("MESSAGE", "")
+                        this?.putLong("TIME", 0)
+                        this?.apply()
+                    }
+
+                    if (m.amount == amount?.toInt() && (System.currentTimeMillis() < time + 1000 * 120))
                     {
                         m.subjectNumber = number
+                        m.message = message
                         DataPersistence(context).save(m)
                         Log.i("Connect", m.toString())
                         saved = true

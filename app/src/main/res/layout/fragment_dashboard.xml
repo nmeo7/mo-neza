@@ -150,7 +150,8 @@
                         android:text="500"
                         android:gravity="end"
                         android:textStyle="bold"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/colorPrimary"
+                        android:shadowColor="@color/colorPrimary"
                         android:textSize="24dp"/>
                 </LinearLayout>
 

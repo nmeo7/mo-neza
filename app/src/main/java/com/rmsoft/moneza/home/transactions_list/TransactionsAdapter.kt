@@ -85,6 +85,8 @@ class TransactionsAdapter(private val transactions: List<Message>, private val l
         val subject = viewHolder.subject
         val amount = viewHolder.amount
         val fee = viewHolder.fee
+        val fee1 = viewHolder.fee1
+        val fee2 = viewHolder.fee2
         val balance = viewHolder.balance
         val time = viewHolder.time
         val type = viewHolder.type
@@ -95,6 +97,19 @@ class TransactionsAdapter(private val transactions: List<Message>, private val l
         balance.text = message.parseAmount(message.balance)
         time.text = message.getTime()
         type.text = message.type
+
+        if (message.fee == 0)
+        {
+            fee.visibility = View.GONE
+            fee1.visibility = View.GONE
+            fee2.visibility = View.GONE
+        }
+        else
+        {
+            fee.visibility = View.VISIBLE
+            fee1.visibility = View.VISIBLE
+            fee2.visibility = View.VISIBLE
+        }
 
 
         if (message.type == "RECEIVING" || message.type == "DEPOSIT")
@@ -126,6 +141,8 @@ class TransactionsAdapter(private val transactions: List<Message>, private val l
         val subject: TextView = itemView.findViewById(R.id.subject)
         val amount: TextView = itemView.findViewById(R.id.amount)
         val fee: TextView = itemView.findViewById(R.id.fee)
+        val fee2: TextView = itemView.findViewById(R.id.fee2)
+        val fee1: TextView = itemView.findViewById(R.id.fee1)
         val balance: TextView = itemView.findViewById(R.id.balance)
         val time: TextView = itemView.findViewById(R.id.time)
         val type: TextView = itemView.findViewById(R.id.type)

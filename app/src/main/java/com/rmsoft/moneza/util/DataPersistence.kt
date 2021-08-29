@@ -56,9 +56,7 @@ class DataPersistence constructor (var context: Context) {
             val qq = (query + " " + query.toUpperCase(Locale.ROOT) + " " + query.capitalize(Locale.ROOT)).split(" ")
 
             for (x in qq)
-            {
                 q = q.or().like("subject", "*$x*")
-            }
         }
         else
             q = mRealm.where(Message::class.java)
