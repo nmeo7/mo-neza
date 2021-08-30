@@ -14,9 +14,9 @@
     <color name="colorTertiary">#1C9AFF</color>
     <color name="colorTertiaryLight">#CEE6FA</color>
 
-    <color name="red">#BC0606</color>
-    <color name="yellow">#F1D90A</color>
-    <color name="green">#01D604</color>4
+    <color name="red">#FF3C00</color>
+    <color name="yellow">#FFF284</color>
+    <color name="green">#2EFF31</color>4
 
     <color name="mdtp_accent_color">#009688</color>
     <color name="mdtp_accent_color_dark">#00796b</color>

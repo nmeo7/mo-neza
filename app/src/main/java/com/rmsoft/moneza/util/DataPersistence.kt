@@ -102,20 +102,10 @@ class DataPersistence constructor (var context: Context) {
         return ret.toList().sortedByDescending { (k, v) -> v }.toMap()
     }
 
-    fun aggregates (type: String = "*", field: String = "amount", lastDays: Long = 0) : String
+    fun aggregates (type: String = "*", field: String = "amount", from: Long, to: Long) : String
     {
-        var t : Long = 0
-        if (lastDays != 0L)
-        {
-            val date = Date(System.currentTimeMillis() - lastDays * 3600 * 1000 * 24)
-            val format = SimpleDateFormat("dd/MM/yyyy", Locale.US)
-            val day = format.format(date)
-
-            t = SimpleDateFormat("dd/MM/yyyy", Locale.US).parse(day)?.time!!
-        }
-
         val mRealm = Realm.getInstance(config)
-        val ret = mRealm.where(Message::class.java).greaterThan("time", t).like("type", type).sum(field)
+        val ret = mRealm.where(Message::class.java).greaterThan("time", from).lessThan("time", to).like("type", type).sum(field)
         return Message().parseAmount(ret)
     }
 
@@ -150,7 +140,7 @@ class DataPersistence constructor (var context: Context) {
         return format.format(date)
     }
 
-    fun days() : HashMap<String, MutableList<Pair<String, Float>>>
+    fun days(from: Long = 0, to: Long = Long.MAX_VALUE) : HashMap<String, MutableList<Pair<String, Float>>>
     {
         val mRealm = Realm.getInstance(config)
         var firstDay = try {
@@ -160,6 +150,14 @@ class DataPersistence constructor (var context: Context) {
         {
             System.currentTimeMillis()
         }
+
+        if (from != 0L)
+            firstDay = from
+
+        val lastDay = if (to != Long.MAX_VALUE)
+                to
+            else
+                System.currentTimeMillis()
 
         Log.i("DATA_PERSISTENCE1", firstDay.toString())
 
@@ -176,14 +174,14 @@ class DataPersistence constructor (var context: Context) {
         Log.i("DATA_PERSISTENCE1", day)
         Log.i("DATA_PERSISTENCE1", System.currentTimeMillis().toString())
 
-        for (x in firstDay..System.currentTimeMillis() step 3600 * 1000 * 24)
+        for (x in firstDay..lastDay step 3600 * 1000 * 24)
         {
             val d = asDay(x)
             sp[ d ] = 0
             sv[ d ] = 0
         }
 
-        val ret = mRealm.where(Message::class.java).findAll()
+        val ret = mRealm.where(Message::class.java).lessThan("time", to).greaterThan("time", from).findAllSorted("time")
 
         for (x in ret)
         {
@@ -205,15 +203,23 @@ class DataPersistence constructor (var context: Context) {
         r["sv"] = mutableListOf() // sv.values.toTypedArray().sortedArray()
         r["sp"] = mutableListOf() // sp.values.toTypedArray().sortedArray()
 
+        var i = 0
+        val t = sv.size - 1
+        val c = t / 2
+
         for (x in sv)
         {
-            val m = Pair(x.key, x.value.toFloat())
+            val m = if (i == 0 || i == t || i == c) Pair(x.key, x.value.toFloat()) else Pair("", x.value.toFloat())
             r["sv"]?.add(m)
+            i++
         }
+
+        i = 0
         for (x in sp)
         {
-            val m = Pair(x.key, x.value.toFloat())
+            val m = if (i == 0 || i == t || i == c) Pair(x.key, x.value.toFloat()) else Pair("", x.value.toFloat())
             r["sp"]?.add(m)
+            i++
         }
 
         return r

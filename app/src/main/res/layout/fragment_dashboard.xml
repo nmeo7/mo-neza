@@ -13,6 +13,7 @@
         >
 
         <TextView
+            android:id="@+id/time_range"
             android:layout_columnSpan="2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -20,6 +21,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="0dp"
+            android:clickable="true"
             />
 
         <LinearLayout
@@ -46,6 +48,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="700" />
+                    <com.github.anastr.speedviewlib.ImageSpeedometer
+                        android:id="@+id/speedView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:sv_speedometerWidth="8dp"
+                        app:sv_indicatorColor="@color/colorPrimaryDark"
+                        app:sv_markColor="@color/colorAccent"
+                        app:sv_withTremble="false"
+                        app:sv_unit=""
+                        app:sv_marksNumber="3"
+                        app:sv_centerCircleRadius="8dp"
+                        app:sv_indicatorWidth="4dp"
+                        app:sv_endDegree="330"
+                        app:sv_startDegree="210"
+                        app:sv_speedTextFormat="INTEGER"
+                        app:sv_withIndicatorLight="true"
+                        app:sv_indicatorLightColor="@color/colorAccent"
+                        app:sv_image="@mipmap/ic_scale_bg"
+                        app:sv_indicator="NeedleIndicator"
+                        />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -87,6 +109,23 @@
                             android:layout_height="wrap_content"
                             android:text=" Fee" />
                     </LinearLayout>
+                    <com.github.anastr.speedviewlib.SpeedView
+                        android:id="@+id/speedView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:sv_speedometerWidth="8dp"
+                        app:sv_indicatorColor="@color/colorPrimaryDark"
+                        app:sv_markColor="@color/colorAccent"
+                        app:sv_withTremble="false"
+                        app:sv_unit="+ 400 000 Fee"
+                        app:sv_marksNumber="3"
+                        app:sv_centerCircleRadius="8dp"
+                        app:sv_indicatorWidth="4dp"
+                        app:sv_endDegree="330"
+                        app:sv_startDegree="210"
+                        app:sv_speedTextFormat="INTEGER"
+                        app:sv_unitUnderSpeedText="true"
+                        app:sv_unitTextColor="@color/red"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -160,12 +199,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_margin="20dp"
-                    app:chart_axis="none"
+                    app:chart_axis="xy"
                     app:chart_gridEffect="dotted"
                     app:chart_labelsColor="#FF70977F"
                     app:chart_labelsSize="10sp"
-                    app:chart_lineThickness="3dp"
-                    app:chart_smoothLine="true" />
+                    app:chart_lineThickness="2dp"
+                    app:chart_smoothLine="true"
+
+                    />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
