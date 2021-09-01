@@ -138,31 +138,53 @@ class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
             sum_sv += x.second
         }
 
-        sum_sp /= days_few["sp"]!!.size
-        sum_sv /= days_few["sv"]!!.size
+        // sum_sp /= days_few["sp"]!!.size
+        // sum_sv /= days_few["sv"]!!.size
 
         var num_sv = 0
         var num_sp = 0
 
-        for (x in days["sp"]!!)
-        {
-            if (x.second < sum_sp)
-                num_sp++
-        }
-        for (x in days["sv"]!!)
-        {
-            if (x.second < sum_sv)
-                num_sv++
-        }
+        var max_sv = 0F
+        var min_sv = 0F
+        var max_sp = 0F
+        var min_sp = 0F
 
-
+        val sv_sorted = days["sv"]!!.sortedBy { it.second }
+        val sp_sorted = days["sp"]!!.sortedBy { it.second }
 
         val speedometer1 = view?.findViewById<ImageSpeedometer>(R.id.speedView1)
-        val speedometer2 = view?.findViewById<SpeedView>(R.id.speedView2)
+        val speedometer2 = view?.findViewById<ImageSpeedometer>(R.id.speedView2)
 
-        val num_all = days["sv"]!!.size
-        speedometer1?.speedTo(num_sp * 100F / num_all)
-        speedometer2?.speedTo(num_sv * 100F / num_all)
+        val size = sv_sorted.size
+        val start = size * 2 / 5
+        val end = size * 9 / 10
+
+        Log.i("DATA", sv_sorted[end].second.toString())
+        Log.i("DATA", sv_sorted[start].second.toString())
+        Log.i("DATA", sp_sorted[end].second.toString())
+        Log.i("DATA", sp_sorted[start].second.toString())
+        Log.i("DATA", sum_sv.toString())
+        Log.i("DATA", sum_sp.toString())
+
+        val size2 = days_few.size
+
+        speedometer1!!.maxSpeed = size2 * sv_sorted[end].second + 1
+        speedometer1!!.minSpeed = size2 * sv_sorted[start].second
+        speedometer2!!.maxSpeed = size2 * sp_sorted[end].second + 1
+        speedometer2!!.minSpeed = size2 * sp_sorted[start].second
+
+        if (sum_sv > size2 * sv_sorted[end].second)
+            speedometer1!!.maxSpeed = sum_sv
+        if (sum_sp > size2 * sp_sorted[end].second)
+            speedometer2!!.maxSpeed = sum_sp
+
+        if (sum_sv < size2 * sv_sorted[start].second)
+            speedometer1!!.minSpeed = sum_sv
+        if (sum_sp < size2 * sp_sorted[start].second)
+            speedometer2!!.minSpeed = sum_sp
+
+        speedometer1?.speedTo(sum_sv)
+        speedometer2?.speedTo(sum_sp)
 
     }
 
@@ -197,17 +219,6 @@ class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
                 updateDashboard (it.first, it.second)
             }
         }
-
-
-
-
-
-        val speedometer2 = view.findViewById<SpeedView>(R.id.speedView2)
-        speedometer2.clearSections()
-        speedometer2.addSections(Section(.0f, .4f, resources.getColor(R.color.green) )
-                , Section(.4f, .8f, resources.getColor(R.color.yellow))
-                , Section(.8f, 1f, resources.getColor(R.color.red)))
-        speedometer2.speedometerWidth = 16f
     }
 
     fun populateChart(lineSet: MutableList<Pair<String, Float>>)

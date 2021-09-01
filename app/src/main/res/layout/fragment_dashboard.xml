@@ -57,15 +57,14 @@
                         app:sv_markColor="@color/colorAccent"
                         app:sv_withTremble="false"
                         app:sv_unit=""
-                        app:sv_marksNumber="3"
                         app:sv_centerCircleRadius="8dp"
                         app:sv_indicatorWidth="4dp"
-                        app:sv_endDegree="330"
-                        app:sv_startDegree="210"
+                        app:sv_endDegree="370"
+                        app:sv_startDegree="170"
                         app:sv_speedTextFormat="INTEGER"
                         app:sv_withIndicatorLight="true"
                         app:sv_indicatorLightColor="@color/colorAccent"
-                        app:sv_image="@mipmap/ic_scale_bg"
+                        app:sv_image="@drawable/ic_drawing"
                         app:sv_indicator="NeedleIndicator"
                         />
                 </LinearLayout>
@@ -109,7 +108,8 @@
                             android:layout_height="wrap_content"
                             android:text=" Fee" />
                     </LinearLayout>
-                    <com.github.anastr.speedviewlib.SpeedView
+
+                    <com.github.anastr.speedviewlib.ImageSpeedometer
                         android:id="@+id/speedView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -117,13 +117,16 @@
                         app:sv_indicatorColor="@color/colorPrimaryDark"
                         app:sv_markColor="@color/colorAccent"
                         app:sv_withTremble="false"
-                        app:sv_unit="+ 400 000 Fee"
-                        app:sv_marksNumber="3"
                         app:sv_centerCircleRadius="8dp"
                         app:sv_indicatorWidth="4dp"
-                        app:sv_endDegree="330"
-                        app:sv_startDegree="210"
+                        app:sv_endDegree="370"
+                        app:sv_startDegree="170"
                         app:sv_speedTextFormat="INTEGER"
+                        app:sv_withIndicatorLight="true"
+                        app:sv_indicatorLightColor="@color/colorAccent"
+                        app:sv_image="@drawable/ic_drawing2"
+                        app:sv_indicator="NeedleIndicator"
+                        app:sv_unit="+ 400 000 Fee"
                         app:sv_unitUnderSpeedText="true"
                         app:sv_unitTextColor="@color/red"/>
                 </LinearLayout>
