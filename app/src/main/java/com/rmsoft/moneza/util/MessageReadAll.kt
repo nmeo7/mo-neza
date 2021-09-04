@@ -88,6 +88,8 @@ class MessageReadAll(private val activity: Context, private var fromSms: Boolean
         if (  CheckPrivileges(context, activity).runtimeAskPrivileges(Manifest.permission.READ_SMS) )
             return contacts
 
+        persistence.deleteEmpty()
+
         val projection = arrayOf("_id", "address", "body")
         val sender = "M-Money"
         val selection = "address LIKE'%$sender'"

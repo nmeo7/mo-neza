@@ -237,7 +237,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 // open qr
 
                 if (!CheckPrivileges(this, this).requestCameraPermission()) {
-                    val i = Intent(this@MainActivity, SimpleScannerActivity::class.java)
+                    val i = Intent(this@MainActivity, QrActivity::class.java)
                     startActivity(i)
                 }
                 true
@@ -255,11 +255,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivityForResult(chooseFile, 3)
                 true
             }*/
+            /*
             R.id.export -> {
                 val i = Intent(this@MainActivity, ShowQrActivity::class.java)
                 startActivity(i)
                 true
-            }
+            }*/
             /*
             R.id.refresh -> {
                 MessageReadAll(this, true).readMessages(this)

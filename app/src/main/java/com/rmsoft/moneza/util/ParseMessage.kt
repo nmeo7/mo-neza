@@ -88,6 +88,8 @@ class ParseMessage {
 
     private fun parsePayment(msg: String): String {
         var st = msg
+        st = st.replace("=", "")
+
         when {
             st.startsWith("*162*") -> {
                 st = st.replace("*162*TxId:", "\nTRANSACTION_ID ")
@@ -99,8 +101,8 @@ class ParseMessage {
                 st = st.replace(" RWF . Message: ", "\nMESSAGE ")
                 st = st.replace(". *EN#", "\nEXTRA ")
             }
-            st.startsWith("=*161*") -> {
-                st = st.replace("=*161*TxId:", "\nTRANSACTION_ID ")
+            st.startsWith("*161*") -> {
+                st = st.replace("*161*TxId:", "\nTRANSACTION_ID ")
                 st = st.replace("*S*Your payment of ", "\nAMOUNT ")
                 st = st.replace(" RWF to ", "\nRECIPIENT ")
                 st = st.replace(" has been completed at ", "\nTIME ")

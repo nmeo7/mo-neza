@@ -2,14 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/qr"
-        android:title="Button 1"
+        android:title="Export"
         android:icon="@drawable/ic_qr_code_scan"
         app:showAsAction="always"/>
-    <item android:id="@+id/export"
-        android:title="Export"
-        android:icon="@drawable/ic_qr_code"
-        app:showAsAction="always"/>
-
     <item
         android:id="@+id/action_search"
         android:icon="@drawable/ic_loupe"
@@ -17,4 +12,5 @@
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         android:iconTint="@color/black"
         android:title="Search"/>
+
 </menu>

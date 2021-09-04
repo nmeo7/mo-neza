@@ -34,7 +34,7 @@
         <item name="text_color">@color/colorPrimaryDark</item>
     </style>
 
-    <style name="custom_toolbar" parent="@style/Widget.AppCompat.Toolbar" >
+    <style name="custom_toolbar" parent="@style/Widget.AppCompat.Toolbar">
         <item name="titleTextColor">@color/colorPrimaryDark</item>
     </style>
 
@@ -43,7 +43,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.MoNeza.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+    <style name="Theme.MoNeza.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:background">@color/colorAccent</item>
     </style>
 

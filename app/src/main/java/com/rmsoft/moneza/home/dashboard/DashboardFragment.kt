@@ -23,6 +23,7 @@ import com.rmsoft.moneza.util.Message
 import io.github.farshidroohi.ChartEntity
 import io.github.farshidroohi.LineChart
 import java.io.*
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -88,6 +89,12 @@ class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
 
         val persistance = DataPersistence(requireActivity())
 
+        val date_text = view?.findViewById<TextView>(R.id.time_range)
+        val date1 = Date(from)
+        val date2 = Date(to)
+        val format = SimpleDateFormat("dd/MM/yyyy", Locale.US)
+        date_text?.setText( "kuva " +  format.format(date1) + " kugera " + format.format(date2) )
+
         deposit.text = persistance.aggregates("DEPOSIT", "amount", from, to)
         payments.text = persistance.aggregates("PAYMENT", "amount", from, to)
         received.text = persistance.aggregates("RECEIVING", "amount", from, to)
@@ -138,17 +145,6 @@ class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
             sum_sv += x.second
         }
 
-        // sum_sp /= days_few["sp"]!!.size
-        // sum_sv /= days_few["sv"]!!.size
-
-        var num_sv = 0
-        var num_sp = 0
-
-        var max_sv = 0F
-        var min_sv = 0F
-        var max_sp = 0F
-        var min_sp = 0F
-
         val sv_sorted = days["sv"]!!.sortedBy { it.second }
         val sp_sorted = days["sp"]!!.sortedBy { it.second }
 
@@ -190,19 +186,11 @@ class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        updateDashboard (System.currentTimeMillis() - 30 * 3600 * 1000 * 24L, System.currentTimeMillis())
-
         // val dtp = DatePickerDialog.newInstance{ datePickerDialog: DatePickerDialog, i: Int, i1: Int, i2: Int -> }
         // dtp.accentColor = Color.BLACK
         // dtp.show(requireFragmentManager(), "")
 
         val now = Calendar.getInstance()
-        var dpd = DatePickerDialog.newInstance(
-            this,
-            now[Calendar.YEAR],
-            now[Calendar.MONTH],
-            now[Calendar.DAY_OF_MONTH]
-        )
         // dpd.show( requireActivity().fragmentManager, "Datepickerdialog")
 
         val date_text = view.findViewById<TextView>(R.id.time_range)
@@ -218,7 +206,15 @@ class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
                 Log.i("TAG", "The selected date range is ${it.first} - ${it.second}")
                 updateDashboard (it.first, it.second)
             }
+
         }
+
+        Log.i("ON_VIEW_CREATED", "cr")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateDashboard (System.currentTimeMillis() - 30 * 3600 * 1000 * 24L, System.currentTimeMillis())
     }
 
     fun populateChart(lineSet: MutableList<Pair<String, Float>>)

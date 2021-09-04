@@ -1,17 +1,16 @@
 package com.rmsoft.moneza.util
 
-import android.app.Activity
 import android.content.Context
 import android.util.Log
 import androidx.collection.ArrayMap
 import io.realm.*
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.Exception
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
-class DataPersistence constructor (var context: Context) {
+
+class DataPersistence constructor(var context: Context) {
 
     private var config : RealmConfiguration
 
@@ -25,7 +24,7 @@ class DataPersistence constructor (var context: Context) {
                 .build()
     }
 
-    fun save (m: Message) {
+    fun save(m: Message) {
         val mRealm = Realm.getInstance(config)
 
         val x = mRealm.where(Message::class.java).equalTo("hash", m.hash).count()
@@ -38,7 +37,17 @@ class DataPersistence constructor (var context: Context) {
         }
     }
 
-    fun find (query: String = "") : ArrayList<Message>
+    fun deleteEmpty ()
+    {
+        val mRealm = Realm.getInstance(config)
+
+        mRealm.beginTransaction()
+        val result: RealmResults<Message> = mRealm.where(Message::class.java).equalTo("amount", 0).findAll()
+        result.deleteAllFromRealm()
+        mRealm.commitTransaction()
+    }
+
+    fun find(query: String = "") : ArrayList<Message>
     {
         val mRealm = Realm.getInstance(config)
 
@@ -73,7 +82,7 @@ class DataPersistence constructor (var context: Context) {
                 day = newDay
                 ret.add(d)
             }
-            ret.add( x )
+            ret.add(x)
 
         }
 
@@ -102,14 +111,14 @@ class DataPersistence constructor (var context: Context) {
         return ret.toList().sortedByDescending { (k, v) -> v }.toMap()
     }
 
-    fun aggregates (type: String = "*", field: String = "amount", from: Long, to: Long) : String
+    fun aggregates(type: String = "*", field: String = "amount", from: Long, to: Long) : String
     {
         val mRealm = Realm.getInstance(config)
         val ret = mRealm.where(Message::class.java).greaterThan("time", from).lessThan("time", to).like("type", type).sum(field)
         return Message().parseAmount(ret)
     }
 
-    fun balance (lastDays: Long = 0) : String
+    fun balance(lastDays: Long = 0) : String
     {
         var t : Long = System.currentTimeMillis()
         if (lastDays != 0L)
@@ -133,7 +142,7 @@ class DataPersistence constructor (var context: Context) {
         }
     }
 
-    fun asDay (day: Long) : String
+    fun asDay(day: Long) : String
     {
         val date = Date(day)
         val format = SimpleDateFormat("dd/MM/yyyy", Locale.US)
@@ -146,7 +155,7 @@ class DataPersistence constructor (var context: Context) {
         var firstDay = try {
             mRealm.where(Message::class.java).greaterThan("amount", 0).findAllSorted("time", Sort.ASCENDING).first().time
         }
-        catch (e:Exception)
+        catch (e: Exception)
         {
             System.currentTimeMillis()
         }
@@ -177,8 +186,8 @@ class DataPersistence constructor (var context: Context) {
         for (x in firstDay..lastDay step 3600 * 1000 * 24)
         {
             val d = asDay(x)
-            sp[ d ] = 0
-            sv[ d ] = 0
+            sp[d] = 0
+            sv[d] = 0
         }
 
         val ret = mRealm.where(Message::class.java).lessThan("time", to).greaterThan("time", from).findAllSorted("time")

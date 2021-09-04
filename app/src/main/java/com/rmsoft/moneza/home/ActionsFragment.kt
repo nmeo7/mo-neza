@@ -164,11 +164,12 @@ class ActionsFragment : Fragment() {
 
             val tm = requireContext().getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
 
+            /*
             if (tm.networkOperatorName != "MTN Rwanda")
             {
                 Toast.makeText(requireActivity(), "Iki gikorwa kibasha gukorwa kuri simu kadi ya MTN gusa!", Toast.LENGTH_LONG).show();
                 return@setOnClickListener
-            }
+            }*/
 
             numberValue = number.text.toString().replace(" ", "")
             amountValue = amount.text.toString().replace(" ", "")

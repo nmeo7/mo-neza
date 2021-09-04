@@ -42,8 +42,6 @@ class TransactionsListFragment : Fragment(), SwipeRefreshLayout.OnRefreshListene
         rvContacts = view.findViewById<View>(R.id.list2) as RecyclerView
         fastScroller = view.findViewById(R.id.fast_scroller) as FastScroller
 
-        refreshAdapter ()
-
         val mSwipeRefreshLayout = view.findViewById(R.id.swipe_container) as SwipeRefreshLayout
         mSwipeRefreshLayout.setOnRefreshListener(this)
         mSwipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary,
@@ -71,6 +69,11 @@ class TransactionsListFragment : Fragment(), SwipeRefreshLayout.OnRefreshListene
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        refreshAdapter ()
+    }
+
     private val viewModel: StateMachine by activityViewModels()
 
 
@@ -89,7 +92,7 @@ class TransactionsListFragment : Fragment(), SwipeRefreshLayout.OnRefreshListene
 
     private fun reReadMessages () {
         Log.i("MessageReadAll", "Starting...")
-        MessageReadAll(requireActivity(), false).readMessages(requireContext(), requireActivity())
+        MessageReadAll(requireActivity(), true).readMessages(requireContext(), requireActivity())
         Log.i("MessageReadAll", "Done.")
     }
 
