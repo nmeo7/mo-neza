@@ -8,11 +8,13 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
-import androidx.appcompat.widget.SearchView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
@@ -21,9 +23,9 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.viewpager.widget.ViewPager
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.borax12.materialdaterangepicker.date.DatePickerDialog
 import com.google.android.material.navigation.NavigationView
-import com.leavjenn.smoothdaterangepicker.date.SmoothDateRangePickerFragment
 import com.leinardi.android.speeddial.SpeedDialView
 import com.rmsoft.moneza.home.ActionsFragment
 import com.rmsoft.moneza.home.dashboard.DashboardFragment
@@ -175,10 +177,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val now = Calendar.getInstance()
         var dpd = DatePickerDialog.newInstance(
-            this,
-            now[Calendar.YEAR],
-            now[Calendar.MONTH],
-            now[Calendar.DAY_OF_MONTH]
+                this,
+                now[Calendar.YEAR],
+                now[Calendar.MONTH],
+                now[Calendar.DAY_OF_MONTH]
         )
         // dpd.show(fragmentManager, "Datepickerdialog")
 
@@ -279,8 +281,49 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-            R.id.nav_dashboard -> {
-                DataPersistence(this).reset()
+            R.id.reset -> {
+                val alertDialog  = SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+                        .setTitleText("Urashaka gusiba koko?")
+                        .setContentText("Ama kode wabitse ntago uzongera kuyabona!")
+                        .setConfirmText("Yego, siba!")
+                        .setCancelText("Oya, tubireke!")
+                        .setConfirmClickListener { sDialog ->
+                            DataPersistence(this).reset()
+                            sDialog.dismissWithAnimation()
+                        }
+                        .showCancelButton(true)
+                        .setCancelClickListener { sDialog -> sDialog.cancel() }
+
+                alertDialog.show()
+
+                // val btn: Button = alertDialog.findViewById(R.id.confirm_button) as Button
+                // btn.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
+
+                // btn = alertDialog.findViewById(R.id.cancel) as Button
+                // btn.setBackgroundColor(ContextCompat.getColor(this, R.color.red))
+                alertDialog.getButton(SweetAlertDialog.BUTTON_CONFIRM).setBackgroundColor(resources.getColor(R.color.colorPrimaryDark));
+
+
+
+            }
+            R.id.withdrawal -> {
+                var ussdCode = "*182*7*2#"
+                ussdCode = ussdCode.substring(0, ussdCode.length - 1)
+                val ussdCodeNew = ussdCode + Uri.encode("#")
+                startActivity(Intent(Intent.ACTION_CALL, Uri.parse("tel:$ussdCodeNew")))
+            }
+            R.id.balance -> {
+                var ussdCode = "*182*6*1#"
+                ussdCode = ussdCode.substring(0, ussdCode.length - 1)
+                val ussdCodeNew = ussdCode + Uri.encode("#")
+                startActivity(Intent(Intent.ACTION_CALL, Uri.parse("tel:$ussdCodeNew")))
+            }
+            R.id.share -> {
+                val sendIntent = Intent()
+                sendIntent.action = Intent.ACTION_SEND
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "The best financial app you will ever use.")
+                sendIntent.type = "text/plain"
+                startActivity(sendIntent)
             }
         }
 
@@ -320,13 +363,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onDateSet(
-        view: DatePickerDialog?,
-        year: Int,
-        monthOfYear: Int,
-        dayOfMonth: Int,
-        yearEnd: Int,
-        monthOfYearEnd: Int,
-        dayOfMonthEnd: Int
+            view: DatePickerDialog?,
+            year: Int,
+            monthOfYear: Int,
+            dayOfMonth: Int,
+            yearEnd: Int,
+            monthOfYearEnd: Int,
+            dayOfMonthEnd: Int
     ) {
 
     }
