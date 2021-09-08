@@ -35,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_margin="8dp"
                 android:textSize="24sp"
-                android:hint="Nimero, Kode, etc."
+                android:hint="@string/number_text_hint"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:boxCornerRadiusTopStart="16dp"
                 app:boxCornerRadiusTopEnd="16dp"
@@ -68,7 +68,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="0dp"
                 android:inputType="phone"
-                android:hint="Amafaranga"
+                android:hint="@string/cash_text_hint"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:boxStrokeColor="@color/colorSecondary"
                 app:hintTextColor="@color/colorSecondaryDark"
@@ -113,7 +113,7 @@
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="guhaha 🌾"
+                        android:text="@string/chip_food"
                         app:chipStrokeWidth="1dp"
                         app:chipStrokeColor="@color/colorAccent"/>
 
@@ -123,7 +123,7 @@
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="kubaho 🏠"
+                        android:text="@string/chip_basic"
                         app:chipStrokeWidth="1dp"
                         app:chipStrokeColor="@color/colorAccent"/>
 
@@ -133,7 +133,7 @@
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="kugenda 🚌"
+                        android:text="@string/chip_transport"
                         app:chipStrokeWidth="1dp"
                         app:chipStrokeColor="@color/colorAccent"/>
 
@@ -143,7 +143,7 @@
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="kwiyitaho 💇‍"
+                        android:text="@string/chip_self_care"
                         app:chipStrokeWidth="1dp"
                         app:chipStrokeColor="@color/colorAccent"/>
 
@@ -153,7 +153,7 @@
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="kwaguka 📚"
+                        android:text="@string/chip_experience"
                         app:chipStrokeWidth="1dp"
                         app:chipStrokeColor="@color/colorAccent"/>
 
@@ -163,7 +163,7 @@
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="gutanga 🌹"
+                        android:text="@string/chip_giving"
                         app:chipStrokeWidth="1dp"
                         app:chipStrokeColor="@color/colorAccent"/>
 
@@ -173,7 +173,7 @@
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="kwambara 👖"
+                        android:text="@string/chip_clothes"
                         app:chipStrokeWidth="1dp"
                         app:chipStrokeColor="@color/colorAccent"/>
 
@@ -183,7 +183,7 @@
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="gusohoka 🍻"
+                        android:text="@string/chip_fun"
                         app:chipStrokeWidth="1dp"
                         app:chipStrokeColor="@color/colorAccent"/>
 
@@ -193,7 +193,7 @@
                         android:padding="0dp"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="gukina 🎮"
+                        android:text="@string/chip_pets"
                         app:chipStrokeWidth="1dp"
                         app:chipStrokeColor="@color/colorAccent"/>
 
@@ -203,7 +203,6 @@
 
             <Button
                 android:id="@+id/action_balance"
-                android:text="Kubikuza"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:layout_marginBottom="40dp"
@@ -217,10 +216,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/amount_layout"
+                android:text="@string/balance"
                 />
             <LinearLayout
                 android:id="@+id/bottom_button"
-                android:text="Kubikuza"
                 android:layout_height="160dp"
                 android:layout_width="match_parent"
                 app:layout_constraintEnd_toEndOf="parent"

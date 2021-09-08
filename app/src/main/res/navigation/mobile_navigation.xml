@@ -8,18 +8,18 @@
     <fragment
         android:id="@+id/nav_actions"
         android:name="com.rmsoft.moneza.home.ActionsFragment"
-        android:label="@string/menu_home"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_actions" />
 
     <fragment
         android:id="@+id/nav_transactions_list"
         android:name="com.rmsoft.moneza.home.transactions_list.TransactionsListFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_transactions_list" />
 
     <fragment
         android:id="@+id/nav_dashboard"
         android:name="com.rmsoft.moneza.home.dashboard.DashboardFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_dashboard" />
 </navigation>

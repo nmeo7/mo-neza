@@ -55,7 +55,7 @@
             android:layout_marginRight="16dp"
             android:background="@drawable/button_bg"
             app:backgroundTint="@color/colorSecondary"
-            android:text="ibindi .."
+            android:text="@string/more"
             android:textAllCaps="false"
             android:textSize="17sp" />
     </LinearLayout>
@@ -79,7 +79,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:background="@drawable/rounded"
-            android:text="Twagiye!"
+            android:text="@string/yes"
             android:textAllCaps="false"
             android:textSize="17sp" />
     </LinearLayout>

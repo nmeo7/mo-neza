@@ -1,28 +1,69 @@
 <resources>
-    <string name="app_name">Mo Neza by RMSoft</string>
-    <string name="title_activity_onboarding">Mo Neza</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="app_name" translatable="false">Mo Neza</string>
+    <string name="title_activity_onboarding" translatable="false">Mo Neza Kinya</string>
+    <string name="title_activity_qr" translatable="false">QR Code</string>
+    <string name="title_activity_main" translatable="false">Mo Neza</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">RM Soft</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="withdraw">Kubikuza</string>
+    <string name="balance">Kureba Asigaye</string>
+    <string name="language">Change Language</string>
+    <string name="agreements">Amasezerano</string>
+    <string name="share">Gusangiza</string>
+    <string name="spam">Ubutubuzi</string>
+    <string name="reset">Gusiba byose</string>
 
-    <string name="menu_home">Mo Neza</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="title_activity_qr">QrActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="more">ibindi…</string>
+    <string name="yes">Twagiye!</string>
+
+    <string name="number_text_hint">Nimero, Kode, etc.</string>
+    <string name="cash_text_hint">Amafaranga</string>
+
+    <string name="chip_food">guhaha 🌾</string>
+    <string name="chip_basic">kubaho 🏠</string>
+    <string name="chip_transport">kugenda 🚌</string>
+    <string name="chip_self_care">kwiyitaho 💇</string>
+    <string name="chip_experience">kwaguka 📚</string>
+    <string name="chip_giving">gutanga 🌹</string>
+    <string name="chip_clothes">kwambara 👖</string>
+    <string name="chip_fun">gusohoka 🍻</string>
+    <string name="chip_pets">gukina 🎮</string>
+
+    <string name="airtime">Kwigurira ama unites</string>
+    <string name="send">Kohereza</string>
+    <string name="pay">Kwishyura</string>
+
+    <string name="days_range">Kuva %1$s kugera %2$s</string>
+    <string name="gained">Ayinjiye: </string>
+    <string name="spent">Ayasohotse: </string>
+    <string name="opening_balance">Watangiranye: </string>
+    <string name="closing_balance">Warangizanye: </string>
+    <string name="dash_balance">Asigaye: </string>
+
+    <string name="dash_withdraws">kubikuza: </string>
+    <string name="dash_deposits">Kubitsa: </string>
+    <string name="dash_received">Kwakira: </string>
+    <string name="dash_fees">Komisiyo: </string>
+    <string name="dash_payments">Kwishyura: </string>
+    <string name="dash_transfers">Kohereza: </string>
+    <string name="dash_total">Yose Hamwe: </string>
+
+    <string name="your_number">Nimero yawe</string>
+
+    <string name="lst_fee">komisiyo</string>
+    <string name="lst_balance">Bal.: </string>
+    <string name="lst_time"> saa </string>
+
+    <string name="amount_error">Goddamn it</string>
+    <string name="hint_number">nimero</string>
+    <string name="hint_code">kode y\'umucuruzi</string>
+    <string name="hint_irembo">kode y\'irembo</string>
+    <string name="hint_cash_power">kashi pawa / irembo</string>
+
+    <string name="delete_title">Urashaka gusiba koko?</string>
+    <string name="delete_content">Ama kode yose wabitse ntago uzongera kuyabona!</string>
+    <string name="delete_yes">Sawa</string>
+    <string name="delete_no">Kureka</string>
+
+    <string name="searching">gushaka…</string>
+    <string name="share_content">Porogaramu ya mbere nziza izagufasha mw\'igenzuramibare ry\'amafaranga ukoresha.</string>
 </resources>

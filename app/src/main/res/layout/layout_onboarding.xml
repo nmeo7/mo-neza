@@ -8,14 +8,13 @@
     <ImageView
         android:id="@+id/img_intro"
         android:layout_marginTop="16dp"
-        android:src="@drawable/travel_page_two"
+        android:src="@drawable/ic_launcher"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_marginTop="50dp"
-        android:text="Plan Your Trip"
         android:textAlignment="center"
         android:layout_gravity="center"
         android:textColor="@color/colorPrimaryDark"
@@ -26,7 +25,6 @@
     <TextView
         android:id="@+id/tv_description"
         android:layout_marginTop="16dp"
-        android:text="Choose your destination, plan your trip. \nPick the best place to your holiday"
         android:textAlignment="center"
         android:layout_gravity="center"
         android:textColor="@color/colorPrimaryDark"

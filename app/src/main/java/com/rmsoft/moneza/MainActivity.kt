@@ -1,20 +1,21 @@
 package com.rmsoft.moneza
 
 import android.content.Intent
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
@@ -184,6 +185,37 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         )
         // dpd.show(fragmentManager, "Datepickerdialog")
 
+        // this should be applied in a smart way.
+        // setLocale ("ru")
+
+    }
+
+    fun setLocale() {
+        val res: Resources = resources
+        val dm: DisplayMetrics = res.displayMetrics
+        val conf: Configuration = res.configuration
+
+        // Log.i("LOCALE", conf.locale.language)
+        // Log.i("LOCALE", Locale.getDefault().language)
+
+        val lan = if (Locale.getDefault().language == "en" || Locale.getDefault().language == "fr")
+        {
+            Locale.getDefault().language
+        }
+        else
+            "rw"
+
+        val myLocale = if (conf.locale.language == "rw")
+            Locale(lan)
+        else
+            Locale("rw")
+
+
+        conf.locale = myLocale
+        res.updateConfiguration(conf, dm)
+        val refresh = Intent(this, MainActivity::class.java)
+        finish()
+        startActivity(refresh)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -226,7 +258,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // val searchView = menu.findItem(R.id.action_search).actionView as SearchView
 
         val txtSearch = searchView.findViewById<EditText>(androidx.appcompat.R.id.search_src_text)
-        txtSearch.hint = "gushaka..."
+        txtSearch.hint = resources.getString(R.string.searching)
         txtSearch.setHintTextColor(Color.DKGRAY)
         txtSearch.setTextColor(Color.BLACK)
         return true
@@ -282,11 +314,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.reset -> {
-                val alertDialog  = SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
-                        .setTitleText("Urashaka gusiba koko?")
-                        .setContentText("Ama kode wabitse ntago uzongera kuyabona!")
-                        .setConfirmText("Yego, siba!")
-                        .setCancelText("Oya, tubireke!")
+                val alertDialog = SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+                        .setTitleText(resources.getString(R.string.delete_title))
+                        .setContentText(resources.getString(R.string.delete_content))
+                        .setConfirmText(resources.getString(R.string.delete_yes))
+                        .setCancelText(resources.getString(R.string.delete_no))
                         .setConfirmClickListener { sDialog ->
                             DataPersistence(this).reset()
                             sDialog.dismissWithAnimation()
@@ -302,7 +334,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 // btn = alertDialog.findViewById(R.id.cancel) as Button
                 // btn.setBackgroundColor(ContextCompat.getColor(this, R.color.red))
                 alertDialog.getButton(SweetAlertDialog.BUTTON_CONFIRM).setBackgroundColor(resources.getColor(R.color.colorPrimaryDark));
-
 
 
             }
@@ -321,9 +352,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.share -> {
                 val sendIntent = Intent()
                 sendIntent.action = Intent.ACTION_SEND
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "The best financial app you will ever use.")
+                sendIntent.putExtra(Intent.EXTRA_TEXT, resources.getString(R.string.share_content))
                 sendIntent.type = "text/plain"
                 startActivity(sendIntent)
+            }
+            R.id.language -> {
+                setLocale ()
             }
         }
 

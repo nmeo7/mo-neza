@@ -14,7 +14,7 @@
         android:layout_height="300dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
-        android:contentDescription="Qr" />
+        android:contentDescription="@string/title_activity_qr" />
 
     <!--Edit text to enter text
         for creating a QR code-->
@@ -27,7 +27,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:autofillHints=""
-        android:hint="nimero yawe"
+        android:hint="@string/your_number"
 
         android:inputType="phone" />
 

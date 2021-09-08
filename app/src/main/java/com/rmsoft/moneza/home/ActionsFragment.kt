@@ -176,7 +176,7 @@ class ActionsFragment : Fragment() {
 
             if (numberValue == "" && amountValue == "")
             {
-                var ussdCode = "*182*7*2#"
+                var ussdCode = "*182*6*1#"
                 Log.i("ussdCode", ussdCode)
 
                 ussdCode = ussdCode.substring(0, ussdCode.length - 1)
@@ -273,7 +273,7 @@ class ActionsFragment : Fragment() {
         if (!TextUtils.isEmpty(s)) {
             amountLayout.error = null
         } else {
-            amountLayout.error = "Goddamn it"
+            amountLayout.error = resources.getString(R.string.amount_error)
         }
     }
 
@@ -300,7 +300,7 @@ class ActionsFragment : Fragment() {
                 numberValue = newValue
                 var ret = ""
 
-                numberLayout.hint = "kode, nimero, etc"
+                numberLayout.hint = resources.getString(R.string.number_text_hint)
                 button?.isEnabled = true
 
                 if ((newValue.startsWith("07") && newValue.length <= 10) || newValue == "0") {
@@ -309,8 +309,8 @@ class ActionsFragment : Fragment() {
                             ret += " "
                         ret += newValue[i]
                     }
-                    button?.text = "Kohereza"
-                    numberLayout.hint = "nimero"
+                    button?.text = resources.getString(R.string.send)
+                    numberLayout.hint = resources.getString(R.string.hint_number)
                 }
                 else if (newValue.length in 1..6) {
                     for (i in newValue.indices) {
@@ -318,8 +318,8 @@ class ActionsFragment : Fragment() {
                             ret += " "
                         ret += newValue[i]
                     }
-                    button?.text = "Kwishyura"
-                    numberLayout.hint = "kode"
+                    button?.text = resources.getString(R.string.pay)
+                    numberLayout.hint = resources.getString(R.string.hint_code)
                 }
                 else if (newValue.length in 1..12){
                     for (i in newValue.indices) {
@@ -327,11 +327,11 @@ class ActionsFragment : Fragment() {
                             ret += " "
                         ret += newValue[i]
                     }
-                    button?.text = "Kwishyura"
+                    button?.text = resources.getString(R.string.pay)
                     if (newValue.length == 12)
-                        numberLayout.hint = "kode y'irembo"
+                        numberLayout.hint = resources.getString(R.string.hint_irembo)
                     else
-                        numberLayout.hint = "kashi pawa / irembo"
+                        numberLayout.hint = resources.getString(R.string.hint_cash_power)
                 }
                 else if (newValue != "")
                 {
@@ -342,7 +342,7 @@ class ActionsFragment : Fragment() {
                 }
 
                 if (newValue == "" && numberValue == "") {
-                    button?.text = "Kubikuza"
+                    button?.text = resources.getString(R.string.balance)
                 }
 
                 number.setText(ret.trim())
@@ -377,11 +377,11 @@ class ActionsFragment : Fragment() {
 
             val button = view?.findViewById<Button>(R.id.action_balance)
             if (newValue.isNotEmpty() && numberValue == "") {
-                button?.text = "Kwigurira ama unite"
+                button?.text = resources.getString(R.string.airtime)
             }
 
             if (newValue == "" && numberValue == "") {
-                button?.text = "Kubikuza"
+                button?.text = resources.getString(R.string.balance)
             }
         }
     }

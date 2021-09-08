@@ -1,0 +1,64 @@
+<resources>
+    <string name="withdraw">Withdraw</string>
+    <string name="balance">Balance</string>
+    <string name="language">mu Kinyarwanda</string>
+    <string name="agreements">Agreements</string>
+    <string name="share">Share</string>
+    <string name="spam">Scams</string>
+    <string name="reset">Reset</string>
+
+    <string name="more">more…</string>
+    <string name="yes">let\'s go</string>
+
+    <string name="number_text_hint">phone number, code, etc.</string>
+    <string name="cash_text_hint">amount</string>
+
+    <string name="chip_food">food 🌾</string>
+    <string name="chip_basic">basic 🏠</string>
+    <string name="chip_transport">transport 🚌</string>
+    <string name="chip_self_care">self care 💇</string>
+    <string name="chip_experience">experiences 📚</string>
+    <string name="chip_giving">giving 🌹</string>
+    <string name="chip_clothes">clothes 👖</string>
+    <string name="chip_fun">fun 🍻</string>
+    <string name="chip_pets">pets 🎮</string>
+
+    <string name="airtime">Buy Airtime</string>
+    <string name="send">Send</string>
+    <string name="pay">Pay</string>
+
+    <string name="days_range">From %1$s to %2$s</string>
+    <string name="gained">Gained: </string>
+    <string name="spent">Spent: </string>
+    <string name="opening_balance">Opening balance: </string>
+    <string name="closing_balance">Closing balance: </string>
+    <string name="dash_balance">balance: </string>
+
+    <string name="dash_withdraws">Withdrawals: </string>
+    <string name="dash_deposits">Deposits: </string>
+    <string name="dash_received">Received: </string>
+    <string name="dash_fees">Fees: </string>
+    <string name="dash_payments">Payments: </string>
+    <string name="dash_transfers">Transfers: </string>
+    <string name="dash_total">Total: </string>
+
+    <string name="your_number">your number</string>
+
+    <string name="lst_fee">fee</string>
+    <string name="lst_balance">Bal.: </string>
+    <string name="lst_time"> at </string>
+
+    <string name="amount_error">Goddamn it</string>
+    <string name="hint_number">number</string>
+    <string name="hint_code">merchant code</string>
+    <string name="hint_irembo">irembo code</string>
+    <string name="hint_cash_power">cash power / irembo</string>
+
+    <string name="delete_title">Do you really want to reset?</string>
+    <string name="delete_content">You will lose all saved merchant codes!</string>
+    <string name="delete_yes">OK</string>
+    <string name="delete_no">No</string>
+
+    <string name="searching">searching…</string>
+    <string name="share_content">The best financial app you will ever use.</string>
+</resources>

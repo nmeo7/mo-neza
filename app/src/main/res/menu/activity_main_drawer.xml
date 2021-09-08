@@ -7,26 +7,26 @@
         <item
             android:id="@+id/withdrawal"
             android:icon="@drawable/ic_withdraw"
-            android:title="Kubikuza" />
+            android:title="@string/withdraw" />
         <item
             android:id="@+id/balance"
             android:icon="@drawable/ic_wallet"
-            android:title="Kureba Asigaye" />
+            android:title="@string/balance" />
     </group>
 
     <group android:id="@+id/grp1">
         <item
             android:id="@+id/language"
             android:icon="@drawable/ic_translation"
-            android:title="Change Language" />
+            android:title="@string/language" />
         <item
             android:id="@+id/agreements"
             android:icon="@drawable/ic_contract"
-            android:title="Amasezerano" />
+            android:title="@string/agreements" />
         <item
             android:id="@+id/share"
             android:icon="@drawable/ic_share"
-            android:title="Gusangiza" />
+            android:title="@string/share" />
     </group>
 
     <group android:id="@+id/grp3">
@@ -34,11 +34,11 @@
             android:id="@+id/spam"
             android:icon="@drawable/ic_spam"
             android:iconTint="@color/red"
-            android:title="Spam" />
+            android:title="@string/spam" />
         <item
             android:id="@+id/reset"
             android:icon="@drawable/ic_delete"
             android:iconTint="@color/red"
-            android:title="Gusiba byose" />
+            android:title="@string/reset" />
     </group>
 </menu>

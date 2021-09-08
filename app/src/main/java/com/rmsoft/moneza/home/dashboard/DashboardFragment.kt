@@ -92,34 +92,35 @@ class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         val date_text = view?.findViewById<TextView>(R.id.time_range)
         val date1 = Date(from)
         val date2 = Date(to)
+        val to_ = to + 3600 * 1000 * 24 - 1000
         val format = SimpleDateFormat("dd/MM/yyyy", Locale.US)
-        date_text?.setText( "kuva " +  format.format(date1) + " kugera " + format.format(date2) )
+        date_text?.text = resources.getString(R.string.days_range, format.format(date1), format.format(date2))  // "kuva " +  format.format(date1) + " kugera " + format.format(date2) )
 
-        deposit.text = persistance.aggregates("DEPOSIT", "amount", from, to)
-        payments.text = persistance.aggregates("PAYMENT", "amount", from, to)
-        received.text = persistance.aggregates("RECEIVING", "amount", from, to)
-        sent.text = persistance.aggregates("TRANSFER", "amount", from, to)
-        withdrawals.text = persistance.aggregates("WITHDRAW", "amount", from, to)
+        deposit.text = persistance.aggregates("DEPOSIT", "amount", from, to_)
+        payments.text = persistance.aggregates("PAYMENT", "amount", from, to_)
+        received.text = persistance.aggregates("RECEIVING", "amount", from, to_)
+        sent.text = persistance.aggregates("TRANSFER", "amount", from, to_)
+        withdrawals.text = persistance.aggregates("WITHDRAW", "amount", from, to_)
 
-        total.text = persistance.aggregates("*", "amount", from, to)
-        commission.text = persistance.aggregates("*", "fee", from, to)
+        total.text = persistance.aggregates("*", "amount", from, to_)
+        commission.text = persistance.aggregates("*", "fee", from, to_)
 
-        val sp = persistance.aggregates("PAYMENT", "amount", from, to).replace(" ", "").toInt() +
-                persistance.aggregates("TRANSFER", "amount", from, to).replace(" ", "").toInt() +
-                persistance.aggregates("WITHDRAW", "amount", from, to).replace(" ", "").toInt()
+        val sp = persistance.aggregates("PAYMENT", "amount", from, to_).replace(" ", "").toInt() +
+                persistance.aggregates("TRANSFER", "amount", from, to_).replace(" ", "").toInt() +
+                persistance.aggregates("WITHDRAW", "amount", from, to_).replace(" ", "").toInt()
 
-        val sv = persistance.aggregates("DEPOSIT", "amount", from, to).replace(" ", "").toInt() +
-                persistance.aggregates("RECEIVING", "amount", from, to).replace(" ", "").toInt()
+        val sv = persistance.aggregates("DEPOSIT", "amount", from, to_).replace(" ", "").toInt() +
+                persistance.aggregates("RECEIVING", "amount", from, to_).replace(" ", "").toInt()
 
         savings.text = Message().parseAmount(sv)
         spendings.text = Message().parseAmount(sp)
         // val starting = view.findViewById<TextView>(R.id.dash_starting)
         // val closing = view.findViewById<TextView>(R.id.dash_closing)
-        fee.text = persistance.aggregates("*", "fee", from, to)
+        fee.text = persistance.aggregates("*", "fee", from, to_)
 
         balance.text = persistance.balance()
         starting.text = persistance.balance(from)
-        closing.text = persistance.balance(to)
+        closing.text = persistance.balance(to_)
 
         val days = persistance.days()
 
@@ -130,7 +131,7 @@ class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         // requireActivity().startActivityForResult(intentContact, 5 /*PICK_CONTACT*/)
 
 
-        val days_few = persistance.days(from, to)
+        val days_few = persistance.days(from, to_)
 
         populateChart(days_few["sp"]!!)
 
