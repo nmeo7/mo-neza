@@ -24,6 +24,7 @@ class QrActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
+        supportActionBar?.setBackgroundDrawable( resources.getDrawable(R.drawable.toolbar_bg) )
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

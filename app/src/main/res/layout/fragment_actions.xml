@@ -115,7 +115,7 @@
                         android:layout_marginBottom="0dp"
                         android:text="@string/chip_food"
                         app:chipStrokeWidth="1dp"
-                        app:chipStrokeColor="@color/colorAccent"/>
+                        app:chipStrokeColor="@color/colorPrimary"/>
 
                     <com.google.android.material.chip.Chip
                         android:layout_width="wrap_content"
@@ -125,7 +125,7 @@
                         android:layout_marginBottom="0dp"
                         android:text="@string/chip_basic"
                         app:chipStrokeWidth="1dp"
-                        app:chipStrokeColor="@color/colorAccent"/>
+                        app:chipStrokeColor="@color/colorPrimary"/>
 
                     <com.google.android.material.chip.Chip
                         android:layout_width="wrap_content"
@@ -135,7 +135,7 @@
                         android:layout_marginBottom="0dp"
                         android:text="@string/chip_transport"
                         app:chipStrokeWidth="1dp"
-                        app:chipStrokeColor="@color/colorAccent"/>
+                        app:chipStrokeColor="@color/colorPrimary"/>
 
                     <com.google.android.material.chip.Chip
                         android:layout_width="wrap_content"
@@ -145,7 +145,7 @@
                         android:layout_marginBottom="0dp"
                         android:text="@string/chip_self_care"
                         app:chipStrokeWidth="1dp"
-                        app:chipStrokeColor="@color/colorAccent"/>
+                        app:chipStrokeColor="@color/colorPrimary"/>
 
                     <com.google.android.material.chip.Chip
                         android:layout_width="wrap_content"
@@ -155,7 +155,7 @@
                         android:layout_marginBottom="0dp"
                         android:text="@string/chip_experience"
                         app:chipStrokeWidth="1dp"
-                        app:chipStrokeColor="@color/colorAccent"/>
+                        app:chipStrokeColor="@color/colorPrimary"/>
 
                     <com.google.android.material.chip.Chip
                         android:layout_width="wrap_content"
@@ -165,7 +165,7 @@
                         android:layout_marginBottom="0dp"
                         android:text="@string/chip_giving"
                         app:chipStrokeWidth="1dp"
-                        app:chipStrokeColor="@color/colorAccent"/>
+                        app:chipStrokeColor="@color/colorPrimary"/>
 
                     <com.google.android.material.chip.Chip
                         android:layout_width="wrap_content"
@@ -175,7 +175,7 @@
                         android:layout_marginBottom="0dp"
                         android:text="@string/chip_clothes"
                         app:chipStrokeWidth="1dp"
-                        app:chipStrokeColor="@color/colorAccent"/>
+                        app:chipStrokeColor="@color/colorPrimary"/>
 
                     <com.google.android.material.chip.Chip
                         android:layout_width="wrap_content"
@@ -185,7 +185,7 @@
                         android:layout_marginBottom="0dp"
                         android:text="@string/chip_fun"
                         app:chipStrokeWidth="1dp"
-                        app:chipStrokeColor="@color/colorAccent"/>
+                        app:chipStrokeColor="@color/colorPrimary"/>
 
                     <com.google.android.material.chip.Chip
                         android:layout_width="wrap_content"
@@ -195,7 +195,7 @@
                         android:layout_marginBottom="0dp"
                         android:text="@string/chip_pets"
                         app:chipStrokeWidth="1dp"
-                        app:chipStrokeColor="@color/colorAccent"/>
+                        app:chipStrokeColor="@color/colorPrimary"/>
 
                 </com.google.android.material.chip.ChipGroup>
 

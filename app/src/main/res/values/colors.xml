@@ -4,9 +4,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00000000</color>
 
-    <color name="colorPrimary">#FBD60A</color>
+    <color name="colorPrimary">#FFF7C9</color>
     <color name="colorPrimaryDark">#4E3201</color>
-    <color name="colorAccent">#FFF7C9</color>
+    <color name="colorAccent">#fe7601</color>
 
     <color name="colorSecondary">#CBFF11</color>
     <color name="colorSecondaryDark">#2C5914</color>
@@ -14,7 +14,7 @@
     <color name="colorTertiary">#1C9AFF</color>
     <color name="colorTertiaryLight">#E1F0FD</color>
 
-    <color name="red">#FF3C00</color>
+    <color name="red">#F8683C</color>
     <color name="yellow">#FFA200</color>
     <color name="green">#2EFF31</color>4
 

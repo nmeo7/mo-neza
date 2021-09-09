@@ -49,8 +49,8 @@
 
     <string name="your_number">Nimero yawe</string>
 
-    <string name="lst_fee">komisiyo</string>
-    <string name="lst_balance">Bal.: </string>
+    <string name="lst_fee"> + komisiyo: </string>
+    <string name="lst_balance">hasigaye: </string>
     <string name="lst_time"> saa </string>
 
     <string name="amount_error">Goddamn it</string>

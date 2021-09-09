@@ -133,6 +133,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+        toolbar.setBackgroundDrawable( resources.getDrawable(R.drawable.toolbar_bg) )
 
         val drawerLayout: DrawerLayout = findViewById(R.id.activity_main)
         appBarConfiguration = AppBarConfiguration(setOf(
