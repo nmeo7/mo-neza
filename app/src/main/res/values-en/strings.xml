@@ -1,6 +1,7 @@
 <resources>
     <string name="withdraw">Withdraw</string>
     <string name="balance">Check Balance</string>
+    <string name="more_codes">More codes</string>
     <string name="language">mu Kinyarwanda</string>
     <string name="agreements">Agreements</string>
     <string name="share">Share</string>
@@ -61,4 +62,10 @@
 
     <string name="searching">searching…</string>
     <string name="share_content">The best financial app you will ever use.</string>
+
+    <string name="next">Next</string>
+    <string name="confirm">Confirm</string>
+
+    <string name="text_challenge">To proceed, enter here the missing character:</string>
+    <string name="title_activity_more_codes">More Codes</string>
 </resources>

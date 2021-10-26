@@ -12,24 +12,60 @@
         android:orientation="vertical"
         >
 
-
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp">
 
-            <LinearLayout
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/time_range"
-                    android:layout_columnSpan="2"
+                android:layout_height="wrap_content"
+                app:singleLine="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_day"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/days_range"
-                    android:clickable="true"
-                    />
-            </LinearLayout>
+                    android:padding="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:text="day"
+                    app:chipStrokeWidth="1dp"
+                    android:checked="true"
+                    app:chipStrokeColor="@color/colorPrimary"/>
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:text="week"
+                    app:chipStrokeWidth="1dp"
+                    app:chipStrokeColor="@color/colorPrimary"/>
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:text="month"
+                    app:chipStrokeWidth="1dp"
+                    app:chipStrokeColor="@color/colorPrimary"/>
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_custom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:text="custom"
+                    app:chipStrokeWidth="1dp"
+                    app:chipStrokeColor="@color/colorPrimary"/>
+            </com.google.android.material.chip.ChipGroup>
         </HorizontalScrollView>
 
         <LinearLayout
@@ -109,6 +145,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" - " />
+                        <TextView
                             android:id="@+id/dash_spendings"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -116,7 +156,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=" + " />
+                            android:text=" - " />
                         <TextView
                             android:id="@+id/dash_fee"
                             android:layout_width="wrap_content"
@@ -143,7 +183,7 @@
                         app:sv_speedTextFormat="INTEGER"
                         app:sv_withIndicatorLight="true"
                         app:sv_indicatorLightColor="@color/colorAccent"
-                        app:sv_image="@drawable/ic_drawing2"
+                        app:sv_image="@drawable/ic_drawing"
                         app:sv_indicator="NeedleIndicator"
                         app:sv_unit=""
                         app:sv_unitUnderSpeedText="true"

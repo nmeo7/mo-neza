@@ -2,39 +2,45 @@ package com.rmsoft.moneza.home.dashboard
 
 
 import android.graphics.Color
+import android.graphics.LinearGradient
+import android.graphics.Shader
 import android.os.Bundle
+import android.text.TextPaint
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.borax12.materialdaterangepicker.date.DatePickerDialog
-import com.db.williamchart.slidertooltip.SliderTooltip
 import com.db.williamchart.view.LineChartView
 import com.github.anastr.speedviewlib.ImageSpeedometer
-import com.github.anastr.speedviewlib.SpeedView
-import com.github.anastr.speedviewlib.components.Section
+import com.google.android.material.chip.Chip
 import com.google.android.material.datepicker.MaterialDatePicker
-import com.leinardi.android.speeddial.SpeedDialView
 import com.rmsoft.moneza.R
 import com.rmsoft.moneza.util.DataPersistence
 import com.rmsoft.moneza.util.Message
-import io.github.farshidroohi.ChartEntity
-import io.github.farshidroohi.LineChart
 import java.io.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 
-class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
+class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener, AdapterView.OnItemSelectedListener {
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_dashboard, container, false)
     }
+
+    lateinit var chip_day: Chip
+    lateinit var chip_week: Chip
+    lateinit var chip_month: Chip
+    lateinit var chip_custom: Chip
 
     private fun parseMoney(it: List<Int>) : String
     {
@@ -70,7 +76,7 @@ class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         return ret.toString()
     }
 
-    fun updateDashboard (from: Long, to: Long)
+    fun updateDashboard(from: Long, to: Long)
     {
         val commission = view?.findViewById<TextView>(R.id.dash_commission)!!
         val balance = view?.findViewById<TextView>(R.id.dash_balance)!!
@@ -89,12 +95,12 @@ class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
 
         val persistance = DataPersistence(requireActivity())
 
-        val date_text = view?.findViewById<TextView>(R.id.time_range)
+        // val date_text = view?.findViewById<TextView>(R.id.time_range)
         val date1 = Date(from)
         val date2 = Date(to)
         val to_ = to + 3600 * 1000 * 24 - 1000
         val format = SimpleDateFormat("dd/MM/yyyy", Locale.US)
-        date_text?.text = resources.getString(R.string.days_range, format.format(date1), format.format(date2))  // "kuva " +  format.format(date1) + " kugera " + format.format(date2) )
+        // date_text?.text = resources.getString(R.string.days_range, format.format(date1), format.format(date2))  // "kuva " +  format.format(date1) + " kugera " + format.format(date2) )
 
         deposit.text = persistance.aggregates("DEPOSIT", "amount", from, to_)
         payments.text = persistance.aggregates("PAYMENT", "amount", from, to_)
@@ -121,6 +127,18 @@ class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         balance.text = persistance.balance()
         starting.text = persistance.balance(from)
         closing.text = persistance.balance(to_)
+
+
+        val paint: TextPaint = closing.paint
+        val width = paint.measureText(persistance.balance())
+
+        val textShader: Shader = LinearGradient(0f, 0f, width, closing.textSize, intArrayOf(
+                Color.parseColor(resources.getString(R.color.colorAccent)),
+                Color.parseColor(resources.getString(R.color.colorAccent)),
+                Color.parseColor(resources.getString(R.color.colorAccent)),
+                Color.parseColor(resources.getString(R.color.colorSecondary))), null, Shader.TileMode.CLAMP)
+        closing.paint.shader = textShader
+        closing.setTextColor(resources.getColor(R.color.colorAccent))
 
         val days = persistance.days()
 
@@ -163,12 +181,12 @@ class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         Log.i("DATA", sum_sv.toString())
         Log.i("DATA", sum_sp.toString())
 
-        val size2 = days_few.size
+        val size2 = days_few["sp"]?.size!!
 
         speedometer1!!.maxSpeed = size2 * sv_sorted[end].second + 1
         speedometer1!!.minSpeed = size2 * sv_sorted[start].second
         speedometer2!!.maxSpeed = size2 * sp_sorted[end].second + 1
-        speedometer2!!.minSpeed = size2 * sp_sorted[start].second
+        speedometer2!!.minSpeed = size2 * sp_sorted[start].second - 1
 
         if (sum_sv > size2 * sv_sorted[end].second)
             speedometer1!!.maxSpeed = sum_sv
@@ -182,7 +200,76 @@ class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
 
         speedometer1?.speedTo(sum_sv)
         speedometer2?.speedTo(sum_sp)
+    }
 
+    fun onChipSelected (range: Long)
+    {
+        chip_day.isChecked = false
+        chip_week.isChecked = false
+        chip_month.isChecked = false
+        chip_custom.isChecked = false
+        chip_custom.text = "custom"
+
+        when (range){
+            1L -> chip_day.isChecked = true
+            7L -> chip_week.isChecked = true
+            30L -> chip_month.isChecked = true
+            0L -> chip_custom.isChecked = true
+        }
+
+        if (range == 0L)
+        {
+            val now = Calendar.getInstance()
+            val builder = MaterialDatePicker.Builder.dateRangePicker()
+            // val now = Calendar.getInstance()
+            builder.setSelection(androidx.core.util.Pair(now.timeInMillis, now.timeInMillis))
+            val picker = builder.build()
+            picker.show(activity?.supportFragmentManager!!, picker.toString())
+
+            picker.addOnNegativeButtonClickListener {  }
+            picker.addOnPositiveButtonClickListener {
+                Log.i("TAG", "The selected date range is ${it.first} - ${it.second}")
+
+                val date1 = Date(it.first)
+                val date2 = Date(it.second)
+                val to_ = it.second + 3600 * 1000 * 24 - 1000
+                val format = SimpleDateFormat("dd/MM/yyyy", Locale.US)
+                chip_custom.text = resources.getString(R.string.days_range, format.format(date1), format.format(date2))
+                updateDashboard(it.first, to_)
+            }
+        }
+        else
+        {
+            val today = System.currentTimeMillis() - System.currentTimeMillis() % (3600 * 1000 * 24L) + 1000 * 3600 * 24
+            val starting = today - 1000 * 3600 * 24 * range
+            updateDashboard(starting, today)
+
+            Log.i("RANGE", starting.toString())
+        }
+    }
+
+    override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
+        Log.i("CLICKED", pos.toString())
+
+        if (pos == 2)
+        {
+            val now = Calendar.getInstance()
+            val builder = MaterialDatePicker.Builder.dateRangePicker()
+            // val now = Calendar.getInstance()
+            builder.setSelection(androidx.core.util.Pair(now.timeInMillis, now.timeInMillis))
+            val picker = builder.build()
+            picker.show(activity?.supportFragmentManager!!, picker.toString())
+
+            picker.addOnNegativeButtonClickListener {  }
+            picker.addOnPositiveButtonClickListener {
+                Log.i("TAG", "The selected date range is ${it.first} - ${it.second}")
+                updateDashboard(it.first, it.second)
+            }
+        }
+    }
+
+    override fun onNothingSelected(parent: AdapterView<*>) {
+        // Another interface callback
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -194,8 +281,8 @@ class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         val now = Calendar.getInstance()
         // dpd.show( requireActivity().fragmentManager, "Datepickerdialog")
 
-        val date_text = view.findViewById<TextView>(R.id.time_range)
-        date_text.setOnClickListener {
+        // val date_text = view.findViewById<TextView>(R.id.time_range)
+        /*date_text.setOnClickListener {
             val builder = MaterialDatePicker.Builder.dateRangePicker()
             // val now = Calendar.getInstance()
             builder.setSelection(androidx.core.util.Pair(now.timeInMillis, now.timeInMillis))
@@ -205,17 +292,28 @@ class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
             picker.addOnNegativeButtonClickListener {  }
             picker.addOnPositiveButtonClickListener {
                 Log.i("TAG", "The selected date range is ${it.first} - ${it.second}")
-                updateDashboard (it.first, it.second)
+                updateDashboard(it.first, it.second)
             }
 
-        }
+        }*/
 
         Log.i("ON_VIEW_CREATED", "cr")
+
+        chip_day = view.findViewById(R.id.chip_day)
+        chip_week = view.findViewById(R.id.chip_week)
+        chip_month = view.findViewById(R.id.chip_month)
+        chip_custom = view.findViewById(R.id.chip_custom)
+
+        chip_day.setOnClickListener { onChipSelected(1) }
+        chip_week.setOnClickListener { onChipSelected(7) }
+        chip_month.setOnClickListener { onChipSelected(30) }
+        chip_custom.setOnClickListener { onChipSelected(0) }
     }
 
     override fun onResume() {
         super.onResume()
-        updateDashboard (System.currentTimeMillis() - 30 * 3600 * 1000 * 24L, System.currentTimeMillis())
+        // updateDashboard(System.currentTimeMillis() - 1 * 3600 * 1000 * 24L, System.currentTimeMillis())
+        onChipSelected (1)
     }
 
     fun populateChart(lineSet: MutableList<Pair<String, Float>>)
@@ -225,7 +323,7 @@ class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
         lineChart.gradientFillColors =
                 intArrayOf(
                         Color.TRANSPARENT,
-                    Color.TRANSPARENT
+                        Color.TRANSPARENT
                 )
         lineChart.animation.duration = 1000L
 
@@ -244,13 +342,13 @@ class DashboardFragment : Fragment(), DatePickerDialog.OnDateSetListener {
     }
 
     override fun onDateSet(
-        view: DatePickerDialog?,
-        year: Int,
-        monthOfYear: Int,
-        dayOfMonth: Int,
-        yearEnd: Int,
-        monthOfYearEnd: Int,
-        dayOfMonthEnd: Int
+            view: DatePickerDialog?,
+            year: Int,
+            monthOfYear: Int,
+            dayOfMonth: Int,
+            yearEnd: Int,
+            monthOfYearEnd: Int,
+            dayOfMonthEnd: Int
     ) {
 
     }

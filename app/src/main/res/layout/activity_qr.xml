@@ -6,25 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".QrActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.MoNeza.AppBarOverlay">
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tabTextColor="@color/colorPrimaryDark"
-            app:tabSelectedTextColor="@color/colorPrimary"
-            app:tabIndicatorColor="@color/colorPrimary"
-            app:tabBackground="@color/white"
-            android:background="@color/white" />
-    </com.google.android.material.appbar.AppBarLayout>
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
+        android:layout_margin="0dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MoNeza.AppBarOverlay"
+        android:background="@color/transparent"
+        app:elevation="0dp">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="240sp"
+            android:layout_height="40sp"
+            app:tabTextColor="@color/colorPrimaryDark"
+            app:tabSelectedTextColor="@color/colorAccent"
+            app:tabIndicatorColor="@color/transparent"
+            app:tabIndicatorHeight="0dp"
+            app:tabIndicatorFullWidth="true"
+            app:tabRippleColor="@color/colorAccent"
+            app:tabBackground="@drawable/tab_color_selector"
+            android:background="@drawable/tabs_bg"
+            android:theme="@style/AppTheme.TabLayout"
+            android:layout_gravity="center|top"
+            android:layout_margin="16dp"
+            android:padding="0dp"
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:layout_marginTop="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:text="|"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        android:layout_margin="16dp"/>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

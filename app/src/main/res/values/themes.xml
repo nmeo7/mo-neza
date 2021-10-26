@@ -26,6 +26,7 @@
 
         <item name="buttonStyle">@style/btn</item>
 
+        <item name="tabStyle">@style/AppTheme.TabLayout</item>
 
     </style>
 
@@ -75,10 +76,24 @@
         <item name="colorButtonNormal">@color/colorSecondary</item>
         <item name="android:textColor">@color/black</item>
         <item name="colorAccent">@color/colorSecondary</item>
+        <item name="background">@drawable/button_bg</item>
     </style>
 
     <style name="ToolbarColoredBackArrow" parent="Theme.MoNeza">
         <item name="android:textColorSecondary">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="spinnerItemStyle" parent="android:Widget.TextView.SpinnerItem">
+
+    </style>
+
+    <style name="spinnerDropDownItemStyle" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+
+    </style>
+
+    <style name="AppTheme.TabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabSelectedTextColor">@android:color/white</item>
+        <item name="tabTextColor">@android:color/white</item>
     </style>
 
 

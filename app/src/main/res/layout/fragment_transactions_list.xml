@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="end"
-        app:bubbleColor="@color/colorPrimary"
+        app:bubbleColor="@color/colorAccent"
         app:bubbleTextColor="@color/white"
         app:handleColor="@color/colorPrimaryDark"
         app:showBubble="true"

@@ -52,7 +52,7 @@ class OnboardingActivity : AppCompatActivity() {
         mList.add(
             OnboardingItem(
                 "Ikaze!",
-                "Genzura imikoreshereze ya\nMULLA zawe NEZA\nmu buryo bwa gihanga. Do it in style.",
+                "Genzura imikoreshereze\ny'amafaranga yawe NEZA.",
                 R.drawable.travel_page_one
             )
         )
@@ -73,7 +73,7 @@ class OnboardingActivity : AppCompatActivity() {
         mList.add(
             OnboardingItem(
                 "Uburenganzira",
-                "Twemerere gusoma ubutumwa bwa\nMoMo yanyu gusa!",
+                "Twemerere gusoma ubutumwa\nbwa MoMo yanyu gusa!",
                 R.drawable.travel_page_three
             )
         )

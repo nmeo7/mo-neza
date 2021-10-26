@@ -12,6 +12,10 @@
             android:id="@+id/balance"
             android:icon="@drawable/ic_wallet"
             android:title="@string/balance" />
+        <item
+            android:id="@+id/more_codes"
+            android:icon="@drawable/ic_code"
+            android:title="@string/more_codes" />
     </group>
 
     <group android:id="@+id/grp1">

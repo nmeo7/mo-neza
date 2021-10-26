@@ -47,7 +47,6 @@
                     android:id="@+id/number"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:inputType="phone"
                     android:padding="16dp"
                     android:drawableRight="@drawable/ic_contact_book"
                     android:drawableEnd="@drawable/ic_contact_book"
@@ -56,6 +55,9 @@
                     android:drawablePadding="16dp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:digits="0123456789ABCDEF "
+                    android:inputType="phone"
+                    android:maxLength="15"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -201,7 +203,7 @@
 
             </HorizontalScrollView>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/action_balance"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -210,13 +212,14 @@
                 android:layout_width="match_parent"
                 android:padding="16dp"
                 android:background="@drawable/button_bg"
-                app:backgroundTint="@color/colorSecondary"
+                android:textAlignment="center"
+                android:gravity="center"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/amount_layout"
-                android:text="@string/balance"
+                android:text="@string/next"
                 />
             <LinearLayout
                 android:id="@+id/bottom_button"

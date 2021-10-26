@@ -1,5 +1,6 @@
 package com.rmsoft.moneza.home.transactions_list
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -91,12 +92,16 @@ class TransactionsAdapter(private val transactions: List<Message>, private val l
         val time = viewHolder.time
         // val type = viewHolder.type
 
-        subject.text = message.subject
         amount.text = message.parseAmount(message.amount)
         fee.text = message.parseAmount(message.fee)
         balance.text = message.parseAmount(message.balance)
         time.text = message.getTime()
         // type.text = message.type
+
+        val re = Regex("[A-Za-z0-9 ;]")
+        val msg = if (message.message == null) "" else re.replace(message.message!!, "").replace("-", "")
+        Log.i("TAGS", msg)
+        subject.text = message.subject + " " + msg
 
         if (message.fee == 0)
         {

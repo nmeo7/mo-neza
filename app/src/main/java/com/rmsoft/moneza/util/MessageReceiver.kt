@@ -19,6 +19,7 @@ import androidx.core.app.NotificationManagerCompat
 import com.rmsoft.moneza.MainActivity
 import com.rmsoft.moneza.R
 import com.rmsoft.moneza.StateMachine
+import com.tapadoo.alerter.Alerter
 
 
 class MessageReceiver : BroadcastReceiver() {
@@ -27,6 +28,13 @@ class MessageReceiver : BroadcastReceiver() {
 
     private val TAG: String = "Sms Receiver"
     val pdu_type = "pdus"
+
+    fun setMainActivity (mainActivity: MainActivity)
+    {
+        this.activity = mainActivity
+    }
+
+    var activity: MainActivity? = null
 
     @TargetApi(Build.VERSION_CODES.M)
     @Override
@@ -70,6 +78,7 @@ class MessageReceiver : BroadcastReceiver() {
             }
 
             Log.i("OnMessage", "$sender: $msgBody")
+            var message = ""
 
             if (sender == "M-Money")
             {
@@ -83,16 +92,7 @@ class MessageReceiver : BroadcastReceiver() {
                     val amount = sharedPref.getString("AMOUNT", "0")
                     val number = sharedPref.getString("NUMBER", "")
                     val time = sharedPref.getLong("TIME", Long.MAX_VALUE)
-                    val message = sharedPref.getString("MESSAGE", "")
-
-                    // reset the shared prefs
-                    with (sharedPref?.edit()) {
-                        this?.putString("NUMBER", "")
-                        this?.putString("AMOUNT", "")
-                        this?.putString("MESSAGE", "")
-                        this?.putLong("TIME", 0)
-                        this?.apply()
-                    }
+                    message = sharedPref.getString("MESSAGE", "")!!
 
                     if (m.amount == amount?.toInt() && (System.currentTimeMillis() < time + 1000 * 120))
                     {
@@ -102,13 +102,25 @@ class MessageReceiver : BroadcastReceiver() {
                         Log.i("Connect", m.toString())
                         saved = true
                     }
+
+                    // reset the shared prefs
+                    with (sharedPref?.edit()) {
+                        this?.putString("NUMBER", "")
+                        this?.putString("AMOUNT", "")
+                        this?.putString("MESSAGE", "")
+                        this?.putLong("TIME", 0)
+                        this?.apply()
+                    }
                 }
-                    // maContext?.notifySmsReceived(m)
+
+                // if (activity != null)
+                    // activity?.notifySmsReceived(m)
 
                 if (!saved)
                     DataPersistence(context).save(m)
 
-                // showNotification(context)
+                if (message != "")
+                    showNotification(context)
             }
         }
     }
@@ -132,14 +144,26 @@ class MessageReceiver : BroadcastReceiver() {
 
     private fun showNotification(context: Context) {
         createNotificationChannel(context)
+
+        val actionIntent = Intent (context, MessageReceiver::class.java).apply {
+            action = "OK"
+        }
+
+
         val channelId = "all_notifications" // Use same Channel ID
-        val intent = Intent(context, ContactsContract.Profile::class.java)
-        val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
+        val intent = Intent(context, MainActivity::class.java)
+        val pendingIntent = PendingIntent.getActivity(context, 0, actionIntent, 0);
+
         val builder = NotificationCompat.Builder(context, channelId) // Create notification with channel Id
                 .setSmallIcon(R.drawable.ic_dashboard)
-                .setContentTitle("My notification")
-                .setContentText("Hello World!")
+                .setContentTitle("How did you like what you paid for?")
                 .setPriority(NotificationCompat.PRIORITY_MAX)
+                .addAction(R.drawable.ic_back, "Good", pendingIntent)
+                .setAutoCancel(true)
+                .addAction(R.drawable.ic_back, "Fair", pendingIntent)
+                .setAutoCancel(true)
+                .addAction(R.drawable.ic_delete, "Bad", pendingIntent)
+                .setAutoCancel(true)
         builder.setContentIntent(pendingIntent).setAutoCancel(true)
         // val mNotificationManager = Message.context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         // with(mNotificationManager) {

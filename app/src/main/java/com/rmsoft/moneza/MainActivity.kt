@@ -34,7 +34,6 @@ import com.rmsoft.moneza.home.transactions_list.TransactionsListFragment
 import com.rmsoft.moneza.util.CheckPrivileges
 import com.rmsoft.moneza.util.DataPersistence
 import com.rmsoft.moneza.util.Message
-import com.tapadoo.alerter.Alerter
 import eu.long1.spacetablayout.SpaceTabLayout
 import java.io.*
 import java.util.*
@@ -56,9 +55,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     fun notifySmsReceived(message: Message) {
         // Log.d("notifySmsReceived", "onReceive: $strMessage")
 
+        /*
         Alerter.create(this)
-                .setTitle("Kwishyura " + message.subject!!)
-                .setText("Waba wifuza kuyihuza na kode $currentNumber?")
+                .setTitle("Rate " + message.subject!!)
+                .setText("Please rate")
                 .setBackgroundColorRes(R.color.colorPrimaryDark)
                 .addButton("Ok", R.style.AlertButton) {
                     message.subjectNumber = currentNumber.replace(" ", "")
@@ -68,6 +68,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 }
                 .setDuration(24000)
                 .show()
+        */
 
 
     }
@@ -103,8 +104,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         tabLayout = findViewById<SpaceTabLayout>(R.id.spaceTabLayout)
 
         tabLayout.initialize(
-                viewPager, supportFragmentManager,
-                fragmentList, savedInstanceState
+            viewPager, supportFragmentManager,
+            fragmentList, savedInstanceState
         )
 
         val speedDialView = findViewById<SpeedDialView>(R.id.speedDial)
@@ -113,7 +114,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {}
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+            }
 
             override fun onPageSelected(position: Int) {
                 // Check if this is the page you want.
@@ -133,11 +139,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        toolbar.setBackgroundDrawable( resources.getDrawable(R.drawable.toolbar_bg) )
+        toolbar.setBackgroundDrawable(resources.getDrawable(R.drawable.toolbar_bg))
 
         val drawerLayout: DrawerLayout = findViewById(R.id.activity_main)
-        appBarConfiguration = AppBarConfiguration(setOf(
-                R.id.nav_actions, R.id.nav_transactions_list, R.id.nav_dashboard), drawerLayout)
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.nav_actions, R.id.nav_transactions_list, R.id.nav_dashboard
+            ), drawerLayout
+        )
         val navController = findNavController(R.id.nav_host_fragment)
 
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -172,17 +181,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
         })
 
-        // val messageReceiver = MessageReceiver(this)
+        // val messageReceiver = MessageReceiver()
+        // messageReceiver.setMainActivity(this)
         // val filter = IntentFilter("android.provider.Telephony.SMS_RECEIVED")
         // registerReceiver(messageReceiver, filter)
 
 
         val now = Calendar.getInstance()
         var dpd = DatePickerDialog.newInstance(
-                this,
-                now[Calendar.YEAR],
-                now[Calendar.MONTH],
-                now[Calendar.DAY_OF_MONTH]
+            this,
+            now[Calendar.YEAR],
+            now[Calendar.MONTH],
+            now[Calendar.DAY_OF_MONTH]
         )
         // dpd.show(fragmentManager, "Datepickerdialog")
 
@@ -316,16 +326,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (item.itemId) {
             R.id.reset -> {
                 val alertDialog = SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
-                        .setTitleText(resources.getString(R.string.delete_title))
-                        .setContentText(resources.getString(R.string.delete_content))
-                        .setConfirmText(resources.getString(R.string.delete_yes))
-                        .setCancelText(resources.getString(R.string.delete_no))
-                        .setConfirmClickListener { sDialog ->
-                            DataPersistence(this).reset()
-                            sDialog.dismissWithAnimation()
-                        }
-                        .showCancelButton(true)
-                        .setCancelClickListener { sDialog -> sDialog.cancel() }
+                    .setTitleText(resources.getString(R.string.delete_title))
+                    .setContentText(resources.getString(R.string.delete_content))
+                    .setConfirmText(resources.getString(R.string.delete_yes))
+                    .setCancelText(resources.getString(R.string.delete_no))
+                    .setConfirmClickListener { sDialog ->
+                        DataPersistence(this).reset()
+                        sDialog.dismissWithAnimation()
+                    }
+                    .showCancelButton(true)
+                    .setCancelClickListener { sDialog -> sDialog.cancel() }
 
                 alertDialog.show()
 
@@ -334,7 +344,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 // btn = alertDialog.findViewById(R.id.cancel) as Button
                 // btn.setBackgroundColor(ContextCompat.getColor(this, R.color.red))
-                alertDialog.getButton(SweetAlertDialog.BUTTON_CONFIRM).setBackgroundColor(resources.getColor(R.color.colorPrimaryDark));
+                alertDialog.getButton(SweetAlertDialog.BUTTON_CONFIRM).setBackgroundColor(
+                    resources.getColor(
+                        R.color.colorPrimaryDark
+                    )
+                );
 
 
             }
@@ -350,6 +364,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val ussdCodeNew = ussdCode + Uri.encode("#")
                 startActivity(Intent(Intent.ACTION_CALL, Uri.parse("tel:$ussdCodeNew")))
             }
+            R.id.more_codes -> {
+                val myIntent = Intent(this, MoreCodesActivity::class.java)
+                startActivity(myIntent)
+            }
             R.id.share -> {
                 val sendIntent = Intent()
                 sendIntent.action = Intent.ACTION_SEND
@@ -358,7 +376,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(sendIntent)
             }
             R.id.language -> {
-                setLocale ()
+                setLocale()
             }
         }
 
@@ -398,13 +416,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onDateSet(
-            view: DatePickerDialog?,
-            year: Int,
-            monthOfYear: Int,
-            dayOfMonth: Int,
-            yearEnd: Int,
-            monthOfYearEnd: Int,
-            dayOfMonthEnd: Int
+        view: DatePickerDialog?,
+        year: Int,
+        monthOfYear: Int,
+        dayOfMonth: Int,
+        yearEnd: Int,
+        monthOfYearEnd: Int,
+        dayOfMonthEnd: Int
     ) {
 
     }

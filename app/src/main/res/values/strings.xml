@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name" translatable="false">Mo Neza</string>
-    <string name="title_activity_onboarding" translatable="false">Mo Neza Kinya</string>
+    <string name="title_activity_onboarding" translatable="false">Mo Neza by RMSoft</string>
     <string name="title_activity_qr" translatable="false">QR Code</string>
     <string name="title_activity_main" translatable="false">Mo Neza</string>
 
     <string name="withdraw">Kubikuza</string>
     <string name="balance">Kureba Asigaye</string>
+    <string name="more_codes">Izindi kode</string>
     <string name="language">Change Language</string>
     <string name="agreements">Amasezerano</string>
     <string name="share">Gusangiza</string>
@@ -66,4 +67,21 @@
 
     <string name="searching">gushaka…</string>
     <string name="share_content">Porogaramu ya mbere nziza izagufasha mw\'igenzuramibare ry\'amafaranga ukoresha.</string>
+
+    <string name="next">Komeza</string>
+    <string name="confirm">Kwemeza</string>
+
+
+    <string-array name="planets_array">
+        <item>Icyumweru</item>
+        <item>Ukwezi</item>
+        <item>Ibindi…</item>
+    </string-array>
+
+
+    <string name="text_challenge">Kugira ngo ukomeze, uzuza umubare/inyuguti ibura:</string>
+    <string name="title_activity_more_codes">Izindi kode</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
 </resources>

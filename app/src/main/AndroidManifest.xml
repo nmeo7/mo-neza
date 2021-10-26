@@ -17,12 +17,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoNeza">
         <activity
+            android:name=".MoreCodesActivity"
+            android:label="@string/title_activity_more_codes"></activity>
+        <activity android:name=".actions.CompleteActionActivity" />
+        <activity
             android:name=".QrActivity"
-            android:label="@string/title_activity_qr"></activity>
+            android:label="@string/title_activity_qr" />
         <activity android:name=".MainActivity2" />
         <activity
             android:name=".ShowQrActivity"
-            android:label="Qr Code"></activity>
+            android:label="Qr Code" />
         <activity android:name=".SimpleScannerActivity" />
         <activity
             android:name=".MainActivity"

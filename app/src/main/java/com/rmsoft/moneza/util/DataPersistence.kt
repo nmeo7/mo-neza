@@ -198,13 +198,16 @@ class DataPersistence constructor(var context: Context) {
 
             if (!sp.containsKey(d)) {
                 sp[d] = 0
+            }
+
+            if (!sv.containsKey(d)) {
                 sv[d] = 0
             }
 
             if (x.type == "DEPOSIT" || x.type == "RECEIVING")
-                sv[d] = sp[d]!! + x.amount
+                sv[d] = sv[d]!! + x.amount
             if (x.type == "PAYMENT" || x.type == "TRANSFER" || x.type == "WITHDRAW")
-                sp[d] = sp[d]!! + x.amount
+                sp[d] = sp[d]!! - x.amount
         }
 
         val r = HashMap<String, MutableList<Pair<String, Float>>>()
