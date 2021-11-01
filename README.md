@@ -8,9 +8,6 @@ Completely eliminate any transaction errors by quick and safe payment and transf
 Support an artist or a team you love and gain access to exclusive contents - limited shirts, early access, etc.
 Provide fresh feedback and browse through others’ recommendations.
 
-Premium services: tax payment, integrating with small feature phones, data mining. Dominate the entire ecosystem. Targeted commercials. Compare prices.
-If people will be able to manage their finances like this, they will be more than happy to use MoMo.
-
 your privacy is safe with us, we care.
 
 ## Features
@@ -31,7 +28,7 @@ List of transactions
 
 ![image](https://user-images.githubusercontent.com/14826570/139663684-12d5ecd4-d303-495d-bc90-c0515ab1cc55.png)
 
-Verification
+Safe transactions
 
 ![image](https://user-images.githubusercontent.com/14826570/139663724-9e2fd8cd-a6a3-43a9-a2b3-e19eb312004e.png)
 
