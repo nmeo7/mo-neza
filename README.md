@@ -16,21 +16,25 @@ your privacy is safe with us, we care.
 ## Features
 
 Quicly pay for goods and services or transfer Money
+
 ![image](https://user-images.githubusercontent.com/14826570/139663514-0b0d4a4f-98a6-49ec-87a4-fc2f78436da1.png)
 
 Quick Response
+
 ![image](https://user-images.githubusercontent.com/14826570/139663428-c5c4e67f-2668-4fb3-b048-1db92b7dd5b9.png)
 
-
-
 A very clear and intuitive dashboard of the transactions
+
 ![image](https://user-images.githubusercontent.com/14826570/139663471-f1dc25c3-9d3f-449e-b85d-4c21fab9b06a.png)
 
 List of transactions
+
 ![image](https://user-images.githubusercontent.com/14826570/139663684-12d5ecd4-d303-495d-bc90-c0515ab1cc55.png)
 
 Verification
+
 ![image](https://user-images.githubusercontent.com/14826570/139663724-9e2fd8cd-a6a3-43a9-a2b3-e19eb312004e.png)
 
 Browse more codes
+
 ![image](https://user-images.githubusercontent.com/14826570/139663795-0e513b58-116b-44da-9563-acbb6f16878b.png)
